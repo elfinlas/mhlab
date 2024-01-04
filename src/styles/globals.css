@@ -1,0 +1,24 @@
+@import "@fontsource-variable/noto-sans-kr";
+@import "@fontsource/dongle";
+@import "@fontsource/dongle/400.css";
+@import "@fontsource/nanum-gothic";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-dongle-header {
+  font-family: "Dongle", sans-serif;
+  font-size: 45px; /* 여기에 원하는 폰트 크기를 설정합니다. */
+  /* 추가적인 스타일을 필요에 따라 정의합니다. */
+}
+
+.font-dongle-normal {
+  font-family: "Dongle", sans-serif;
+  font-size: 25px; /* 여기에 원하는 폰트 크기를 설정합니다. */
+  /* 추가적인 스타일을 필요에 따라 정의합니다. */
+}
+
+.font-ng {
+  font-family: "NanumGothic";
+}
