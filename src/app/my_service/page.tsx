@@ -5,6 +5,7 @@ import {
   MY_SERVICE_BCOW_STORE_INFO,
   MY_SERVICE_MYC_STORE_INFO,
 } from "../../constants/my.service.constants";
+import Image from "next/image";
 
 interface MyServiceItemProps {
   title: string;
@@ -34,6 +35,13 @@ export default function MyServicePage() {
 
   return (
     <>
+      <Image
+        src={"/cover.png"}
+        alt="Album"
+        width={550}
+        height={150}
+        className="hidden"
+      />
       <div className="grid c_m_pc:grid-cols-2 grid-cols-4 c_pc:p-10 c_mobile:grid-cols-1 c_mobile:gap-5">
         {serviceList.map((item: MyServiceItemProps, index: number) => {
           return (
