@@ -4,7 +4,7 @@ import { MyServiceDataType } from "@/types/my_service/my.service.type";
 import {
   MY_SERVICE_BCOW_STORE_INFO,
   MY_SERVICE_MYC_STORE_INFO,
-} from "../constants/my.service.constants";
+} from "../../constants/my.service.constants";
 
 interface MyServiceItemProps {
   title: string;

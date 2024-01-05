@@ -6,7 +6,10 @@ import getmetaData from "@/components/seo/meta.data";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = getmetaData({});
+export const metadata: Metadata = getmetaData({
+  title: "Introduce MHLab Service",
+  description: "MHLab에서 만든 서비스를 소개합니다.",
+});
 
 export default function RootLayout({
   children,

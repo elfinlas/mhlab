@@ -1,4 +1,4 @@
-import { MY_SERVICE_BCOW_STORE_INFO } from "@/app/constants/my.service.constants";
+import { MY_SERVICE_BCOW_STORE_INFO } from "@/constants/my.service.constants";
 import ServiceImgCarousel from "@/components/my_service/service.img.carousel";
 import ServiceStoreInfo from "@/components/my_service/store.info";
 import Image from "next/image";
