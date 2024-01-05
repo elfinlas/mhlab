@@ -13,6 +13,29 @@ export default function getmetaData(props: MetaDataProps): Metadata {
       props.description != undefined
         ? (props.description as string)
         : "Description mhlab service",
+    authors: { name: "mhlab" },
+    keywords: [
+      "mhlab",
+      "elfinlas",
+      "lotto",
+      "흑우집합소",
+      "로또",
+      "복권",
+      "dhlotto",
+      "동행복권",
+      "wine",
+      "마와셀",
+      "cellar",
+      "taste",
+      "tastenote",
+      "와인시음",
+      "와인",
+      "와인셀러",
+      "와인노트",
+    ],
+    creator: "mhlab",
+    publisher: "mhlab",
+    icons: "/favicon.ico",
 
     //OG
     openGraph: {
