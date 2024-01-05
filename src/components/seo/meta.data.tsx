@@ -44,7 +44,8 @@ export default function getmetaData(props: MetaDataProps): Metadata {
         props.description != undefined
           ? (props.description as string)
           : "Description mhlab service",
-      images: "/cover.png",
+      images: "https://mhlab.vercel.app/cover.png",
+      type: "website",
     },
 
     //App Link
