@@ -11,7 +11,7 @@ import { BsAndroid, BsApple } from "react-icons/bs"
 
 
 
-export default async function ProjectDetailPage({ params }: { params: { id: string } }) {
+export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const awaitedParams = await params;
   const project = productItemList.find((p) => p.id === awaitedParams.id);
 

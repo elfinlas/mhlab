@@ -6,7 +6,7 @@ export default function LanguageSwitcher() {
   const { locale, setLocale } = useLanguage();
 
   const switchLanguage = (newLocale: string) => {
-    setLocale(newLocale as any);
+    setLocale(newLocale as 'ko' | 'en' | 'ja');
   };
 
   return (

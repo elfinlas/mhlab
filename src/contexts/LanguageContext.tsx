@@ -19,11 +19,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let value: any = messages[locale];
+    let value: unknown = messages[locale];
 
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
-        value = value[k];
+        value = (value as Record<string, unknown>)[k];
       } else {
         return key; // 키가 없으면 원본 키 반환
       }

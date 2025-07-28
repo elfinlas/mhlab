@@ -37,7 +37,6 @@ export default function TimelineCard({
   description,
   imageSrc,
   imageAlt,
-  badgeVariant = 'secondary',
   position = 'left',
   paragraphs = [],
 }: TimelineCardProps) {
