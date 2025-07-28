@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { BsAndroid } from 'react-icons/bs';
 import { TbBrowser } from 'react-icons/tb';
+import Link from 'next/link';
 
 /**
  * 프로젝트 카드
@@ -12,6 +13,7 @@ import { TbBrowser } from 'react-icons/tb';
  */
 
 export default function ProjectCard(props: {
+  id: string;
   title: string;
   description: string;
   icon: LucideIcon | string;
@@ -70,7 +72,8 @@ export default function ProjectCard(props: {
   };
 
   return (
-    <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:scale-105 transition-transform duration-200 flex flex-col h-full'>
+    <Link href={`/product/${props.id}`} className='block'>
+      <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:scale-105 transition-transform duration-200 flex flex-col h-full cursor-pointer'>
       <div className='w-12 h-12 mb-3 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700 group-hover:bg-green-100 dark:group-hover:bg-green-900 overflow-hidden'>
         {renderIcon()}
       </div>
@@ -85,6 +88,7 @@ export default function ProjectCard(props: {
       {props.platform && (
         <div className='flex flex-wrap gap-2 mt-auto'>{renderPlatform()}</div>
       )}
-    </div>
+      </div>
+    </Link>
   );
 }

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className='min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800'>
       {/* 좌우 배치 레이아웃 */}
-      <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+      <div className='container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-12 max-w-7xl'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start'>
           {/* 왼쪽: Hero 섹션 */}
           <div className='space-y-8'>
@@ -30,7 +30,7 @@ export default function Home() {
               </p>
               <Link
                 href='/about'
-                className='inline-flex items-center px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors duration-200'
+                className='inline-flex items-center px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-300 rounded-xl font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors duration-200'
               >
                 더 알아보기
                 <svg

@@ -4,7 +4,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 export default function ProductDetailHeader() {
     return (
-        <header className="border-b sticky top-0 z-50 bg-white/80 backdrop-blur-sm">
+        <header className="border-b sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
             <nav className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='flex justify-between items-center h-16'>
                     <Link

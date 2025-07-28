@@ -4,9 +4,9 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 
 export const metadata: Metadata = {
-  title: '포트폴리오 | 개발자 포트폴리오',
+  title: 'MHLab',
   description:
-    '창의적인 웹 개발과 사용자 경험에 열정을 가진 개발자의 포트폴리오입니다.',
+    'Introduction of MHLab products',
   icons: {
     icon: [
       {
