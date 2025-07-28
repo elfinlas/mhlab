@@ -1,0 +1,62 @@
+{
+  "navigation": {
+    "about": "自己紹介",
+    "skills": "スキル",
+    "projects": "プロジェクト",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "title": "こんにちは！",
+    "subtitle": "開発者",
+    "suffix": "です",
+    "description": "創造的なウェブ開発とユーザーエクスペリエンスに情熱を持つ開発者です。最新技術を活用して意味のあるデジタルソリューションを作成しています。",
+    "viewProjects": "プロジェクトを見る",
+    "downloadResume": "履歴書をダウンロード"
+  },
+  "about": {
+    "title": "自己紹介",
+    "whoAmI": "私は誰ですか？",
+    "description1": "こんにちは！ウェブ開発に情熱を持つ開発者です。ユーザー中心のデザインと最新技術を組み合わせて、意味のあるウェブアプリケーションを開発することを楽しんでいます。",
+    "description2": "React、Next.js、TypeScriptなどの最新技術スタックを活用して、高性能でユーザーフレンドリーなウェブサイトを構築しています。",
+    "experience": "主な経験",
+    "experience1": "ウェブ開発3年以上",
+    "experience2": "React/Next.js専門家",
+    "experience3": "レスポンシブウェブデザイン",
+    "experience4": "UI/UXデザイン経験"
+  },
+  "skills": {
+    "title": "スキル"
+  },
+  "projects": {
+    "title": "プロジェクト",
+    "subtitle": "私が開発した様々なプロジェクトを紹介します。各プロジェクトは最新技術を活用してユーザー中心のソリューションを提供します。",
+    "technologies": "使用技術",
+    "keyFeatures": "主要機能",
+    "detailedDescription": "詳細説明",
+    "viewCode": "コードを見る",
+    "liveDemo": "ライブデモ",
+    "viewAll": "すべてのプロジェクトを見る",
+    "detailView": "詳細を見る",
+    "portfolio": {
+      "title": "ポートフォリオウェブサイト",
+      "description": "Next.jsとTailwind CSSを使用したレスポンシブポートフォリオウェブサイト"
+    },
+    "ecommerce": {
+      "title": "Eコマースプラットフォーム",
+      "description": "ReactとNode.jsを使用したオンラインショッピングプラットフォーム"
+    },
+    "todo": {
+      "title": "タスク管理アプリ",
+      "description": "ユーザーフレンドリーなタスク管理アプリケーション"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "プロジェクトやコラボレーションに興味があれば、お気軽にお問い合わせください！",
+    "email": "メールを送信",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "© 2024 ポートフォリオ。Next.jsで制作。"
+  }
+}

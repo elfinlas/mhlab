@@ -1,0 +1,62 @@
+{
+  "navigation": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hello!",
+    "subtitle": "Developer",
+    "suffix": "here",
+    "description": "I'm a passionate developer focused on creative web development and user experience. I create meaningful digital solutions using the latest technologies.",
+    "viewProjects": "View Projects",
+    "downloadResume": "Download Resume"
+  },
+  "about": {
+    "title": "About",
+    "whoAmI": "Who am I?",
+    "description1": "Hello! I'm a developer passionate about web development. I love combining user-centered design with cutting-edge technology to create meaningful web applications.",
+    "description2": "I build high-performance and user-friendly websites using modern technology stacks like React, Next.js, and TypeScript.",
+    "experience": "Key Experience",
+    "experience1": "3+ years of web development",
+    "experience2": "React/Next.js expert",
+    "experience3": "Responsive web design",
+    "experience4": "UI/UX design experience"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Introducing various projects I've developed. Each project provides user-centered solutions using the latest technologies.",
+    "technologies": "Technologies",
+    "keyFeatures": "Key Features",
+    "detailedDescription": "Detailed Description",
+    "viewCode": "View Code",
+    "liveDemo": "Live Demo",
+    "viewAll": "View All Projects",
+    "detailView": "Detail View",
+    "portfolio": {
+      "title": "Portfolio Website",
+      "description": "Responsive portfolio website built with Next.js and Tailwind CSS"
+    },
+    "ecommerce": {
+      "title": "E-commerce Platform",
+      "description": "Online shopping platform built with React and Node.js"
+    },
+    "todo": {
+      "title": "Todo Management App",
+      "description": "User-friendly todo management application"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Feel free to reach out if you're interested in projects or collaboration!",
+    "email": "Send Email",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "© 2024 Portfolio. Built with Next.js."
+  }
+}
