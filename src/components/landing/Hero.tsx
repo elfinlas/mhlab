@@ -9,6 +9,7 @@ const badges = [
   { icon: '🏘️', label: '부동산 투자' },
   { icon: '🏦', label: '주식 투자' },
   { icon: '👨‍💻', label: '취미개발' },
+  { icon: '📸', label: '사진' },
 ];
 
 export default function Hero() {

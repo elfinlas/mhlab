@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+import type { Metadata } from 'next'
 import {  ExternalLink,  Globe } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -9,7 +10,40 @@ import { productItemList } from "@/data/Product"
 import ProductDetailHeader from "@/components/product/detail/Header"
 import { BsAndroid, BsApple } from "react-icons/bs"
 
+// 동적 metadata 생성
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const awaitedParams = await params;
+  const project = productItemList.find((p) => p.id === awaitedParams.id);
 
+  if (!project) {
+    return {
+      title: 'Project Not Found - MHLab',
+    };
+  }
+
+  return {
+    title: `${project.title} - MHLab`,
+    description: project.description[0] || `MHLab의 ${project.title} 프로젝트를 확인해보세요.`,
+    openGraph: {
+      title: `${project.title} - MHLab`,
+      description: project.description[0] || `MHLab의 ${project.title} 프로젝트를 확인해보세요.`,
+      url: `https://elfinlas.com/product/${project.id}`,
+      images: [
+        {
+          url: project.images[0] || '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      title: `${project.title} - MHLab`,
+      description: project.description[0] || `MHLab의 ${project.title} 프로젝트를 확인해보세요.`,
+      images: [project.images[0] || '/og-image.png'],
+    },
+  };
+}
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const awaitedParams = await params;
