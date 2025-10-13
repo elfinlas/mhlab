@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About - MHLab',
     description: 'MHLab의 개발 경험과 프로젝트 히스토리를 확인해보세요.',
-    url: 'https://elfinlas.com/about',
+    url: 'https://mhlab.im/about',
     images: [
       {
         url: '/about/profile.webp',
