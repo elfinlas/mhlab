@@ -11,6 +11,14 @@ const projects: {
   link: string;
 }[] = [
   {
+    id: 'travellog',
+    title: 'TravelLog (모바일 앱)',
+    description: '여행 기록을 쉽게 관리할 수 있는 앱',
+    icon: '/product/travellog/app_icon.webp',
+    platform: [{ title: 'android' }],
+    link: '/product/travellog',
+  },
+  {
     id: 'myc_web',
     title: '마와셀 (웹 서비스)',
     description: '와인과 와이너리, 포도 품종 등 다양한 와인 정보를 제공',

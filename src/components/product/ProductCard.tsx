@@ -52,9 +52,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               <div className="text-slate-600 text-lg leading-relaxed mb-6">
                 {project.description.map((line, idx) => (
                   <React.Fragment key={idx}>
-                    {line}
-                    <br />
-                    <br />
+                    {/* {line}
+                    <br/> */}
+                     <p key={idx} className="mb-3 last:mb-0">{line}</p>
+                    
                   </React.Fragment>
                 ))}
               </div>

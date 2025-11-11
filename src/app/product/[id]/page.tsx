@@ -78,13 +78,15 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Overview</h2>
                   <div className="text-base font-medium text-gray-600 dark:text-gray-300 leading-relaxed">
                     {project.description.map((paragraph, index) => (
-                      <p key={index} 
-                         dangerouslySetInnerHTML={{ 
-                           __html: paragraph
-                             .replace(/\n/g, '<br><br>')
-                             .replace(/<b>/g, '<strong>')
-                             .replace(/<\/b>/g, '</strong>')
-                         }} 
+                      <p
+                      key={index}
+                      className="leading-7 md:leading-6 tracking-[0.012em] md:tracking-[0.006em] whitespace-pre-line mb-2 last:mb-0"
+                      dangerouslySetInnerHTML={{
+                        __html: paragraph
+                          // 개행은 CSS로 처리하므로 <br> 주입 제거
+                          .replace(/<b>/g, '<strong>')
+                          .replace(/<\/b>/g, '</strong>')
+                      }}
                       />
                     ))}
                   </div>
@@ -115,28 +117,28 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     project.links.type === "mobile" ? "grid-cols-1 md:grid-cols-2" :
                     "grid-cols-1 md:grid-cols-3"
                   }`}>
-                    {project.links.type === "mobile" || project.links.type === "full" && (
-                      <>
-                        {project.links.appStore && (
-                          <Button asChild className="bg-black hover:bg-gray-800 dark:text-white">
-                            <a href={project.links.appStore} target="_blank" rel="noopener noreferrer">
-                              <BsApple className="w-4 h-4 mr-2 " />
-                              App Store
-                              <ExternalLink className="w-4 h-4 ml-2" />
-                            </a>
-                          </Button>
-                        )}
-                        {project.links.googlePlay && (
-                          <Button asChild className="bg-green-600 hover:bg-green-700 dark:text-white">
-                            <a href={project.links.googlePlay} target="_blank" rel="noopener noreferrer">
-                              <BsAndroid className="w-4 h-4 mr-2" />
-                              Google Play
-                              <ExternalLink className="w-4 h-4 ml-2" />
-                            </a>
-                          </Button>
-                        )}
-                      </>
-                    )}
+                    {(project.links.type === "mobile" || project.links.type === "full") && (
+  <>
+    {project.links.appStore && (
+      <Button asChild className="bg-black hover:bg-gray-800 dark:text-white">
+        <a href={project.links.appStore} target="_blank" rel="noopener noreferrer">
+          <BsApple className="w-4 h-4 mr-2 " />
+          App Store
+          <ExternalLink className="w-4 h-4 ml-2" />
+        </a>
+      </Button>
+    )}
+    {project.links.googlePlay && (
+      <Button asChild className="bg-green-600 hover:bg-green-700 dark:text-white">
+        <a href={project.links.googlePlay} target="_blank" rel="noopener noreferrer">
+          <BsAndroid className="w-4 h-4 mr-2" />
+          Google Play
+          <ExternalLink className="w-4 h-4 ml-2" />
+        </a>
+      </Button>
+    )}
+  </>
+)}
                     {project.links.type === "website" || project.links.website && (
                       <Button asChild className="bg-blue-400 hover:bg-blue-500 dark:text-white">                        
                         <a href={project.links.website} target="_blank" rel="noopener noreferrer">

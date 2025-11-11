@@ -1,4 +1,30 @@
+
+//메인 리스트
 export const productList = [
+
+  {id : "travellog",
+    title: "TravelLog(트래블로그)",
+    category: "Mobile Application",
+    description:
+      [
+        "TravelLog는 자신의 여행 기록을 관리하는 어플리케이션입니다.",
+        "간편하게 여행 시작과 종료로 여행을 기록하거나, 여행 날짜만으로도 여행을 기록할 수 있습니다.",
+        "다른 곳에 공유되지 않는 개인 정보 중시를 중시합니다.",
+      ],
+    mainFeatures: ["간편한 여행 기록", "여행 기록 열람", "여행 경로 확인"],
+    images: [
+      "/product/travellog/img_01.webp",
+      "/product/travellog/img_02.webp",
+      "/product/travellog/img_03.webp",
+      "/product/travellog/img_04.webp",
+      "/product/travellog/img_05.webp",
+      "/product/travellog/img_06.webp",
+      "/product/travellog/img_07.webp",
+    ],
+    color: "from-blue-500 to-purple-600",
+  },
+
+  //reservelog
   {
     id: "reservelog",
     title: "ReserveLog(웹 서비스)",
@@ -96,6 +122,8 @@ export const productList = [
 
 ];
 
+
+//
 export interface ProductItemType {
     id: string;
     title: string;
@@ -119,9 +147,108 @@ export interface ProductItemType {
 }
 
 
+//
 export const productItemList =[
-///ReserveLog
+  {id: "travellog",
+    title: "TravelLog(트래블로그)",
+    category: "Mobile Application",
+    description : [
+      "잊고 싶지 않은 여행의 추억, Travel Log가 가장 쉽고 완벽하게 기록해 드립니다.\n",
+          "여행의 시작과 끝을 버튼 하나로 알려주세요.\n",
+          "Travel Log는 그 기간 동안의 모든 사진과 영상을 자동으로 불러와 당신만의 타임라인을 만듭니다.\n",
+          "날짜를 놓쳤어도 괜찮습니다. 날짜만 입력하면 해당 기간의 추억을 즉시 찾아 기록해 드립니다.",
+      ],
+    keyPoints: [
+      "📍 간편한 여행 기록", "🗺️ 여행 기록 열람", "🔍 여행 경로 확인", "🌙 편의 기능", "🌐 다국어 지원"
+      ],
+      links: {
+        website: "",
+        appStore: "",
+        googlePlay: "https://play.google.com/store/apps/details?id=dev.mhlab.travel_logger",
+        type: "mobile",
+      },
+      images: [
+        "/product/travellog/img_01.webp",
+      "/product/travellog/img_02.webp",
+      "/product/travellog/img_03.webp",
+      "/product/travellog/img_04.webp",
+      "/product/travellog/img_05.webp",
+      "/product/travellog/img_06.webp",
+      "/product/travellog/img_07.webp",
+      ],
+      functions:[
+        {
+          id: "create_trip",
+          title: "여행 기록 생성",
+          description: [
+            "여행 기록을 쉽게 생성할 수 있습니다.",
+            "여행을 갈 때 시작버튼을 클릭하고 즐겁게 여행을 즐기세요.",
+            "여행을 마치면 종료버튼을 클릭하고 추억을 기록할 수 있습니다.",
+            "날짜를 놓쳤어도 괜찮습니다.",
+            "여행 날짜만 입력하면 해당 기간의 추억을 즉시 찾아 기록해 드립니다."
+          ],
+          features: [
+            "여행 시작과 종료 기록",
+            "과거에 있는 날짜 기록",
+          ],
+          images: [
+            "/product/travellog/img_01.webp",
+            "/product/travellog/img_05.webp",
+          ],
+        },
+        
+        {
+          id: "view_trip",
+          title: "여행 기록 열람",
+          description: [
+            "여행 기록을 클릭하면 해당 여행 기록의 상세 정보를 확인할 수 있습니다.",
+            "날짜별, 지역과 시간대 별로 기록을 확인할 수 있습니다.",
+            "각 클러스터별 상세하게 이동한 위치의 사진과 영상을 확인할 수 있고, 그에 대한 제목과 설명을 기록할 수 있습니다.",
+          ],
+          features: [
+            "여행 기록 열람",
+            "날짜별 기록 확인",
+            "지역과 시간대 별 기록 확인",
+          ],
+          images: [
+            "/product/travellog/img_02.webp",
+            "/product/travellog/img_03.webp",
+            "/product/travellog/img_07.webp",
+          ],
+        },
 
+        {
+          id: "route_view_trip",
+          title: "여행 경로 열람",
+          description: [
+            "여행 시작부터 끝까지 지나온 경로를 확인할 수 있습니다.",
+            "일자별로 이동한 경로를 확인할 수 있습니다.",
+          ],
+          features: [
+            "여행 경로 열람",
+          ],
+          images: [
+            "/product/travellog/img_04.webp",
+          ],
+        },
+
+        {
+          id: "trip_list",
+          title: "여행 기록 리스트",
+          description: [
+            "지금까지 기록된 여행 기록을 모두 확인할 수 있습니다.",
+            "총 여행의 횟수와 여행 일자를 확인할 수 있습니다.",
+          ],
+          features: [
+            "여행 요약",
+          ],
+          images: [
+            "/product/travellog/img_06.webp",
+          ],
+        },
+      ],
+    }, 
+//ReserveLog
 {
   id: "reservelog",
   title: "ReserveLog(웹 서비스)",
@@ -291,7 +418,7 @@ export const productItemList =[
   },
 
 
-  ///흑우집합소
+  //흑우집합소
   {
     id: "bcow",
     title: "흑우집합소(앱, 웹 서비스)",

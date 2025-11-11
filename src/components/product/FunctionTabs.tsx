@@ -200,9 +200,9 @@ export function FunctionTabs({ functions }: FunctionTabsProps) {
                   <div className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                     {func.description.map((paragraph, index) => (
                       <p key={index}
+                      className="leading-6 md:leading-5 tracking-[0.012em] md:tracking-[0.006em] whitespace-pre-line mb-5 last:mb-0"
                         dangerouslySetInnerHTML={{
                           __html: paragraph
-                            .replace(/\n/g, '<br><br>')
                             .replace(/<b>/g, '<strong>')
                             .replace(/<\/b>/g, '</strong>')
                         }}
