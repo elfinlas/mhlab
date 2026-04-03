@@ -1,62 +1,65 @@
 {
-  "navigation": {
-    "about": "自己紹介",
-    "skills": "スキル",
-    "projects": "プロジェクト",
-    "contact": "お問い合わせ"
+  "productListing": {
+    "searchPlaceholder": "サービスを検索…",
+    "noResults": "該当するサービスがありません。",
+    "eyebrow": "サービス紹介",
+    "titleLead": "MHLab サービス",
+    "titleGradient": "思考を形にした成果",
+    "subtitle": "アイデアから始まり、実際のサービスとして形にしたプロジェクトを紹介します。それぞれの背景にある思考やプロセスもあわせてご覧ください。",
+    "viewDetails": "詳しく見る",
+    "comingTitle": "新しいサービスを順次追加予定です。",
+    "comingBody": "さまざまなプロジェクトにご期待ください。",
+    "footerBrand": "MHLab Systems",
+    "footerPrivacy": "プライバシー",
+    "footerTerms": "利用規約",
+    "footerContact": "お問い合わせ",
+    "footerCopyright": "© 2025 MHLab. All rights reserved.",
+    "mobileHome": "ホーム",
+    "mobileLibrary": "一覧",
+    "mobileSaved": "保存",
+    "mobileSettings": "設定",
+    "supportedLanguages": "対応言語",
+    "supportedLanguagesAria": "アプリまたはサービスで利用できる言語",
+    "localeKo": "韓国語",
+    "localeEn": "英語",
+    "localeJa": "日本語",
+    "detailBackToServiceList": "サービス一覧"
   },
-  "hero": {
-    "title": "こんにちは！",
-    "subtitle": "開発者",
-    "suffix": "です",
-    "description": "創造的なウェブ開発とユーザーエクスペリエンスに情熱を持つ開発者です。最新技術を活用して意味のあるデジタルソリューションを作成しています。",
-    "viewProjects": "プロジェクトを見る",
-    "downloadResume": "履歴書をダウンロード"
+  "home": {
+    "aboutHeading": "About",
+    "linksHeading": "Links",
+    "productsHeading": "Products",
+    "aboutBody": "かつては優れた開発者を目指して全力で走りましたが、その道の厳しさを知り、不動産や株式など新しい機会へ。今はワインを楽しみながら、趣味で開発してのんびり過ごしています。",
+    "learnMore": "詳しく見る",
+    "seeMore": "もっと見る",
+    "productsSeeMoreHint": "プロジェクト・サービス一覧へ移動します。",
+    "viewAllProjects": "すべてのプロジェクト"
   },
-  "about": {
-    "title": "自己紹介",
-    "whoAmI": "私は誰ですか？",
-    "description1": "こんにちは！ウェブ開発に情熱を持つ開発者です。ユーザー中心のデザインと最新技術を組み合わせて、意味のあるウェブアプリケーションを開発することを楽しんでいます。",
-    "description2": "React、Next.js、TypeScriptなどの最新技術スタックを活用して、高性能でユーザーフレンドリーなウェブサイトを構築しています。",
-    "experience": "主な経験",
-    "experience1": "ウェブ開発3年以上",
-    "experience2": "React/Next.js専門家",
-    "experience3": "レスポンシブウェブデザイン",
-    "experience4": "UI/UXデザイン経験"
-  },
-  "skills": {
-    "title": "スキル"
-  },
-  "projects": {
-    "title": "プロジェクト",
-    "subtitle": "私が開発した様々なプロジェクトを紹介します。各プロジェクトは最新技術を活用してユーザー中心のソリューションを提供します。",
-    "technologies": "使用技術",
-    "keyFeatures": "主要機能",
-    "detailedDescription": "詳細説明",
-    "viewCode": "コードを見る",
-    "liveDemo": "ライブデモ",
-    "viewAll": "すべてのプロジェクトを見る",
-    "detailView": "詳細を見る",
-    "portfolio": {
-      "title": "ポートフォリオウェブサイト",
-      "description": "Next.jsとTailwind CSSを使用したレスポンシブポートフォリオウェブサイト"
+  "stitchPage": {
+    "profileAlt": "プロフィール写真",
+    "aboutImageAlt": "About 画像",
+    "heroGreeting": "ようこそ！",
+    "heroLead": "趣味で開発している",
+    "heroTrail": "です",
+    "heroDescription1": "スタートアップから大企業まで開発者として働き、不動産・株式へ転じました。",
+    "heroDescription2": "今はワイン好きの趣味開発者です。",
+    "badges": {
+      "wine": "ワイン好き",
+      "realEstate": "不動産投資",
+      "stock": "株式投資",
+      "hobbyDev": "趣味開発",
+      "photo": "写真"
     },
-    "ecommerce": {
-      "title": "Eコマースプラットフォーム",
-      "description": "ReactとNode.jsを使用したオンラインショッピングプラットフォーム"
+    "aboutBody": "かつては立派な開発者を目指して全力でしたが、その道の厳しさを知り、新しい機会へ。今はワインを楽しみ、趣味で開発してのんびり過ごしています…",
+    "linkTitles": {
+      "github": "GitHub",
+      "globe": "開発ブログ",
+      "naver": "趣味ブログ",
+      "threads": "Threads"
     },
-    "todo": {
-      "title": "タスク管理アプリ",
-      "description": "ユーザーフレンドリーなタスク管理アプリケーション"
-    }
-  },
-  "contact": {
-    "title": "お問い合わせ",
-    "description": "プロジェクトやコラボレーションに興味があれば、お気軽にお問い合わせください！",
-    "email": "メールを送信",
-    "github": "GitHub"
-  },
-  "footer": {
-    "copyright": "© 2024 ポートフォリオ。Next.jsで制作。"
+    "aboutReadMore": "続きを読む",
+    "ariaLanguageGroup": "言語を選択",
+    "ariaLangKo": "韓国語に切り替え",
+    "ariaLangEn": "英語に切り替え"
   }
 }

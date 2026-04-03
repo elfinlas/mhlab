@@ -1,62 +1,65 @@
 {
-  "navigation": {
-    "about": "About",
-    "skills": "Skills",
-    "projects": "Projects",
-    "contact": "Contact"
+  "productListing": {
+    "searchPlaceholder": "Search products…",
+    "noResults": "No matching services.",
+    "eyebrow": "Services",
+    "titleLead": "MHLab Services",
+    "titleGradient": "Ideas Brought to Life",
+    "subtitle": "A collection of projects that started as ideas and evolved into real services. Each one reflects the thoughts and process behind its creation.",
+    "viewDetails": "View details",
+    "comingTitle": "More services are on the way.",
+    "comingBody": "Stay tuned for new projects and experiments.",
+    "footerBrand": "MHLab Systems",
+    "footerPrivacy": "Privacy Policy",
+    "footerTerms": "Terms of Service",
+    "footerContact": "Contact",
+    "footerCopyright": "© 2025 MHLab. All rights reserved.",
+    "mobileHome": "Home",
+    "mobileLibrary": "Library",
+    "mobileSaved": "Saved",
+    "mobileSettings": "Settings",
+    "supportedLanguages": "Languages",
+    "supportedLanguagesAria": "Languages supported in the app or service",
+    "localeKo": "Korean",
+    "localeEn": "English",
+    "localeJa": "Japanese",
+    "detailBackToServiceList": "Service list"
   },
-  "hero": {
-    "title": "Hello!",
-    "subtitle": "Developer",
-    "suffix": "here",
-    "description": "I'm a passionate developer focused on creative web development and user experience. I create meaningful digital solutions using the latest technologies.",
-    "viewProjects": "View Projects",
-    "downloadResume": "Download Resume"
+  "home": {
+    "aboutHeading": "About",
+    "linksHeading": "Links",
+    "productsHeading": "Products",
+    "aboutBody": "I once chased being a great developer with everything I had. Realizing how hard that path can be, I climbed a different ladder—into real estate and stocks—and now I enjoy wine, hobby coding, and a slower pace.",
+    "learnMore": "Learn more",
+    "seeMore": "See more",
+    "productsSeeMoreHint": "Browse the full list of projects and services.",
+    "viewAllProjects": "View all projects"
   },
-  "about": {
-    "title": "About",
-    "whoAmI": "Who am I?",
-    "description1": "Hello! I'm a developer passionate about web development. I love combining user-centered design with cutting-edge technology to create meaningful web applications.",
-    "description2": "I build high-performance and user-friendly websites using modern technology stacks like React, Next.js, and TypeScript.",
-    "experience": "Key Experience",
-    "experience1": "3+ years of web development",
-    "experience2": "React/Next.js expert",
-    "experience3": "Responsive web design",
-    "experience4": "UI/UX design experience"
-  },
-  "skills": {
-    "title": "Skills"
-  },
-  "projects": {
-    "title": "Projects",
-    "subtitle": "Introducing various projects I've developed. Each project provides user-centered solutions using the latest technologies.",
-    "technologies": "Technologies",
-    "keyFeatures": "Key Features",
-    "detailedDescription": "Detailed Description",
-    "viewCode": "View Code",
-    "liveDemo": "Live Demo",
-    "viewAll": "View All Projects",
-    "detailView": "Detail View",
-    "portfolio": {
-      "title": "Portfolio Website",
-      "description": "Responsive portfolio website built with Next.js and Tailwind CSS"
+  "stitchPage": {
+    "profileAlt": "Profile photo",
+    "aboutImageAlt": "About image",
+    "heroGreeting": "Welcome — good to see you here!",
+    "heroLead": "I'm",
+    "heroTrail": ", building for fun.",
+    "heroDescription1": "From startups to big tech I worked as a developer, then pivoted into real estate and investing.",
+    "heroDescription2": "These days I’m a wine lover who still codes as a hobby.",
+    "badges": {
+      "wine": "Wine lover",
+      "realEstate": "Real estate",
+      "stock": "Stock investing",
+      "hobbyDev": "Hobby coding",
+      "photo": "Photography"
     },
-    "ecommerce": {
-      "title": "E-commerce Platform",
-      "description": "Online shopping platform built with React and Node.js"
+    "aboutBody": "I once gave everything to become a great developer, but realized how tough that path can be—so I climbed a different ladder through new opportunities. Now I enjoy wine, code for fun, and take life at an easy pace…",
+    "linkTitles": {
+      "github": "GitHub",
+      "globe": "Dev blog",
+      "naver": "Hobby blog",
+      "threads": "Threads"
     },
-    "todo": {
-      "title": "Todo Management App",
-      "description": "User-friendly todo management application"
-    }
-  },
-  "contact": {
-    "title": "Contact",
-    "description": "Feel free to reach out if you're interested in projects or collaboration!",
-    "email": "Send Email",
-    "github": "GitHub"
-  },
-  "footer": {
-    "copyright": "© 2024 Portfolio. Built with Next.js."
+    "aboutReadMore": "Read more",
+    "ariaLanguageGroup": "Choose language",
+    "ariaLangKo": "Switch to Korean",
+    "ariaLangEn": "Switch to English"
   }
 }

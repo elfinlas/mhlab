@@ -1,16 +1,13 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { FlatCompat } from '@eslint/eslintrc';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import coreWebVitals from 'eslint-config-next/core-web-vitals';
+import nextTypescript from 'eslint-config-next/typescript';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
+/** @type {import('eslint').Linter.Config[]} */
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...coreWebVitals,
+  ...nextTypescript,
+  /** Prettier와 겹치는 ESLint 스타일 규칙 비활성화 — 포맷은 Prettier에 맡김 */
+  eslintConfigPrettier,
 ];
 
 export default eslintConfig;

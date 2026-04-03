@@ -29,21 +29,16 @@ cd elfinlas
 
 ### 2. 의존성 설치
 
+[Corepack](https://nodejs.org/api/corepack.html)으로 pnpm 버전을 맞춘 뒤 설치합니다.
+
 ```bash
-npm install
-# 또는
-yarn install
-# 또는
+corepack enable
 pnpm install
 ```
 
 ### 3. 개발 서버 실행
 
 ```bash
-npm run dev
-# 또는
-yarn dev
-# 또는
 pnpm dev
 ```
 
@@ -81,13 +76,13 @@ src/
 ### 프로덕션 빌드
 
 ```bash
-npm run build
+pnpm build
 ```
 
 ### 프로덕션 서버 실행
 
 ```bash
-npm start
+pnpm start
 ```
 
 ### Vercel 배포

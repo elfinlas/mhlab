@@ -1,51 +1,26 @@
-'use client';
+import { Manrope } from 'next/font/google';
+import ProductListingView from '@/components/product/ProductListingView';
 
-
-import ProductHeader from '@/components/product/Header';
-import ProductHero from '@/components/product/Hero';
-import { ProjectCard } from '@/components/product/ProductCard';
-import { productList } from '@/data/Product';
-
+//next/font/google에서 Manrope 폰트를 불러와 설정하는 코드입니다.
+/*
+Manrope({ ... })
+빌드 시점에 Google Fonts의 Manrope를 가져와, 프로젝트에 맞게 최적화(자체 호스팅·서브셋 등)한 뒤 manrope 객체를 만듭니다.
+subsets: ['latin']
+라틴 문자만 포함해 폰트 파일 크기를 줄입니다. (한글은 보통 시스템/다른 폰트로 보일 수 있음.)
+display: 'swap'
+폰트가 로드되기 전에는 대체 글꼴로 보이다가, 로드되면 Manrope로 바꿉니다. (깜빡임은 있을 수 있지만, 긴 공백 텍스트는 피하는 전략입니다.)
+*/
+const manrope = Manrope({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-    {/* Header */}
-    <ProductHeader />
-
-    {/* Hero Section */}
-    <ProductHero />
-
-    {/* Projects Grid */}
-    <section className="dark:bg-slate-900">
-      <div className="container mx-auto">
-        <div className="grid gap-8 md:gap-12">
-          {productList.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
-      </div>
-    </section>
-
-          {/* 새로운 서비스 안내 카드 */}
-          <div className='max-w-xl mx-auto mt-16 mb-8'>
-            <div className='flex items-center gap-4 p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow text-center'>
-              <span className='text-3xl md:text-4xl text-blue-500'>👀</span>
-              <div className='flex-1'>
-                <div className='text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-1'>
-                  곧 새로운 서비스가 추가될 예정입니다.
-                </div>
-                <div className='text-slate-500 dark:text-slate-400 text-sm'>
-                  더 다양한 프로젝트와 활동을 기대해 주세요!
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-    <footer className="bg-slate-900 dark:bg-slate-900 text-white dark:text-white py-12 px-4">
-            Ⓒ 2025 MHLab
-          </footer>
-  </div>
-  ) 
+    <div
+      className={`${manrope.className} min-h-screen bg-white text-gray-900 selection:bg-indigo-100 dark:bg-[oklch(0.145_0_0)] dark:text-slate-100 dark:selection:bg-violet-950 dark:selection:text-violet-100`}
+    >
+      <ProductListingView />
+    </div>
+  );
 }

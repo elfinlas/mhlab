@@ -1,7 +1,5 @@
 'use client';
 
-import Link from "next/link";
-
 export default function FooterLegalPrivacy() {
     return (
         <div className="mt-10 rounded-lg  p-6  shadow-lg ">

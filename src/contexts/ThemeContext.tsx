@@ -16,20 +16,22 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    queueMicrotask(() => {
+      setMounted(true);
 
-    // 로컬 스토리지에서 테마 설정 불러오기
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      // 시스템 설정 확인
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
-        .matches
-        ? 'dark'
-        : 'light';
-      setTheme(systemTheme);
-    }
+      // 로컬 스토리지에서 테마 설정 불러오기
+      const savedTheme = localStorage.getItem('theme') as Theme;
+      if (savedTheme) {
+        setTheme(savedTheme);
+      } else {
+        // 시스템 설정 확인
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+          .matches
+          ? 'dark'
+          : 'light';
+        setTheme(systemTheme);
+      }
+    });
   }, []);
 
   useEffect(() => {

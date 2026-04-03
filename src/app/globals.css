@@ -3,6 +3,36 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* /product 목록 — 라이트 에디토리얼 배경 (test_res/code.html · DESIGN.md) */
+.product-listing-light-bg {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.06), transparent 45%),
+    radial-gradient(circle at 0% 100%, rgba(99, 102, 241, 0.04), transparent 42%),
+    #ffffff;
+}
+
+.dark .product-listing-light-bg {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.14), transparent 48%),
+    radial-gradient(circle at 0% 100%, rgba(129, 140, 248, 0.08), transparent 45%),
+    oklch(0.145 0 0);
+}
+
+/* /product/[id] 상세 — code.html 에디토리얼 톤 */
+.product-detail-light-bg {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.07), transparent 46%),
+    radial-gradient(circle at 0% 100%, rgba(99, 102, 241, 0.05), transparent 44%),
+    #ffffff;
+}
+
+.dark .product-detail-light-bg {
+  background:
+    radial-gradient(circle at 85% 5%, rgba(99, 102, 241, 0.18), transparent 42%),
+    radial-gradient(circle at 10% 90%, rgba(45, 183, 242, 0.08), transparent 48%),
+    oklch(0.145 0 0);
+}
+
 /* 나눔고딕 폰트 정의 */
 @font-face {
   font-family: 'Nanum Gothic';
@@ -250,6 +280,564 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+@keyframes landing-float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -14px);
+  }
+}
+
+.animate-float {
+  animation: landing-float 7s ease-in-out infinite;
+}
+
+/* 홈 코드 페이지 오로라 — translate3d + opacity로 움직임이 보이도록 (GPU) */
+@keyframes home-aurora-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.88;
+  }
+  33% {
+    transform: translate3d(8%, 6%, 0) scale(1.08);
+    opacity: 1;
+  }
+  66% {
+    transform: translate3d(3%, -8%, 0) scale(0.94);
+    opacity: 0.92;
+  }
+}
+
+@keyframes home-aurora-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.9;
+  }
+  40% {
+    transform: translate3d(-10%, 6%, 0) scale(1.1);
+    opacity: 1;
+  }
+  80% {
+    transform: translate3d(6%, -8%, 0) scale(0.9);
+    opacity: 0.85;
+  }
+}
+
+@keyframes home-aurora-drift-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate3d(-6%, 10%, 0) scale(1.07);
+    opacity: 1;
+  }
+}
+
+@keyframes home-aurora-drift-d {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.88;
+  }
+  35% {
+    transform: translate3d(6%, 8%, 0) scale(0.93);
+    opacity: 1;
+  }
+  70% {
+    transform: translate3d(-8%, -5%, 0) scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+@keyframes home-aurora-drift-e {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.87;
+  }
+  50% {
+    transform: translate3d(5%, -9%, 0) scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes home-aurora-drift-f {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.82;
+  }
+  45% {
+    transform: translate3d(-7%, -6%, 0) scale(1.12);
+    opacity: 0.98;
+  }
+  90% {
+    transform: translate3d(8%, 5%, 0) scale(0.9);
+    opacity: 0.88;
+  }
+}
+
+@keyframes home-aurora-mesh-breathe {
+  0%,
+  100% {
+    opacity: 0.88;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+/* 라이트 모드: 밝은 베이스에서 움직임·호흡이 읽히도록 진폭·투명도 변화 확대 */
+@keyframes home-aurora-drift-a-light {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.78;
+  }
+  33% {
+    transform: translate3d(14%, 11%, 0) scale(1.12);
+    opacity: 1;
+  }
+  66% {
+    transform: translate3d(5%, -14%, 0) scale(0.92);
+    opacity: 0.88;
+  }
+}
+
+@keyframes home-aurora-drift-b-light {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translate3d(-16%, 10%, 0) scale(1.14);
+    opacity: 1;
+  }
+  80% {
+    transform: translate3d(10%, -13%, 0) scale(0.88);
+    opacity: 0.82;
+  }
+}
+
+@keyframes home-aurora-drift-c-light {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.76;
+  }
+  50% {
+    transform: translate3d(-11%, 16%, 0) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes home-aurora-drift-d-light {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
+  35% {
+    transform: translate3d(11%, 13%, 0) scale(0.9);
+    opacity: 1;
+  }
+  70% {
+    transform: translate3d(-13%, -9%, 0) scale(1.12);
+    opacity: 0.86;
+  }
+}
+
+@keyframes home-aurora-drift-e-light {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.78;
+  }
+  50% {
+    transform: translate3d(9%, -15%, 0) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes home-aurora-drift-f-light {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.74;
+  }
+  45% {
+    transform: translate3d(-12%, -10%, 0) scale(1.16);
+    opacity: 1;
+  }
+  90% {
+    transform: translate3d(14%, 9%, 0) scale(0.88);
+    opacity: 0.84;
+  }
+}
+
+@keyframes home-aurora-mesh-breathe-light {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* !important: tailwind/tw-animate 등과 animation 단축 속성 충돌 방지 */
+.home-aurora-drift-a {
+  animation: home-aurora-drift-a 16s ease-in-out infinite !important;
+}
+.home-aurora-drift-b {
+  animation: home-aurora-drift-b 18s ease-in-out infinite !important;
+}
+.home-aurora-drift-c {
+  animation: home-aurora-drift-c 14s ease-in-out infinite !important;
+}
+.home-aurora-drift-d {
+  animation: home-aurora-drift-d 17s ease-in-out -3s infinite !important;
+}
+.home-aurora-drift-e {
+  animation: home-aurora-drift-e 15s ease-in-out -2s infinite !important;
+}
+.home-aurora-drift-f {
+  animation: home-aurora-drift-f 20s ease-in-out -5s infinite !important;
+}
+
+.home-aurora-mesh-breathe {
+  animation: home-aurora-mesh-breathe 12s ease-in-out infinite !important;
+  transform-origin: 50% 80%;
+}
+
+html:not(.dark) .home-aurora-drift-a {
+  animation: home-aurora-drift-a-light 14s ease-in-out infinite !important;
+}
+html:not(.dark) .home-aurora-drift-b {
+  animation: home-aurora-drift-b-light 16s ease-in-out infinite !important;
+}
+html:not(.dark) .home-aurora-drift-c {
+  animation: home-aurora-drift-c-light 12s ease-in-out infinite !important;
+}
+html:not(.dark) .home-aurora-drift-d {
+  animation: home-aurora-drift-d-light 15s ease-in-out -3s infinite !important;
+}
+html:not(.dark) .home-aurora-drift-e {
+  animation: home-aurora-drift-e-light 13s ease-in-out -2s infinite !important;
+}
+html:not(.dark) .home-aurora-drift-f {
+  animation: home-aurora-drift-f-light 17s ease-in-out -5s infinite !important;
+}
+html:not(.dark) .home-aurora-mesh-breathe {
+  animation: home-aurora-mesh-breathe-light 10s ease-in-out infinite !important;
+}
+
+/* 다크: 움직임·투명도 펄스를 약하게 해 어색한 번쩍임 완화 */
+@keyframes home-aurora-drift-a-dark {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.94;
+  }
+  50% {
+    transform: translate3d(4%, 3%, 0) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes home-aurora-drift-b-dark {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.93;
+  }
+  50% {
+    transform: translate3d(-5%, 4%, 0) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes home-aurora-drift-c-dark {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.92;
+  }
+  50% {
+    transform: translate3d(-3%, 5%, 0) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes home-aurora-drift-d-dark {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.94;
+  }
+  50% {
+    transform: translate3d(3%, 4%, 0) scale(1.03);
+    opacity: 1;
+  }
+}
+
+@keyframes home-aurora-drift-e-dark {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.93;
+  }
+  50% {
+    transform: translate3d(3%, -4%, 0) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes home-aurora-drift-f-dark {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.91;
+  }
+  50% {
+    transform: translate3d(-4%, -3%, 0) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes home-aurora-mesh-breathe-dark {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.015);
+  }
+}
+
+html.dark .home-aurora-drift-a {
+  animation: home-aurora-drift-a-dark 22s ease-in-out infinite !important;
+}
+html.dark .home-aurora-drift-b {
+  animation: home-aurora-drift-b-dark 24s ease-in-out infinite !important;
+}
+html.dark .home-aurora-drift-c {
+  animation: home-aurora-drift-c-dark 19s ease-in-out infinite !important;
+}
+html.dark .home-aurora-drift-d {
+  animation: home-aurora-drift-d-dark 21s ease-in-out -2s infinite !important;
+}
+html.dark .home-aurora-drift-e {
+  animation: home-aurora-drift-e-dark 20s ease-in-out -1.5s infinite !important;
+}
+html.dark .home-aurora-drift-f {
+  animation: home-aurora-drift-f-dark 26s ease-in-out -4s infinite !important;
+}
+html.dark .home-aurora-mesh-breathe {
+  animation: home-aurora-mesh-breathe-dark 18s ease-in-out infinite !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-aurora-drift-a,
+  .home-aurora-drift-b,
+  .home-aurora-drift-c,
+  .home-aurora-drift-d,
+  .home-aurora-drift-e,
+  .home-aurora-drift-f,
+  .home-aurora-mesh-breathe,
+  html:not(.dark) .home-aurora-drift-a,
+  html:not(.dark) .home-aurora-drift-b,
+  html:not(.dark) .home-aurora-drift-c,
+  html:not(.dark) .home-aurora-drift-d,
+  html:not(.dark) .home-aurora-drift-e,
+  html:not(.dark) .home-aurora-drift-f,
+  html:not(.dark) .home-aurora-mesh-breathe,
+  html.dark .home-aurora-drift-a,
+  html.dark .home-aurora-drift-b,
+  html.dark .home-aurora-drift-c,
+  html.dark .home-aurora-drift-d,
+  html.dark .home-aurora-drift-e,
+  html.dark .home-aurora-drift-f,
+  html.dark .home-aurora-mesh-breathe {
+    animation: none !important;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass-card {
+  background: rgb(255 255 255 / 0.78);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgb(255 255 255 / 0.55);
+}
+
+.dark .glass-card {
+  background: rgb(30 41 59 / 0.72);
+  border-color: rgb(71 85 105 / 0.45);
+}
+
+/* —— About 페이지: 다크 글래스 / 라이트 미니멀 (고해상도·모션) —— */
+.about-header-glass {
+  background: rgb(255 255 255 / 0.78);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-color: rgb(226 232 240 / 0.95);
+}
+
+.dark .about-header-glass {
+  background: rgb(12 8 20 / 0.78);
+  border-color: rgb(139 92 246 / 0.14);
+}
+
+@keyframes about-profile-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.88;
+    transform: scale(1.09);
+  }
+}
+
+.about-profile-glow {
+  background: radial-gradient(
+    circle,
+    rgb(139 92 246 / 0.55) 0%,
+    rgb(167 139 250 / 0.2) 45%,
+    transparent 72%
+  );
+  filter: blur(22px);
+  animation: about-profile-glow-pulse 3.2s ease-in-out infinite;
+}
+
+@keyframes about-float-soft {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(14px, -20px, 0);
+  }
+}
+
+.about-float-blob {
+  animation: about-float-soft 16s ease-in-out infinite;
+}
+
+.about-float-blob-delayed {
+  animation: about-float-soft 20s ease-in-out infinite reverse;
+  animation-delay: -5s;
+}
+
+@keyframes about-hero-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.about-hero-in {
+  animation: about-hero-in 0.88s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.about-reveal {
+  transition-property: opacity, transform;
+  transition-duration: 0.78s;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-reveal-hidden {
+  opacity: 0;
+  transform: translate3d(0, 1.35rem, 0);
+}
+
+html:not(.dark) .about-reveal-hidden {
+  transform: translate3d(-0.85rem, 1rem, 0);
+}
+
+/* 다크: 큰 이동 + 페이드가 배경과 겹쳐 번짐·단차처럼 보일 수 있음 */
+.dark .about-reveal-hidden {
+  transform: translate3d(0, 0.5rem, 0);
+}
+
+.about-reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-profile-glow,
+  .about-float-blob,
+  .about-float-blob-delayed {
+    animation: none !important;
+    opacity: 0.38;
+    transform: none;
+  }
+
+  .about-hero-in {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-reveal,
+  .about-reveal-hidden,
+  .about-reveal-visible,
+  html:not(.dark) .about-reveal-hidden {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* About — Stitch editorial (grain + 카드 그림자) */
+.about-stitch-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* 다크: 밝은 노이즈가 깨진 화면·지저분한 입자처럼 보임 */
+.dark .about-stitch-grain {
+  display: none;
+}
+
+.about-stitch-editorial-shadow {
+  box-shadow: 0 40px 80px -20px rgba(25, 28, 29, 0.06);
+}
+
+.dark .about-stitch-editorial-shadow {
+  box-shadow: 0 32px 64px -28px rgba(0, 0, 0, 0.55);
 }
 
 @layer base {

@@ -4,13 +4,16 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 interface ImageCarouselProps {
   images: string[]
   title: string
+  /** 상세 히어로 등 큰 영역용 */
+  variant?: "default" | "hero"
 }
 
-export function ImageCarousel({ images, title }: ImageCarouselProps) {
+export function ImageCarousel({ images, title, variant = "default" }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [fade, setFade] = useState(true)
   const [modalOpen, setModalOpen] = useState(false)
@@ -69,7 +72,14 @@ export function ImageCarousel({ images, title }: ImageCarouselProps) {
   return (
     <div className="relative group w-full">
       {/* Main Image Container */}
-      <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden rounded-lg bg-gray-100">
+      <div
+        className={cn(
+          "relative w-full overflow-hidden rounded-lg bg-gray-100",
+          variant === "hero"
+            ? "h-[min(92vw,580px)] sm:h-[min(88vw,640px)] md:h-[min(52vw,700px)] lg:h-[min(46vw,820px)]"
+            : "h-[400px] md:h-[600px]",
+        )}
+      >
         <Image
           src={images[currentIndex] || "/placeholder.svg"}
           alt={`${title} - Image ${currentIndex + 1}`}
@@ -77,7 +87,11 @@ export function ImageCarousel({ images, title }: ImageCarouselProps) {
           className={`object-contain transition-all duration-500 ease-in-out scale-110 cursor-zoom-in ${
             fade ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+          sizes={
+            variant === "hero"
+              ? "(max-width: 768px) 100vw, (max-width: 1024px) 52vw, 900px"
+              : "(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+          }
           priority={currentIndex === 0}
           onClick={() => setModalOpen(true)}
         />

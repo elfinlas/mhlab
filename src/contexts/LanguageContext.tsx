@@ -1,8 +1,24 @@
 'use client';
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from 'react';
 import { messages } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
+
+const LOCALE_STORAGE_KEY = 'elfinlas-locale';
+
+function readStoredLocale(): Locale | null {
+  if (typeof window === 'undefined') return null;
+  const raw = localStorage.getItem(LOCALE_STORAGE_KEY);
+  if (raw === 'ko' || raw === 'en' || raw === 'ja') return raw;
+  return null;
+}
 
 interface LanguageContextType {
   locale: Locale;
@@ -15,7 +31,25 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>('ko');
+  const [locale, setLocaleState] = useState<Locale>('ko');
+
+  useEffect(() => {
+    const stored = readStoredLocale();
+    if (stored) {
+      // localStorage는 클라이언트 마운트 후에만 안전; useState 초기값은 SSR과 맞추기 위해 'ko' 고정
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- 위 이유로 하이드레이션 후 로케일 복원
+      setLocaleState(stored);
+    }
+  }, []);
+
+  const setLocale = useCallback((next: Locale) => {
+    setLocaleState(next);
+    try {
+      localStorage.setItem(LOCALE_STORAGE_KEY, next);
+    } catch {
+      /* ignore */
+    }
+  }, []);
 
   const t = (key: string): string => {
     const keys = key.split('.');

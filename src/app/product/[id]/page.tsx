@@ -1,177 +1,83 @@
-import { notFound } from "next/navigation"
-import type { Metadata } from 'next'
-import {  ExternalLink,  Globe } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { FunctionTabs } from "@/components/product/FunctionTabs"
-import { ImageCarousel } from "@/components/product/ImageCarousel"
-import { productItemList } from "@/data/Product"
-import ProductDetailHeader from "@/components/product/detail/Header"
-import { BsAndroid, BsApple } from "react-icons/bs"
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { Manrope } from 'next/font/google';
+import { ProductDetailView } from '@/components/product/detail/ProductDetailView';
+import {
+  isProductPublished,
+  productItemList,
+  resolveLocalizedString,
+  resolveLocalizedStringList,
+  resolveProductImages,
+} from '@/data/Product';
 
-// 동적 metadata 생성
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+const manrope = Manrope({
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
   const awaitedParams = await params;
   const project = productItemList.find((p) => p.id === awaitedParams.id);
 
-  if (!project) {
+  if (!project || !isProductPublished(project)) {
     return {
       title: 'Project Not Found - MHLab',
     };
   }
 
+  const ogImage =
+    resolveProductImages(project.images, 'ko')[0] || '/og-image.png';
+  const pageTitle = resolveLocalizedString(project.title, 'ko');
+  const descFirst =
+    resolveLocalizedStringList(project.description, 'ko')[0] || '';
+  const metaDescription =
+    descFirst || `MHLab의 ${pageTitle} 프로젝트를 확인해보세요.`;
+
   return {
-    title: `${project.title} - MHLab`,
-    description: project.description[0] || `MHLab의 ${project.title} 프로젝트를 확인해보세요.`,
+    title: `${pageTitle} - MHLab`,
+    description: metaDescription,
     openGraph: {
-      title: `${project.title} - MHLab`,
-      description: project.description[0] || `MHLab의 ${project.title} 프로젝트를 확인해보세요.`,
+      title: `${pageTitle} - MHLab`,
+      description: metaDescription,
       url: `https://elfinlas.com/product/${project.id}`,
       images: [
         {
-          url: project.images[0] || '/og-image.png',
+          url: ogImage,
           width: 1200,
           height: 630,
-          alt: project.title,
+          alt: pageTitle,
         },
       ],
     },
     twitter: {
-      title: `${project.title} - MHLab`,
-      description: project.description[0] || `MHLab의 ${project.title} 프로젝트를 확인해보세요.`,
-      images: [project.images[0] || '/og-image.png'],
+      title: `${pageTitle} - MHLab`,
+      description: metaDescription,
+      images: [ogImage],
     },
   };
 }
 
-export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ProjectDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const awaitedParams = await params;
   const project = productItemList.find((p) => p.id === awaitedParams.id);
 
-  if (!project) {
+  if (!project || !isProductPublished(project)) {
     notFound();
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Header */}
-      <ProductDetailHeader />
-
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Project Title */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">{project.title}</h1>
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <Badge variant="secondary">{project.category}</Badge>
-          </div>
-        </div>
-
-        {/* Project Overview and Image Carousel */}
-        <div className="mb-12">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Left Column - Project Overview */}
-            <div className="space-y-8 order-2 md:order-1">
-              {/* Description */}
-              <Card className="border-0 shadow-sm">
-                <CardContent className="p-6">
-                  <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Overview</h2>
-                  <div className="text-base font-medium text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {project.description.map((paragraph, index) => (
-                      <p
-                      key={index}
-                      className="leading-7 md:leading-6 tracking-[0.012em] md:tracking-[0.006em] whitespace-pre-line mb-2 last:mb-0"
-                      dangerouslySetInnerHTML={{
-                        __html: paragraph
-                          // 개행은 CSS로 처리하므로 <br> 주입 제거
-                          .replace(/<b>/g, '<strong>')
-                          .replace(/<\/b>/g, '</strong>')
-                      }}
-                      />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Key Points */}
-              <Card className="border-0 shadow-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Key Points</h3>
-                  <div className="space-y-3">
-                    {project.keyPoints.map((point, index) => (
-                      <div key={index} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-gray-500 dark:bg-gray-400 rounded-full flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-300">{point}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Links */}
-              <Card className="border-0 shadow-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Links</h3>
-                  <div className={`grid gap-4 ${
-                    project.links.type === "web" ? "grid-cols-1" :
-                    project.links.type === "mobile" ? "grid-cols-1 md:grid-cols-2" :
-                    "grid-cols-1 md:grid-cols-3"
-                  }`}>
-                    {(project.links.type === "mobile" || project.links.type === "full") && (
-  <>
-    {project.links.appStore && (
-      <Button asChild className="bg-black hover:bg-gray-800 dark:text-white">
-        <a href={project.links.appStore} target="_blank" rel="noopener noreferrer">
-          <BsApple className="w-4 h-4 mr-2 " />
-          App Store
-          <ExternalLink className="w-4 h-4 ml-2" />
-        </a>
-      </Button>
-    )}
-    {project.links.googlePlay && (
-      <Button asChild className="bg-green-600 hover:bg-green-700 dark:text-white">
-        <a href={project.links.googlePlay} target="_blank" rel="noopener noreferrer">
-          <BsAndroid className="w-4 h-4 mr-2" />
-          Google Play
-          <ExternalLink className="w-4 h-4 ml-2" />
-        </a>
-      </Button>
-    )}
-  </>
-)}
-                    {project.links.type === "website" || project.links.website && (
-                      <Button asChild className="bg-blue-400 hover:bg-blue-500 dark:text-white">                        
-                        <a href={project.links.website} target="_blank" rel="noopener noreferrer">
-                          <Globe className="w-4 h-4 mr-2" />
-                          Visit Website 
-                          <ExternalLink className="w-4 h-4 ml-2" />
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Right Column - Image Carousel */}
-            <div className="flex items-center justify-center order-1 md:order-2">
-              <Card className="overflow-hidden border-0 shadow-lg w-full h-full max-w-[500px] mx-auto">
-                <CardContent className="p-0 w-full h-full">
-                  <div className="w-full h-full">
-                    <ImageCarousel images={project.images} title={project.title} />
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-
-        {/* Function Tabs */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Features & Functionality</h2>
-          <FunctionTabs functions={project.functions} />
-        </div>
-      </div>
+    <div
+      className={`${manrope.className} min-h-screen bg-white text-gray-900 selection:bg-indigo-100 dark:bg-[oklch(0.145_0_0)] dark:text-slate-100 dark:selection:bg-violet-950 dark:selection:text-violet-100`}
+    >
+      <ProductDetailView project={project} />
     </div>
-  )
+  );
 }

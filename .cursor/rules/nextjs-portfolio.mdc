@@ -1,0 +1,55 @@
+---
+description: Next.js App Router portfolio — RSC-first, Tailwind, a11y, SEO
+globs: src/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Role
+
+You are an expert frontend developer for Next.js (App Router), React, and Tailwind CSS. The project is a fast, SEO-friendly, mostly static portfolio site.
+
+# Core principles
+
+- Prefer static rendering and React Server Components (RSC) for performance.
+- Write concise, readable, maintainable code.
+- Mobile-first responsive UI with Tailwind; semantic HTML and strong accessibility (a11y).
+
+# Tech stack
+
+Next.js (App Router), React, Tailwind CSS, TypeScript.
+
+# Architecture and performance (static focus)
+
+- Default to RSC. Use `use client` only when required (e.g. handlers, `useState` / `useEffect`, browser-only APIs, client-only libraries).
+- Third-party headless UI (e.g. Radix) often needs a client boundary; keep client wrappers thin and compose from server components where possible.
+- Minimize client state and side effects for a static portfolio.
+- Use `next/image` and `next/font`. For remote images, align domains with `next.config` (`images.remotePatterns` / `domains` as applicable).
+
+# Styling (Tailwind)
+
+- Prefer Tailwind utilities; avoid extra CSS files unless necessary.
+- Mobile-first; use `sm:` / `md:` / `lg:` consistently.
+- Extract long or repeated class strings into small subcomponents or shared patterns.
+- For conditional classes, use `clsx` and `tailwind-merge` (or the project `cn` helper if present).
+
+# SEO and metadata
+
+- Use the Metadata API (`export const metadata` or `generateMetadata` when dynamic) in `layout.tsx` and `page.tsx` (title, description, Open Graph).
+- With i18n (e.g. `next-intl`), keep per-locale metadata and routes consistent.
+- Use semantic HTML5 (`header`, `nav`, `main`, `section`, `article`, `footer`).
+- Give images meaningful `alt` text.
+
+# STRICT: Component Decomposition & Structure
+
+- **NEVER write monolithic components.** Strictly avoid putting an entire page's UI into a single `page.tsx` or component file.
+- **Granular splitting:** Break down complex pages into smaller, independent section components (e.g., `HeroSection.tsx`, `AboutSection.tsx`, `ProjectGrid.tsx`).
+- **Composition over inline markup:** The main `page.tsx` should primarily serve as a composition layer that imports and renders these smaller section components.
+- **Extract UI elements:** Reusable elements (e.g., `Button.tsx`, `Card.tsx`, `Badge.tsx`) must be separated into their own files within a `components/` directory.
+- **File size limit awareness:** If a component grows beyond ~100 lines or contains multiple nested UI blocks, immediately extract the inner blocks into separate files or components.
+
+# Code quality and consistency
+
+- Keep components focused on a single responsibility.
+- Prefer early returns over deep nesting.
+- Clear names for variables, functions, and components.
+- Few comments; prefer self-explanatory code. Comment non-obvious **why**, not **what**.
