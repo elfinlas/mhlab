@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "slug": "3.0.1",
+      "title": "MaWaCel 3.0.1 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "3.0.0",
+      "title": "MaWaCel 3.0.0 Patch Notes",
+      "types": [
+        "app",
+        "renewal"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.14",
+      "title": "MaWaCel 2.0.14 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.13",
+      "title": "MaWaCel 2.0.13 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.12",
+      "title": "MaWaCel 2.0.12 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.11",
+      "title": "MaWaCel 2.0.11 Patch Notes",
+      "types": [
+        "app",
+        "fix",
+        "feature"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.9",
+      "title": "MaWaCel 2.0.9 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.8",
+      "title": "MaWaCel 2.0.8 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.7",
+      "title": "MaWaCel 2.0.7 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.6",
+      "title": "MaWaCel 2.0.6 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.5",
+      "title": "MaWaCel 2.0.5 Patch Notes",
+      "types": [
+        "app",
+        "fix",
+        "feature"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.4",
+      "title": "MaWaCel 2.0.4 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.3",
+      "title": "MaWaCel 2.0.3 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.2",
+      "title": "MaWaCel 2.0.2 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.1",
+      "title": "MaWaCel 2.0.1 Patch Notes",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.0",
+      "title": "MaWaCel 2.0.0 Patch Notes",
+      "types": [
+        "app",
+        "renewal"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    }
+  ]
+}

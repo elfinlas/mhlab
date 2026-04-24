@@ -14,7 +14,7 @@ import {
   ABOUT_CHAPTER_BLOCKS,
   ABOUT_CHAPTER_SECTION_IDS,
   getAboutPageCopy,
-} from '@/data/aboutPageCopy';
+} from '@/data/About';
 
 export default function AboutStitchContent() {
   const { locale } = useLanguage();

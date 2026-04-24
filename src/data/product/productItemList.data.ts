@@ -767,6 +767,7 @@ export const productItemList: ProductItemType[] = [
       appStore: 'https://itunes.apple.com/kr/app/apple-store/6474965246',
       googlePlay: 'https://play.google.com/store/apps/details?id=dev.mhlab.myc',
       type: 'mobile',
+      patchNotes: true,
     },
     supportedLocales: ['ko', 'en'],
     images: {

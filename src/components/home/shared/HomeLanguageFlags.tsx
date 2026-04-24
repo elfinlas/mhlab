@@ -1,7 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/ui/utils';
 
 const FLAGS: { locale: 'ko' | 'en'; flag: string; ariaKey: string }[] = [
   { locale: 'ko', flag: '🇰🇷', ariaKey: 'stitchPage.ariaLangKo' },

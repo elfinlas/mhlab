@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Suspense } from 'react';
 import './globals.css';
+import { PostHogRouteCapture } from '@/components/analytics/PostHogRouteCapture';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 
@@ -80,7 +82,12 @@ export default function RootLayout({
         </Script>
         
         <ThemeProvider>
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <Suspense fallback={null}>
+              <PostHogRouteCapture />
+            </Suspense>
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

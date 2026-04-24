@@ -1,0 +1,1456 @@
+---
+title: '마와셀 3.0.0 패치노트'
+type:
+  - app
+  - renewal
+createdAt: 2026-04-24
+updatedAt: 2026-04-24
+---
+
+# 새로워진 부분의 요약
+
+| 구분       | 설명                                    |
+| ---------- | --------------------------------------- |
+| `홈`       | 종합적인 정보 표시 기능 개선            |
+| `와인`     | 와인 검색 및 상세, 요약 정보 표시 기능  |
+| `시음노트` | 상세 타입과 요약 정보 추가 및 기능 개선 |
+| `와인셀러` | 셀러 관리 및 보관 위치 표시 기능 개선   |
+| `설정`     | 앱 설정 기능 개선                       |
+
+---
+
+<PatchNoteHeroBanner
+  title='홈'
+  subtitle='종합적인 정보 표시 기능 개선'
+  bgImage='/patch-notes/myc_app/res/title/home_title.webp'
+/>
+
+메인 화면이 **정보의 허브** 역할을 제대로 할 수 있도록, 통합 검색 기능을
+추가하고 UI 구성을 깔끔하게 다듬었습니다.
+
+<PatchNoteSectionHeading
+  icon='🔍'
+  title='통합 검색 & 필터'
+  label={['업데이트', '검색']}
+/>
+
+- 홈 화면 통합 검색: 이제 홈 상단에서 '나의 와인'과 '시음 노트'를 한 번에 검색할
+  수 있습니다.
+- 똑똑한 검색 결과 이동: 검색 결과에서 '더보기'를 누르면, 해당 키워드가 필터로
+  적용된 리스트 화면으로 바로 이동합니다.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_0/home/home01.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🏠'
+  title='홈 화면 구성(Layout) 최적화'
+  label={['업데이트']}
+/>
+
+- 최신 항목 위주 표시: 홈 화면이 너무 길어지지 않도록 최근 등록한 와인은 4개,
+  시음 노트는 3개만 표시됩니다.
+- 더 보고 싶다면 새로 추가된 '더보기(More)' 카드를 눌러주세요.
+- 이미지 비율 개선: 와인 썸네일이 찌그러져 보이던 현상을 수정하여, 어떤 비율의
+  사진이든 예쁘게 보입니다.
+- 정보 가독성 향상: 와인 카드에 상태(보관/다 마심)와 빈티지(NV 포함)가 명확하게
+  표시됩니다.
+- 시음 노트에 작성일자가 표시됩니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/home/home02.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/home/home03.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🔗'
+  title='연결 및 데이터 연동'
+  label={['업데이트']}
+/>
+
+- 내 셀러 현황 연동: 홈 화면의 셀러 섹션에 실제 보관 중인 와인 데이터와 병 용량
+  정보가 실시간으로 연동됩니다.
+- 더 자연스러운 화면 이동: 와인/노트/셀러 카드를 탭하면 상세 화면으로 이동하며,
+  '뒤로 가기' 시 홈 화면이 아닌 직전 리스트로 돌아옵니다.
+- 매끄러운 동선: '와인 추가' 및 '시음 노트 작성' 버튼의 연결 흐름을 개선하여
+  사용이 더 편해졌습니다.
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='디자인 및 사용성 개선'
+  label={['업데이트']}
+/>
+
+- 하단 내비게이션 바: 버튼과 배경 색상을 정돈하고, 현재 탭을 쉽게 구분할 수
+  있도록 텍스트 라벨을 추가했습니다.
+- 버그 수정: 종료 팝업 반복 노출, 뒤로 가기 버튼 표시 오류, 영문/국문 번역 누락
+  문제를 해결했습니다.
+
+---
+
+<PatchNoteHeroBanner
+  title='와인'
+  subtitle='와인 검색 및 상세, 요약 정보 표시 기능'
+  bgImage='/patch-notes/myc_app/res/title/wine_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='와인 리스트'
+  label={['업데이트']}
+  description='많은 와인 속에서 내가 원하는 와인을 편리하게 찾아보세요.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine01.webp'
+/>
+
+정렬 기능이 대폭 강화되고, 리스트의 정보 가독성이 개선되었습니다.
+
+<PatchNoteSectionHeading
+  icon='📋'
+  title='더 강력해진 필터와 정렬'
+  label={['업데이트']}
+/>
+
+- 정교한 정렬 옵션: 이제 와인을 등록일, 빈티지, 보관 일수에 따라 오름차순 또는
+  내림차순으로 자유롭게 정렬할 수 있습니다.
+- 상태별 필터링: 필터의 기본값이 '보관 중'과 '수령 대기'로 설정되어 현재 관리
+  중인 와인을 바로 보여줍니다.
+- 필터를 적용하면 어떤 항목이 적용되었는지 상단에 명확히 표시됩니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine02.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine03.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📦'
+  title='일괄 이동 기능'
+  label={['신규']}
+/>
+
+- 일괄 이동 기능: 여러 개의 와인을 선택해 한꺼번에 다른 셀러나 장소로 옮길 수
+  있는 일괄 이동 기능이 추가되었습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine04.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine05.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine06.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='✨'
+  title='직관적인 리스트 UI'
+  label={['신규']}
+/>
+
+- 수령 대기 와인 구분: 아직 받지 못한 '수령 대기' 상태의 와인은 리스트에서
+  이미지가 블러(흐림) 처리되고 회색 톤으로 표시되어, 보관 중인 와인과 쉽게
+  구분됩니다.
+- 보관 기간 대신 '수령 예정일'이 표시됩니다.
+- 상세 정보 가독성: 와인의 빈티지, 타입, 용량 표시 디자인을 다듬고 이름과
+  빈티지의 색상을 조정하여 한눈에 쏙 들어오도록 개선했습니다.
+- 시음 적기 표시: 와인에 시음 적기(Drinking Window) 정보가 있다면 리스트에서도
+  바로 확인할 수 있습니다.
+- 수령 예정 표시: 와인에 수령 예정일이 있다면 리스트에서도 바로 확인할 수
+  있습니다.
+- 보관일 표시: 와인을 등록한 당일에는 '0일' 대신 '당일 보관 중'이라는 친절한
+  문구가 표시됩니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine07.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine08.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine09.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='와인 상세'
+  label={['업데이트']}
+  description='와인의 정보를 더 직관적이고 자세하게 확인할 수 있도록 전면 개편했습니다.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine10.webp'
+/>
+
+이제 와인의 히스토리부터 보관 위치까지 한눈에 확인하세요.
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='확 바뀐 UI & 가독성'
+  label={['업데이트']}
+/>
+
+- 깔끔해진 1열 레이아웃: 기존의 복잡했던 2열 배치를 1열 리스트 형태로 변경하여,
+  와인 정보를 위에서 아래로 편안하게 읽을 수 있습니다.
+- 직관적인 헤더 정보: 와인 이름 바로 위에 빈티지와 와인 타입이 표시되어 핵심
+  정보를 가장 먼저 확인할 수 있습니다.
+- 다크 모드 완벽 지원: 배경색과 텍스트 대비를 조정하여 어두운 환경에서도 눈이
+  편안하도록 가독성을 높였습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine11.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine12.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📸'
+  title='강력해진 포토 뷰어'
+  label={['업데이트']}
+/>
+
+- 슬라이드 & 다운로드: 와인 사진이 여러 장일 경우 옆으로 넘겨볼 수 있으며,
+  사진을 터치하면 확대/축소는 물론 다운로드까지 가능한 전용 뷰어가 실행됩니다.
+- 디자인 디테일: 배경색이 자연스럽게 어우러지도록 수정하여 갤러리처럼 고급스러운
+  느낌을 줍니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine13.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🔗'
+  title='연결성 강화 (시음 노트 & 셀러)'
+  label={['신규']}
+/>
+
+- 시음 노트 바로가기: 해당 와인으로 작성된 시음 노트가 있다면 버튼 하나로 바로
+  이동해 기록을 확인할 수 있습니다. (없다면 바로 작성도 가능!)
+- 내 와인 위치 확인: 보관 장소를 터치하면, 셀러 내 정확한 슬롯 위치를
+  애니메이션과 함께 시각적으로 보여줍니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine12.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine14.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📜'
+  title='히스토리 정보'
+  label={['신규']}
+/>
+
+- 히스토리 기능: 와인 이름 변경, 상태, 보관 장소 이동 등에 대한 정보를
+  히스토리로 보관할 수 있게 됩니다.
+- 변경된 이력이 있을 경우 상세 화면에서 확인할 수 있습니다.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_0/wine/wine15.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🛠'
+  title='스마트한 상태 및 정보 관리'
+  label={['신규']}
+/>
+
+- 히스토리 접기/펼치기: 와인의 수정 이력이 너무 길어질 경우를 대비해, 내용을
+  접었다 펼 수 있는 기능을 추가했습니다.
+- 구매 대기 관리: '구매 대기' 상태인 와인은 수령일이 지나면 자동으로 보관 상태로
+  변경됩니다.
+- 수령일이 미정일 경우 '수령' 버튼으로 수령 후 보관 처리를 할 수 있습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine15.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine16.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine17.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='와인 등록'
+  label={['업데이트']}
+  description='와인 등록이 귀찮지 않도록 사진 촬영만으로 정보를 입력하게 하는 OCR 기능을 추가했습니다.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine18.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📷'
+  title='똑똑한 자동 입력 (OCR & 불러오기)'
+  label={['신규']}
+/>
+
+- 와인 라벨 스캔(OCR): 와인 라벨 사진을 찍으면(최대 3장) 와인 이름, 빈티지,
+  생산국, 알코올 도수 등 주요 정보를 분석하여 수동 또는 자동으로 채워줍니다.
+- 기존 와인 불러오기: 이전에 마셨던 와인을 또 샀다면? '기존 와인에서 채우기'를
+  통해 검색 한 번으로 사진과 정보를 그대로 복사해올 수 있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine19.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine20.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine21.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🚚'
+  title='구매 대기(Pending) 모드'
+  label={['신규']}
+/>
+
+- 배송 관리: 와인을 구매했지만 아직 도착하지 않았나요? '수령 대기' 상태로
+  등록해보세요.
+- 자동 보관 처리: 수령 예정일이 지나면 자동으로 '보관 중' 상태로 변경되어 관리가
+  편해집니다. (날짜 미정 시 '수령' 버튼으로 수동 전환 가능)
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine38.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine39.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine40.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📸'
+  title='사진 순서 변경 기능'
+  label={['신규']}
+/>
+
+- 사진 등록 개선: 사진 등록 시 사진 순서를 변경할 수 있는 기능이 추가되었습니다.
+- 더 이상 순서를 맞추려고 삭제 후 재등록하는 번거로움 없이 순서를 변경할 수
+  있습니다.
+
+<PatchNoteSectionHeading
+  icon='🌏'
+  title='더 섬세해진 입력 필드'
+  label={['신규']}
+/>
+
+- 국가/지역 검색: 전 세계 와인 산지 데이터가 대폭 보강되었습니다. 스크롤 내릴
+  필요 없이 검색으로 국가와 지역을 빠르게 찾으세요.
+- 시음 적기(Drinking Window): 와인이 가장 맛있는 시기(시음 적기)를 기록하는
+  필드가 추가되었습니다. (추후 AI를 통해 와인 검색 기능으로 최적 시음 적기를
+  자동 등록하는 기능으로 변경될 예정입니다.)
+- 현지화된 구입처: 한국/영어권 등 언어 설정에 맞춰 자주 쓰는 와인 구입처 목록이
+  최적화되었습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine24.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine25.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine26.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='UI 및 편의성 개선'
+  label={['신규']}
+/>
+
+- 안전한 삭제 로직: 셀러를 삭제할 때, 해당 셀러에 보관 중이던 와인들의 위치
+  정보(층/슬롯)를 자동으로 정리해주고, 기본 셀러 설정을 안전하게 변경합니다.
+- 디테일: 가격 표시에 쉼표(,)가 적용되고, 용량(L/Bottle) 표기 오류를
+  수정했습니다.
+
+<PatchNoteSectionHeading
+  icon='👋'
+  title='와인 복제 기능 삭제'
+  label={['삭제']}
+/>
+
+- 와인 복제 기능 삭제: 와인 복제 기능은 기존 와인 불러오기 기능으로
+  대체되었습니다.
+
+  <br />
+
+<PatchNoteCategoryItem
+  icon='📊'
+  title='와인 통계'
+  label={['신규']}
+  description='내 와인 자산 가치부터 월별 음주 패턴까지, 인포그래픽 형태로 깔끔하게 정리해 드립니다.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine27.webp'
+/>
+
+내 와인 자산 가치부터 월별 음주 패턴까지, 인포그래픽 형태로 깔끔하게 정리해
+드립니다.
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='보유내역과 소비내역 리포트'
+  label={['신규']}
+/>
+
+- 보유 내역: 현재 보유 중인 와인들의 가치, 타입, 빈티지, 국가 등을 한눈에 확인할
+  수 있습니다.
+- 소비 내역: 소비한 와인들의 히스토리, 월별 음주 기록, 국가별 소비, 재구매, 총
+  구입 비용 등 다양한 정보를 한눈에 확인할 수 있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine32.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine27.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='💰'
+  title='와인 자산 가치 리포트'
+  label={['신규']}
+/>
+
+- 총 자산 규모: 현재 보유 중인 와인들의 가격 총합을 계산하여 '내 와인 자산
+  가치'를 알려줍니다.
+- 하이라이트: 내 셀러 속 '가장 비싼 와인'과 '가장 오래된 빈티지 와인'이 무엇인지
+  뱃지와 함께 특별하게 표시해 줍니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine28.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine32.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📈'
+  title='시각화된 데이터 차트'
+  label={['신규']}
+/>
+
+- 월별 음주 기록(Heatmap): 캘린더 형태의 히트맵(잔디 심기) 차트가
+  추가되었습니다. 내가 언제 얼마나 와인을 즐겼는지 날짜별로 한눈에 파악할 수
+  있습니다.
+- 직관적 분포도: 빈티지별 보유 현황과 국가별 소비 내역이 도넛 차트와 그래프로
+  제공되며, 범례에 퍼센트(%)가 추가되어 비중을 쉽게 알 수 있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine29.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine30.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine31.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🏆'
+  title='소비 패턴 분석'
+  label={['신규']}
+/>
+
+- Top Pick 와인: 소비 탭에서 내가 가장 만족했거나 많이 소비한 와인을 'Top
+  Pick'으로 선정하여 보여줍니다.
+- 국가별 취향: 내가 어느 나라 와인을 주로 소비했는지 UI를 개선하여 시각적으로
+  통일감 있게 보여줍니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine33.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine34.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine35.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='디자인 및 가독성 개선'
+  label={['신규']}
+/>
+
+- 다크 모드 최적화: 어두운 배경에서 차트의 글씨나 월별 기록이 잘 보이지 않던
+  문제를 해결하여, 밤에도 선명하게 데이터를 확인할 수 있습니다.
+- UI 디테일: 국가별 차트의 색상 중복 문제를 수정하고, 타이틀 아이콘과 그래프
+  라벨(병수/건수) 표기를 다듬어 완성도를 높였습니다.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📤'
+  title='와인 일괄 이동'
+  label={['신규']}
+  description='여러 개의 와인을 한꺼번에 다른 셀러나 장소로 옮길 수 있는 일괄 이동 기능이 추가되었습니다.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine04.webp'
+/>
+
+새로운 셀러가 추가될 경우 막연했었나요? 이제 셀러나 장소 간 와인을 한꺼번에
+이동하세요.
+
+<PatchNoteSectionHeading
+  icon='📤'
+  title='와인 일괄 이동 기능'
+  label={['신규']}
+/>
+
+- 와인 일괄 이동: 이동할 장소를 선택하고, 해당 장소로 이동할 와인을 선택하면
+  한번에 이동됩니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine04.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine05.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine06.webp', alt: '' },
+    ]}
+  />
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📍'
+  title='와인 보관 위치'
+  label={['신규']}
+  description='내 와인이 어디에 있는지 궁금하셨죠? 보관된 와인의 위치를 한눈에 확인해보세요.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine14.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📍'
+  title='와인 보관 위치'
+  label={['신규']}
+/>
+
+- 와인 보관 위치: 등록된 셀러에 보관된 와인의 경우 상세 화면에서 보관 위치 클릭
+  시 보관 위치 페이지로 이동합니다.
+- 선반 정보 표시: 와인이 위치한 선반의 정보를 표시합니다.
+- 슬롯 정보 표시: 와인이 위치한 선반 내의 슬롯의 정보를 표시합니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine36.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine37.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine14.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🎉'
+  title='기타'
+  label={['신규']}
+  description='기타 업데이트 내용을 확인해보세요.'
+  bgImage='/patch-notes/myc_app/res/title/wine_sub03.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📬'
+  title='구매 대기(Pending) 상태 추가'
+  label={['신규']}
+/>
+
+- 구매 대기(Pending) 상태 추가: 와인을 구매는 했지만, 배송 및 수령 날짜 문제로
+  인해 등록하기 애매했던 와인을 '대기 상태'로 설정하여 등록할 수 있습니다.
+- 수령일을 설정하면 자동으로 '보관 중' 상태로 변경됩니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine38.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine39.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine40.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine41.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine42.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📅'
+  title='시음 적기 속성 추가'
+  label={['신규']}
+/>
+
+- 시음 적기 표시: 시음 적기 값을 입력한 경우 시음 적기를 표시합니다.
+- 추후 와인에 대한 시음 적기를 자동으로 등록하는 기능으로 변경될 예정입니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine18.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine36.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🧮'
+  title='보관일자 표시'
+  label={['신규']}
+/>
+
+- 보관 일자 표시: 보관 일자가 잘못 계산되던 문제를 수정하였습니다
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_0/wine/wine08.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🌍'
+  title='생산 국가 및 지역 추가'
+  label={['신규']}
+/>
+
+- 생산 국가 및 지역 추가: 일부 누락되었던 생산 국가를 추가하였습니다.
+- 국가를 선택하면 알려진 지역을 선택할 수 있습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine24.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine25.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine26.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🌏'
+  title='구입 장소 추가 (외국)'
+  label={['신규']}
+/>
+
+- 구입 장소 추가 (외국): 영문 버전에서 해외의 구입 장소를 일부 추가하였습니다.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_0/wine/wine43.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🌌'
+  title='기본 이미지 추가'
+  label={['신규']}
+/>
+
+- 기본 이미지 추가: 각 타입에 알맞는 기본 이미지가 추가되었습니다.
+
+---
+
+<PatchNoteHeroBanner
+  title='시음 노트'
+  subtitle='상세 타입과 요약 정보 추가 및 기능 개선'
+  bgImage='/patch-notes/myc_app/res/title/taste_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📝'
+  title='시음 노트 리스트'
+  label={['업데이트']}
+  description='많은 시음 노트 속에서 내가 원하는 시음 노트를 편리하게 찾아보세요.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste01.webp'
+/>
+
+쌓여가는 시음 기록들, 이제는 더 쉽고 빠르게 찾아보세요. 리스트 디자인을 깔끔하게
+다듬고, 강력한 태그 검색 기능을 추가했습니다.
+
+<PatchNoteSectionHeading
+  icon='🔍'
+  title='똑똑해진 검색과 필터'
+  label={['신규']}
+/>
+
+- 태그(#) 검색: 와인 이름뿐만 아니라, 내가 남긴 #태그로도 시음 노트를 검색할 수
+  있습니다. (예: #가성비, #선물)
+- 정교한 필터: 검색 조건을 버튼과 드롭다운 형태로 직관적으로 개선하여, 원하는
+  기록을 더 빠르게 분류해낼 수 있습니다.
+- 다양한 검색 필터: 별점, 시음 노트 타입, 와인 출처, 정렬 기준 등 다양한
+  조건으로 검색할 수 있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste02.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste03.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste04.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste05.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📝'
+  title='깔끔한 리스트 디자인'
+  label={['신규']}
+/>
+
+- 정보 전달력 강화: 리스트 카드에 시음 노트의 타입과 주요 태그가 명확히 표시되어
+  내용을 짐작하기 쉬워졌습니다.
+- 이름 전체 표시: 시음 노트 이름이 길어도 '...'으로 잘리지 않고 전체 이름을 모두
+  보여주도록 개선했습니다.
+- 타입 표시: 시음 노트의 타입을 표시합니다.
+- 이미지 처리: 사진을 등록하지 않았거나 불러올 수 없는 경우, 깔끔한 기본
+  이미지가 적용됩니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste01.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📝'
+  title='디테일 및 안정성'
+  label={['신규']}
+/>
+
+- 다크 모드 최적화: 어두운 테마에서도 텍스트와 필터 버튼이 잘 보이도록 색상
+  대비를 조정했습니다.
+- 버그 수정: 검색 시 앱이 종료되던 문제, 리스트가 상단 메뉴바에 가려지던 문제,
+  태그 클릭 시 오작동하던 문제들을 모두 해결했습니다.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📅'
+  title='시음 노트 달력'
+  label={['신규']}
+  description='내가 언제 와인을 마셨는지 궁금하셨죠?'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste06.webp'
+/>
+
+달력 화면에서 나의 와인 기록을 날짜별로 한눈에 확인해보세요.
+
+<PatchNoteSectionHeading
+  icon='📅'
+  title='한눈에 보는 와인 기록 (Calendar View)'
+  label={['신규']}
+/>
+
+- 직관적인 달력 UI: 월별(Month)로 마신 와인을 직관적으로 보여줍니다.
+- 캘린더를 접거나 펴서(Expand/Collapse) 주간/월간 단위로 유연하게 볼 수
+  있습니다.
+- 편리한 이동: 연도와 월을 쉽게 이동할 수 있도록 네비게이션을 개선하여, 과거의
+  기록도 빠르게 찾아볼 수 있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste06.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='✍️'
+  title='빠른 기록과 접근성'
+  label={['신규']}
+/>
+
+- 즉시 작성: 달력 화면 상단의 '+' 버튼을 누르면, 날짜 선택 고민 없이 바로 시음
+  노트 작성 화면으로 이동합니다.
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='디테일한 UI 개선'
+  label={['신규']}
+/>
+
+- 날짜 선택 개선: 날짜 선택 팝업(Dialog)의 글자 크기를 조정하고, 버튼 위치를
+  사용자 경험에 맞게 재배치하여 조작이 더 편해졌습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste07.webp', alt: '' },
+    ]}
+  />
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📜'
+  title='시음 노트 상세'
+  label={['신규']}
+  description='내가 기록한 맛과 향을 더 아름답게 감상하세요.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste08.webp'
+/>
+
+아로마와 구조감이 시각적으로 표현되며, 멋진 이미지로 만들어 친구들에게 자랑할
+수도 있습니다.
+
+<PatchNoteSectionHeading
+  icon='🏷️'
+  title='태그 기능 추가'
+  label={['신규']}
+/>
+
+- 태그 기능: 시음 노트에 태그를 추가할 수 있습니다.
+- 시음 노트에 태그를 추가하여 손쉽게 검색하거나, 정보를 입력할 수 있습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste15.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📝'
+  title='상세 모드의 추가'
+  label={['신규']}
+/>
+
+- 상세 모드: 기존에 제공하던 간단 모드와는 달리 상세 모드가 추가되었습니다.
+- 구조&밸런스: 바디감,타닌,당도,산도 등 와인의 구조감과 밸런스를 시각적으로
+  표현할 수 있습니다.
+- 질감: 묽음,크리미함,오일리/유질감,둥글둥글함 등 와인의 질감을 시각적으로
+  표현할 수 있습니다.
+- 아로마: 아로마를 직접 선택할 수 있으며, 아이콘과 강도가 함께 표시되어, 그때
+  느꼈던 향의 뉘앙스를 더 생생하게 떠올릴 수 있습니다.
+- 결함: 와인에서 감지된 결함을 선택할 수 있습니다.
+- 기타 정보: 페어링한 음식, 시음 온도, 디캔딩 시간, 와인 색상 등 전문가 수준의
+  상세 정보도 깔끔한 UI로 보여줍니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste09.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste08.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste10.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste11.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste12.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste13.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste14.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste15.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste16.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste17.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📸'
+  title='나만의 감상, 이미지로 공유하기'
+  label={['신규']}
+/>
+
+- 카드 뉴스 만들기: 텍스트로만 남기기 아쉽다면? 내보내기 버튼 하나로 시음 노트를
+  예쁜 카드 이미지로 변환해 줍니다.
+
+<PatchNoteSectionHeading
+  icon='👀'
+  title='보기 편한 디자인과 다크 모드'
+  label={['업데이트']}
+/>
+
+- 심플 & 디테일: 핵심만 보는 심플 모드와 모든 정보를 보는 상세 모드 모두
+  가독성을 대폭 개선했습니다.
+- 다크 모드 최적화: 밤에 와인을 마시며 앱을 켜도 눈이 부시지 않도록, 태그와
+  텍스트의 색상 대비를 완벽하게 조정했습니다.
+
+<PatchNoteSectionHeading
+  icon='🔗'
+  title='스마트한 정보 연결'
+  label={['업데이트']}
+/>
+
+- 보유 기간 표시: 이 와인을 셀러에 얼마나 묵혀두었다가 마셨는지 '보유 기간'을
+  자동으로 계산해 알려줍니다.
+- 정확한 평점: 별점만으로는 부족했던 평가를 보완하기 위해, 별 옆에 정확한 점수도
+  함께 표시됩니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste18.webp', alt: '' },
+    ]}
+  />
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='✍️'
+  title='시음 노트 작성'
+  label={['신규']}
+  description='와인을 마시는 그 순간의 감각을 놓치지 마세요.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste13.webp'
+/>
+
+향기(Aroma)부터 구조감, 페어링까지 전문가처럼 섬세하게 기록할 수 있습니다.
+
+<PatchNoteSectionHeading
+  icon='👃'
+  title='섬세해진 향기 기록'
+  label={['신규']}
+/>
+
+- 직관적인 선택: 아로마 선택 화면이 카드형 UI로 개편되어 보기 편해졌고, 검색
+  기능이 추가되어 원하는 향을 빠르게 찾을 수 있습니다.
+- 아로마 가이드: 어떤 향인지 헷갈릴 때를 위해 '아로마 힌트 도움말'을
+  추가했습니다.
+- 강도 조절: 향을 선택하고 터치하면 슬라이더가 나타나 향의 강도까지 디테일하게
+  조절할 수 있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste12.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste13.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste19.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🍷'
+  title='전문가 수준의 상세 기록'
+  label={['신규']}
+/>
+
+- 다양한 속성 추가: 와인 색상(Color), 페어링 푸드, 디캔딩 시간, 시음 온도 등
+  기록할 수 있는 항목이 대폭 늘어났습니다.
+- 구조감 시각화: 바디감, 산도, 당도, 타닌 등의 밸런스를 직관적으로 조절할 수
+  있으며, 타닌의 경우 '없음' 옵션도 선택 가능합니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste08.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste09.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste10.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste11.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste14.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste15.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste16.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste17.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='💡'
+  title='더 똑똑하고 편한 입력'
+  label={['신규']}
+/>
+
+- 태그 자동 완성: 자주 쓰는 태그를 일일이 치지 마세요. 몇 글자만 입력하면 이전에
+  썼던 태그를 추천해 줍니다.
+- 실수 방지: 열심히 작성 중에 실수로 뒤로 가기를 눌러도, 내용이 날아가지 않도록
+  작성 취소 확인 팝업이 뜹니다.
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='다크 모드 & UI 최적화'
+  label={['업데이트']}
+/>
+
+- 가독성 개선: 어두운 곳에서 시음 노트를 작성할 때도 눈이 편안하도록, 다크
+  모드에서의 텍스트와 입력창 색상을 완벽하게 수정했습니다.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📊'
+  title='시음 노트 통계'
+  label={['신규']}
+  description='단순히 기록만 쌓이는 게 아니라, 내가 어떤 스타일의 와인을 좋아하는지 분석해 드립니다.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste23.webp'
+/>
+
+변화된 차트와 통계로 나의 취향을 발견해보세요.
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='더 강력해진 취향 분석'
+  label={['신규']}
+/>
+
+- 와인 타입 차트: 연도별로 내가 마신 와인의 종류(레드, 화이트 등)를 도표로
+  보여주고, 선호하는 스타일이 어떻게 변했는지 알려주는 분석 문구를 추가했습니다.
+- 평점 트렌드: 시음 평점 UI를 새롭게 단장하고, 연도별 평균 점수에 따라 나의
+  만족도를 설명해 주는 재미있는 코멘트를 제공합니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste24.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste25.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste27.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste28.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📈'
+  title='보기 편한 차트'
+  label={['신규']}
+/>
+
+- 라인 차트 도입: 월별 통계를 직관적인 연도별 라인 차트로 변경하여, 나의 시음량
+  변화 추이를 한눈에 파악할 수 있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste26.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste29.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='다크 모드 & 안정성'
+  label={['신규']}
+/>
+
+- 가독성 확보: 다크 모드에서 잘 보이지 않던 타이틀과 차트 텍스트를 수정하여
+  밤에도 눈이 편안합니다.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='👅'
+  title='아로마 선택'
+  label={['신규']}
+  description='상세 모드에서는 아로마를 직접 선택할 수 있게 되었습니다.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste13.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='👅'
+  title='아로마 선택'
+  label={['신규']}
+/>
+
+- 아로마 선택: 아로마를 직접 선택하거나 검색하여 추가할 수 있습니다.
+- 가이드 개선: 아로마에 대한 설명이 필요할 경우 도움말에서 확인할 수 있습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste12.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste13.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste19.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📖'
+  title='아로마 가이드'
+  label={['신규']}
+  description='아로마를 선택할 때 도움이 되는 가이드 화면이 추가되었습니다.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste21.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📖'
+  title='아로마 가이드'
+  label={['신규']}
+/>
+
+- 아로마 가이드: 이로마에 대한 간략한 설명, 주로 발견되는 포도 품종에 대한
+  정보를 제공합니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste20.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste21.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste22.webp', alt: '' },
+  ]}
+/>
+
+---
+
+<PatchNoteHeroBanner
+  title='와인 셀러'
+  subtitle='와인 셀러 관리 및 보관 위치 표시 기능 개선'
+  bgImage='/patch-notes/myc_app/res/title/cellar_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🕋'
+  title='와인 셀러 리스트'
+  label={['업데이트']}
+  description='나의 소중한 와인 창고, 이제 더 고급스럽고 직관적으로 관리하세요.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/cellar/cellar01.webp'
+/>
+
+실제 와인 셀러의 어두운 분위기를 담은 디자인과 정확한 통계 기능을 적용했습니다.
+
+<PatchNoteSectionHeading
+  icon='🚪'
+  title='프리미엄 셀러 분위기'
+  label={['업데이트']}
+/>
+
+- 다크 테마 디자인: 와인 셀러 특유의 차분하고 고급스러운 분위기를 살리기 위해,
+  라이트/다크 모드와 관계없이 어두운 배경 테마를 적용했습니다.
+- 카드 UI 개선: 각 셀러 카드의 디자인을 다듬고 배경 밝기를 조정하여, 정보가 더
+  또렷하게 보입니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar01.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📋'
+  title='새롭게 추가된 정령 기능'
+  label={['신규']}
+/>
+
+- 정렬 기능: 보관 병수, 생성일, 이름의 값으로 오름,내림차순으로 정렬할 수
+  있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar02.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='한눈에 보는 셀러 현황'
+  label={['신규']}
+/>
+
+- 스마트한 요약 카드: 상단 요약 영역을 좌우 비대칭의 세련된 UI로 변경하고, 총
+  보관 병수와 자산 가치가 정확하게 계산되어 표시됩니다. (셀러 외 보관 와인 제외
+  처리)
+- 직관적인 용량 표시: 셀러가 얼마나 찼는지 숫자로만 보지 마세요.
+- 저장률(%)에 따라 프로그래스 바의 색상이 달라져 여유 공간을 직관적으로 알 수
+  있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar01.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar03.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar04.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🛠'
+  title='데이터 및 안정성'
+  label={['신규']}
+/>
+
+- 데이터 보정: 총 보관 가능 병수 정보가 없는 경우 기본값(99병)을 적용하여 UI가
+  깨지지 않도록 개선했습니다.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🕋'
+  title='와인 셀러 상세'
+  label={['업데이트']}
+  description='나의 와인 창고를 더 완벽하게 관리하는 방법.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/cellar/cellar05.webp'
+/>
+
+실제 셀러와 같은 고급스러운 디자인과 빈틈없는 선반/슬롯 관리 기능을 만나보세요.
+
+<PatchNoteSectionHeading
+  icon='🚪'
+  title='프리미엄 다크 룸'
+  label={['업데이트']}
+/>
+
+- 몰입형 다크 테마: 실제 와인 셀러의 차분하고 어두운 분위기를 재현하기 위해,
+  휴대폰 설정(라이트 모드)과 상관없이 전용 다크 테마가 적용됩니다.
+- 세련된 요약 정보: 상단 요약 화면이 스크롤을 내려도 자연스럽게 유지되는(Sticky)
+  UI로 변경되었으며, 셀러 사진과 설명을 갤러리처럼 감상할 수 있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar08.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar06.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar07.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🗂️'
+  title='체계적인 선반 & 슬롯 관리'
+  label={['신규']}
+/>
+
+- 시각적 위치 확인: 이제 셀러의 선반(Shelf)과 슬롯(Slot) 정보를 완벽하게
+  지원합니다.
+- 와인이 몇 번째 칸에 있는지 직관적으로 확인하세요.
+- 보기 모드 지원: 선반에 있는 와인들을 '격자 보기'와 '간단히 보기' 모드로
+  전환하며 취향껏 관리할 수 있습니다.
+- 빈 슬롯 표시: 슬롯 기능을 사용할 경우, 비어 있는 칸은 별도 아이콘(Inbox)으로
+  표시되어 남은 공간을 쉽게 파악할 수 있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar08.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar09.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='셀러 인사이트'
+  label={['신규']}
+/>
+
+- 스마트 요약 탭: '요약' 탭이 신설되었습니다.
+- 내 셀러의 빈티지 분포를 차트로 보여주고, '가장 오래 보관한 와인'과 '가장
+  오래된 빈티지'를 콕 집어 알려줍니다.
+- 정확한 통계: 국가별 보유 수량과 와인 타입별 통계가 더 정확하게 계산되어
+  표시됩니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar10.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar11.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🛠'
+  title='데이터 안정성 및 편의성'
+  label={['업데이트']}
+/>
+
+- 안전한 삭제 로직: 셀러를 삭제할 때, 해당 셀러에 보관 중이던 와인들의 위치
+  정보(층/슬롯)를 자동으로 정리해주고, 기본 셀러 설정을 안전하게 변경합니다.
+- 디테일: 가격 표시에 쉼표(,)가 적용되고, 용량(L/Bottle) 표기 오류를
+  수정했습니다.
+
+  <br />
+
+<PatchNoteCategoryItem
+  icon='🕋'
+  title='와인 셀러 등록/수정'
+  label={['업데이트']}
+  description='선반의 슬롯 개수부터 제조사 선택까지, 등록 과정이 훨씬 섬세하고 편해졌습니다.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/cellar/cellar12.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🗂️'
+  title='정교해진 선반 & 슬롯 설정'
+  label={['신규']}
+/>
+
+- 슬롯(Slot) 관리: 층수뿐만 아니라 각 층의 '슬롯(칸)' 개수까지 설정할 수
+  있습니다.
+- 칸막이가 없는 층이라면 슬롯을 '0'으로 설정해 무제한(Infinite)으로 표시할 수도
+  있습니다.
+- 유연한 옵션: 선반 관리가 너무 복잡한가요?
+- 선반 기능을 '미사용'으로 설정하면 단순하게 전체 병수만 관리할 수도 있습니다.
+- 직관적인 UI: 선반 설정이 복잡하지 않도록 별도 화면으로 분리했으며, 층수 표시
+  순서를 직관적으로 개선했습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar12.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar13.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar14.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar15.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar16.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar17.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='✨'
+  title='확 바뀐 등록 UI'
+  label={['신규']}
+/>
+
+- 제조사 선택: 자주 찾는 주요 셀러 브랜드가 상단에 표시되어 선택이 빨라졌고,
+  목록에 없는 경우 전체 리스트에서 찾을 수 있습니다.
+- 통일된 경험: 이미지 등록 방식과 날짜 선택(Dark Mode 적용) 디자인을 와인 등록
+  화면과 통일하여, 앱 전체적으로 일관된 사용성을 제공합니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar18.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar19.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🛠'
+  title='사용성 및 안전장치'
+  label={['신규']}
+/>
+
+- 작성 보호: 셀러 정보를 열심히 입력하다가 실수로 뒤로 가기를 눌러도, 확인
+  팝업이 떠서 데이터 유실을 막아줍니다.
+- 안정성 강화: 셀러 층이나 슬롯 정보를 수정/삭제할 때 앱이 종료되던 문제를
+  해결하고, 층 추가 시 위치가 어긋나던 버그를 수정했습니다.
+
+---
+
+<PatchNoteHeroBanner
+  title='설정'
+  subtitle='앱 설정 기능 개선'
+  bgImage='/patch-notes/myc_app/res/title/setting_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='⚙️'
+  title='업데이트 패치노트'
+  label={['업데이트']}
+  description='앱을 내 스타일에 딱 맞게 커스터마이징하세요.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/setting/setting01.webp'
+/>
+
+시음 노트 작성 환경을 세밀하게 설정하고, CSV 파일을 통해 데이터를 완벽하게
+복원할 수 있습니다.
+
+<PatchNoteSectionHeading
+  icon='📜  '
+  title='자세한 패치노트'
+  label={['신규']}
+/>
+
+- 패치노트: 각 화면 별로 변경되거나 새로 추가된 기능, 제거된 기능을 자세하게
+  확인할 수 있습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/setting/setting01.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🍷'
+  title='기본 와인 저장 장소'
+  label={['신규']}
+/>
+
+- 기본 와인 저장 장소: 와인을 등록할 때마다 저장소를 선택하기 귀찮으셨나요?
+  '기본 저장 장소'를 설정해두면 해당 장소를 기본 값으로 선택합니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/setting/setting02.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📝'
+  title='다양한 시음 노트 설정'
+  label={['신규']}
+/>
+
+- 시음 노트 모드: 기본으로 사용할 시음 노트 모드를 설정할 수 있습니다.
+- 기본 제목: 시음 노트 제목이 자동으로 생성될 때의 문구(접미사)의 다양한 패턴을
+  설정할 수 있습니다.
+- 아로마 강도: 상세 모드에서 사용하는 아로마의 값의 강도 값 사용 여부를 선택할
+  수 있습니다.
+- 미 사용시 기본 강도 3으로 설정됩니다.
+- 태그 관리: 시음 노트에 등록된 모든 #태그를 한곳에서 모아보고, 사용된 횟수를
+  확인할 수 있습니다.
+- 불필요한 태그는 삭제할 수 있습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting03.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting04.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🔄'
+  title='더욱 안정적인 백업 및 복원'
+  label={['신규']}
+/>
+
+- 백업 및 복원: 백업과 복원 성능을 개선하여 진행 속도가 더 빨라졌습니다.
+- 버전이 변경되면서 새로운 데이터 값의 추가, 기능의 안정성을 더하였습니다.
+
+<PatchNoteSectionHeading
+  icon='📄'
+  title='CSV 복원 기능 추가'
+  label={['신규']}
+/>
+
+- CSV 복원: 엑셀이나 텍스트 편집기에서 편집한 CSV 파일을 앱으로 직접 가져올 수
+  있습니다.
+- 대량의 와인과 셀러 데이터를 한 번에 등록하고 싶다면 'CSV 복원 가이드'를
+  확인하여 쉽고 빠르게 이사하세요.
+- 자세한 것은 CSV 복원 가이드를 참고해주세요.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting05.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🧹'
+  title='데이터 전체 초기화'
+  label={['신규']}
+/>
+
+- 초기화: 앱을 처음 설치했을 때처럼 깨끗한 상태로 되돌리고 싶을 때를 위해 '전체
+  초기화' 기능을 추가했습니다.
+- 단 한 번의 클릭으로 모든 설정과 데이터를 비우고 새롭게 시작할 수 있습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting06.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🐞'
+  title='버그 및 문의 사항 접수'
+  label={['업데이트']}
+/>
+
+- 버그 및 문의 사항 접수: 앱에서 발생하는 버그나 문의 사항을 접수할 수 있습니다.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='💾'
+  title='CSV 복원'
+  label={['업데이트']}
+  description='CSV 파일을 통해 데이터를 완벽하게 복원할 수 있습니다.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/setting/setting05.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🍷'
+  title='와인 데이터 가져오기'
+  label={['신규']}
+/>
+
+- 와인 영역: 양식에 맞춰 CSV 파일을 작성하면 해당 데이터를 마와셀로 가져올 수
+  있습니다.
+- 사진도 함께 가져올 수 있습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting05.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🕋'
+  title='셀러 데이터 가져오기'
+  label={['신규']}
+/>
+
+- 셀러 영역: 양식에 맞춰 CSV 파일을 작성하면 해당 데이터를 셀러로 가져올 수
+  있습니다.
+- 사진도 함께 가져올 수 있습니다.
+
+<PatchNoteSectionHeading
+  icon='📜'
+  title='CSV 복원 가이드'
+  label={['신규']}
+/>
+
+- CSV 복원 가이드: 복원에 어려움이 없도록 친절한 가이드 화면을 추가하였습니다.
+- 기능별 가이드 제공: 와인과 셀러 항목으로 세분화된 가이드를 제공합니다.
+- 가이드 내용이 어려울 경우 하단의 샘플 CSV 파일을 참고해주세요.
+- 그래도 어렵다면?: 그래도 어렵다면 이메일 양식에 제출해주시면 검토 후 답변
+  드리겠습니다.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/setting/setting07.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/setting/setting08.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/setting/setting09.webp', alt: '' },
+    ]}
+  />
+
+---
+
+<br />
+<br />
+<br />

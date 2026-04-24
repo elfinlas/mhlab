@@ -1,0 +1,35 @@
+---
+title: '예시 패치노트'
+type: feature
+createdAt: 2026-04-22
+updatedAt: 2026-04-22
+---
+
+<PatchNoteHeroBanner
+  title='홈 화면'
+  subtitle='종합적인 정보 표시 기능 개선'
+  bgImage='/patch-notes/myc_app/ko/assets/example-banner.jpg'
+/>
+
+<PatchNoteCallout>
+  MDX에서 등록된 컴포넌트: `PatchNoteHeroBanner` / `HeroBanner`,
+  `PatchNoteCallout` / `Callout`, 마크다운 표·목록·코드 블록 등.
+</PatchNoteCallout>
+
+## 섹션 제목
+
+본문은 일반 마크다운과 동일합니다.
+
+- 항목
+- 항목
+
+```ts
+// 코드 블록
+```
+
+`<PatchNoteCategoryItem />` — 아이콘·제목·라벨·설명(선택)·`bgImage`/`overlayOpacity`(선택).
+
+`<PatchNoteImageCarousel items={[ { src, alt }, ... ]} />` — 캐러셀·확대.
+
+Cursor/VS Code 스니펫: `pn-front`, `pn-hero`, `pn-cat`, `pn-carousel`, `pn-callout` 등
+(`.vscode/patch-note-mdx.code-snippets`).

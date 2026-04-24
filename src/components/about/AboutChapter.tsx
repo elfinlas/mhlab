@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/ui/utils';
 import RevealOnView from '@/components/about/RevealOnView';
 
 export type AboutStitchChapterProps = {

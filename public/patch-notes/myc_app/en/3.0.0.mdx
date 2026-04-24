@@ -1,0 +1,1467 @@
+---
+title: 'MaWaCel 3.0.0 Patch Notes'
+type:
+  - app
+  - renewal
+createdAt: 2026-04-24
+updatedAt: 2026-04-24
+---
+
+# Summary of New Features
+
+| Category       | Description                                              |
+| -------------- | -------------------------------------------------------- |
+| `Home`         | Improved comprehensive information display features      |
+| `Wine`         | Wine search, detailed info, and summary display features |
+| `Tasting Note` | Added detailed types/summaries and feature improvements  |
+| `Wine Cellar`  | Improved cellar management and storage location display  |
+| `Settings`     | Improved app configuration features                      |
+
+---
+
+<PatchNoteHeroBanner
+  title='Home'
+  subtitle='Improved comprehensive information display features'
+  bgImage='/patch-notes/myc_app/res/title/home_title.webp'
+/>
+
+The main screen has been refined with integrated search and a cleaner UI layout
+so that it can properly function as an **information hub**.
+
+<PatchNoteSectionHeading
+  icon='🔍'
+  title='Integrated Search & Filters'
+  label={['Update', 'Search']}
+/>
+
+- Integrated Search on Home: You can now search for 'My Wines' and 'Tasting
+  Notes' simultaneously from the top of the home screen.
+- Smart Navigation: Tapping 'More' in the search results takes you directly to
+  the list screen with that keyword automatically applied as a filter.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/home/home01.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🏠'
+  title='Home Screen Layout Optimization'
+  label={['Update']}
+/>
+
+- Recent Items Focus: To keep the home screen from becoming too long, it now
+  displays only the 4 most recently registered wines and 3 most recent tasting
+  notes.
+- View More: Tap the newly added 'More' cards to see the full list.
+- Improved Image Ratios: Fixed the issue where wine thumbnails appeared
+  distorted; photos now look beautiful regardless of their aspect ratio.
+- Enhanced Readability: Status (In Storage / Consumed) and Vintage (including
+  NV) are now clearly displayed on wine cards.
+- Tasting note creation dates are now displayed.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/home/home02.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/home/home03.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🔗'
+  title='Connectivity & Data Integration'
+  label={['Update']}
+/>
+
+- My Cellar Sync: Actual stored wine data and bottle capacity information are
+  now linked in real-time to the cellar section on the home screen.
+- More Natural Transitions: Tapping a wine/note/cellar card takes you to the
+  details, and 'Back' now returns you to the previous list instead of the home
+  screen.
+- Smooth User Flow: Improved the flow of 'Add Wine' and 'Create Tasting Note'
+  buttons for more convenient use.
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='Design & Usability Improvements'
+  label={['Update']}
+/>
+
+- Bottom Navigation Bar: Refined button and background colors, and added text
+  labels to easily distinguish the current tab.
+- Bug Fixes: Resolved issues with recurring exit pop-ups, back button display
+  errors, and missing English/Korean translations.
+
+---
+
+<PatchNoteHeroBanner
+  title='Wine'
+  subtitle='Wine search, detailed info, and summary display features'
+  bgImage='/patch-notes/myc_app/res/title/wine_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='Wine List'
+  label={['Update']}
+  description='Conveniently find the exact wine you want among many bottles.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine01.webp'
+/>
+
+Sorting capabilities have been significantly strengthened, and information
+readability in the list has been improved.
+
+<PatchNoteSectionHeading
+  icon='📋'
+  title='More Powerful Filters & Sorting'
+  label={['Update']}
+/>
+
+- Precise Sorting: You can now freely sort wines by Registration Date, Vintage,
+  or Storage Duration in ascending or descending order.
+- Status Filtering: The filter default is set to 'In Storage' and 'Pending' to
+  immediately show the wines you are currently managing.
+- Applied filters are clearly indicated at the top of the screen.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine02.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine03.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📦'
+  title='Bulk Move Feature'
+  label={['New']}
+/>
+
+- Bulk Movement: A new feature allows you to select multiple wines and move them
+  to another cellar or location all at once.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine04.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine05.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine06.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='✨'
+  title='Intuitive List UI'
+  label={['New']}
+/>
+
+- Pending Wine Distinction: Wines in the 'Pending' state now appear with blurred
+  images and gray tones in the list to easily distinguish them from wines in
+  storage.
+- 'Expected Receipt Date' is displayed instead of storage duration for pending
+  wines.
+- Detail Readability: Refined the design for Vintage, Type, and Capacity, and
+  adjusted the colors of names and vintages for better focus.
+- Drinking Window: If drinking window info is available, it can be checked
+  directly from the list.
+- Expected Receipt: If there is an expected receipt date, it can be checked
+  directly from the list.
+- Storage Milestone: On the day a wine is registered, it shows a friendly
+  'Stored Today' message instead of '0 Days'.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine07.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine08.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine09.webp', alt: '' },
+    ]}
+  />
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='Wine Details'
+  label={['Update']}
+  description='Completely revamped to provide a more intuitive and detailed view of wine information.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine10.webp'
+/>
+
+Now check everything from wine history to storage location at a glance.
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='Revamped UI & Readability'
+  label={['Update']}
+/>
+
+- Clean 1-Column Layout: Changed the existing complex 2-column layout to a
+  1-column list format so you can comfortably read wine information from top to
+  bottom.
+- Intuitive Header Info: Vintage and Wine Type are displayed right above the
+  wine name for immediate identification of core info.
+- Full Dark Mode Support: Adjusted background colors and text contrast for
+  better legibility in dark environments.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine11.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine12.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📸'
+  title='Enhanced Photo Viewer'
+  label={['Update']}
+/>
+
+- Slide & Download: Swipe through multiple wine photos. Tapping a photo opens a
+  dedicated viewer for zooming and downloading.
+- Design Details: Natural background blending provide a high-end gallery feel.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_0/wine/wine13.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🔗'
+  title='Enhanced Connectivity (Tasting Notes & Cellar)'
+  label={['New']}
+/>
+
+- Quick Link to Tasting Notes: Jump straight to existing tasting notes for a
+  wine with one button (or start a new one if none exist!).
+- Visual Location Finder: Tap the storage location to see the exact slot
+  position in your cellar with a visual animation.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine12.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine14.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📜'
+  title='History Information'
+  label={['New']}
+/>
+
+- History Feature: Logs of wine name changes, status updates, and storage
+  movements can now be kept as history.
+- Historical records can be checked on the detail screen if changes have
+  occurred.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine15.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🛠'
+  title='Smart Status & Info Management'
+  label={['New']}
+/>
+
+- Collapse/Expand History: Added the ability to fold or unfold the history
+  section if it becomes too long.
+- Pending Status Management: Wines in 'Pending' state automatically change to
+  storage status once the receipt date passes.
+- For unknown receipt dates, you can manually process them as stored via the
+  'Received' button.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine15.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine16.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine17.webp', alt: '' },
+    ]}
+  />
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='Wine Registration'
+  label={['Update']}
+  description='Added an OCR feature that allows you to input information just by taking a photo, so wine registration is no longer a chore.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine18.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📷'
+  title='Smart Auto-Input (OCR & Import)'
+  label={['New']}
+/>
+
+- Wine Label Scanning (OCR): Taking a photo of the label (up to 3) analyzes and
+  fills in key info such as wine name, vintage, country, and alcohol content
+  automatically or manually.
+- Import Existing Wine: Buying a wine you've had before? Use 'Fill from Existing
+  Wine' to copy photos and info via a simple search.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine19.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine20.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine21.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🚚'
+  title='Pending Mode'
+  label={['New']}
+/>
+
+- Delivery Management: Bought a wine but it hasn't arrived yet? Register it as
+  'Pending'.
+- Automatic Storage Processing: It automatically switches to 'In Storage' after
+  the expected receipt date for easier management (Manual switch via 'Received'
+  button possible if date is TBD).
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine38.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine39.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine40.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📸'
+  title='Photo Reordering'
+  label={['New']}
+/>
+
+- Photo Registration Improvement: Added the ability to change the order of
+  photos during registration.
+- No more hassle of deleting and re-registering to get the order right.
+
+<PatchNoteSectionHeading
+  icon='🌏'
+  title='Delicate Input Fields'
+  label={['New']}
+/>
+
+- Country/Region Search: Greatly reinforced global wine region data. Find
+  countries and regions quickly via search without endless scrolling.
+- Drinking Window: Added a field to record when a wine is at its best.
+  (AI-driven auto-registration via wine search is planned for the future.)
+- Localized Purchase Locations: Frequently used purchase locations are optimized
+  according to language settings (Korean/English).
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine24.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine25.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine26.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='UI & Convenience Improvements'
+  label={['New']}
+/>
+
+- Safe Deletion Logic: When deleting a cellar, the position info (shelf/slot) of
+  wines in that cellar is automatically cleaned up, and default cellar settings
+  are safely changed.
+- Details: Applied commas (,) to price displays and fixed errors in capacity
+  (L/Bottle) notation.
+
+<PatchNoteSectionHeading
+  icon='👋'
+  title='Wine Clone Feature Removed'
+  label={['Removed']}
+/>
+
+- Removal of Wine Clone: The wine clone feature has been replaced by the 'Import
+  Existing Wine' feature.
+
+  <br />
+
+<PatchNoteCategoryItem
+  icon='📊'
+  title='Wine Statistics'
+  label={['New']}
+  description='From wine asset value to monthly drinking patterns, we organize everything in clean infographics.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine27.webp'
+/>
+
+From wine asset value to monthly drinking patterns, everything is organized in
+clean infographics.
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='Holdings & Consumption Reports'
+  label={['New']}
+/>
+
+- Holdings: Check the value, type, vintage, and country of your current
+  collection at a glance.
+- Consumption: View various info including consumption history, monthly records,
+  consumption by country, repurchases, and total cost at a glance.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine32.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine27.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='💰'
+  title='Wine Asset Value Report'
+  label={['New']}
+/>
+
+- Total Asset Scale: Calculates the sum of prices of current wines to show your
+  'Wine Asset Value'.
+- Highlights: Specially indicates the 'Most Expensive Wine' and 'Oldest Vintage
+  Wine' in your cellar with badges.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine28.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine32.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📈'
+  title='Visualized Data Charts'
+  label={['New']}
+/>
+
+- Monthly Drinking Heatmap: Added a calendar-style heatmap chart. See when and
+  how much you enjoyed wine by date at a glance.
+- Intuitive Distribution: Vintage holdings and consumption by country are
+  provided in donut charts and graphs, with percentages (%) added for easy
+  weight comparison.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine29.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine30.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine31.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🏆'
+  title='Consumption Pattern Analysis'
+  label={['New']}
+/>
+
+- Top Pick Wine: Selects and shows 'Top Picks' based on your satisfaction or
+  high consumption in the consumption tab.
+- Preference by Country: Improved the UI to visually show which countries' wines
+  you consumed most with a unified feel.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine33.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine34.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine35.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='Design & Readability Improvements'
+  label={['New']}
+/>
+
+- Dark Mode Optimization: Fixed issues where chart text or monthly records were
+  hard to see on dark backgrounds; data is now sharp even at night.
+- UI Details: Fixed color duplication in country charts and refined title icons
+  and graph labels (bottles/cases) for better quality.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📤'
+  title='Bulk Wine Movement'
+  label={['New']}
+  description='A new feature allows you to move multiple wines to another cellar or location all at once.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine04.webp'
+/>
+
+Were you overwhelmed when adding a new cellar? Now move wines between cellars or
+locations all at once.
+
+<PatchNoteSectionHeading
+  icon='📤'
+  title='Bulk Wine Movement Feature'
+  label={['New']}
+/>
+
+- Bulk Movement: Select the destination, choose the wines to move, and they will
+  be moved at once.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine04.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine05.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine06.webp', alt: '' },
+    ]}
+  />
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📍'
+  title='Wine Storage Location'
+  label={['New']}
+  description='Wondering where your wine is? Check the storage location of your wine at a glance.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/wine/wine14.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📍'
+  title='Wine Storage Location'
+  label={['New']}
+/>
+
+- Wine Storage Location: For wines stored in registered cellars, clicking the
+  storage location on the detail screen takes you to the storage location page.
+- Shelf Info Display: Displays the information of the shelf where the wine is
+  located.
+- Slot Info Display: Displays the information of the slot within the shelf where
+  the wine is located.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine36.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine37.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine14.webp', alt: '' },
+    ]}
+  />
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🎉'
+  title='Other'
+  label={['New']}
+  description='Check out other update details.'
+  bgImage='/patch-notes/myc_app/res/title/wine_sub03.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📬'
+  title='Added Pending Status'
+  label={['New']}
+/>
+
+- Added Pending Status: You can now register wines that were awkward to track
+  due to shipping or receipt date issues as 'Pending'.
+- Setting a receipt date automatically changes the status to 'In Storage'.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine38.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine39.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine40.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine41.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine42.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📅'
+  title='Added Drinking Window Attribute'
+  label={['New']}
+/>
+
+- Drinking Window Display: Displays the drinking window if the value is entered.
+- This will be updated to an AI-driven auto-registration feature in the future.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine18.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine36.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🧮'
+  title='Storage Date Display'
+  label={['New']}
+/>
+
+- Storage Date Display: Fixed the issue where storage dates were calculated
+  incorrectly.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine08.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🌍'
+  title='Added Production Countries & Regions'
+  label={['New']}
+/>
+
+- Added Production Countries & Regions: Added some previously missing production
+  countries.
+- Selecting a country allows you to choose known regions.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine24.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine25.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/wine/wine26.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🌏'
+  title='Added Purchase Locations (Overseas)'
+  label={['New']}
+/>
+
+- Added Purchase Locations (Overseas): Added some overseas purchase locations in
+  the English version.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/wine/wine43.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🌌'
+  title='Added Default Images'
+  label={['New']}
+/>
+
+- Added Default Images: Added appropriate default images for each type.
+
+---
+
+<PatchNoteHeroBanner
+  title='Tasting Note'
+  subtitle='Added detailed types/summaries and feature improvements'
+  bgImage='/patch-notes/myc_app/res/title/taste_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📝'
+  title='Tasting Note List'
+  label={['Update']}
+  description='Conveniently find the exact tasting note you want among many records.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste01.webp'
+/>
+
+Find your growing wine records easier and faster. We've refined the list design
+and added powerful tag search.
+
+<PatchNoteSectionHeading
+  icon='🔍'
+  title='Smarter Search & Filters'
+  label={['New']}
+/>
+
+- Hashtag (#) Search: Search tasting notes not just by wine name, but by the
+  #tags you left (e.g., #DailyValue, #Gift).
+- Granular Filters: Improved search conditions into intuitive buttons and
+  dropdowns to categorize desired records faster.
+- Diverse Search Filters: Filter by rating, note type, source, sorting criteria,
+  etc.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste02.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste03.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste04.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste05.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📝'
+  title='Clean List Design'
+  label={['New']}
+/>
+
+- Enhanced Information Delivery: Note types and key tags are clearly displayed
+  on list cards for easier content guessing.
+- Full Name Display: Even long wine names are displayed in full without being
+  cut off by '...'.
+- Type Display: Displays the type of tasting note.
+- Image Handling: Clean default images are applied if no photo is registered or
+  available.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste01.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📝'
+  title='Detail & Stability'
+  label={['New']}
+/>
+
+- Dark Mode Optimization: Adjusted color contrast for text and filter buttons to
+  be clearly visible in dark themes.
+- Bug Fixes: Resolved app crashes during search, list overlapping with the top
+  menu bar, and tag-click malfunctions.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📅'
+  title='Tasting Note Calendar'
+  label={['New']}
+  description='Wondering when you drank which wine?'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste06.webp'
+/>
+
+Check your wine records by date at a glance on the calendar screen.
+
+<PatchNoteSectionHeading
+  icon='📅'
+  title='Wine Records at a Glance (Calendar View)'
+  label={['New']}
+/>
+
+- Intuitive Calendar UI: Shows wines consumed by month (Month View).
+- Flexibly view by week or month by expanding/collapsing the calendar.
+- Convenient Navigation: Improved navigation for easy movement between years and
+  months to find past records quickly.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste06.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='✍️'
+  title='Quick Recording & Accessibility'
+  label={['New']}
+/>
+
+- Immediate Creation: Tap the '+' button on the calendar screen to go straight
+  to the writing screen without worrying about date selection.
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='Detailed UI Improvements'
+  label={['New']}
+/>
+
+- Improved Date Selection: Adjusted font size in the date selection dialog and
+  repositioned buttons for a more comfortable user experience.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste07.webp', alt: '' },
+    ]}
+  />
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📜'
+  title='Tasting Note Details'
+  label={['New']}
+  description='Appreciate the tastes and aromas you recorded more beautifully.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste08.webp'
+/>
+
+Aromas and structures are expressed visually, and you can create stunning images
+to share with friends.
+
+<PatchNoteSectionHeading
+  icon='🏷️'
+  title='Added Tag Feature'
+  label={['New']}
+/>
+
+- Tag Feature: You can now add tags to tasting notes.
+- Search easily or input information by adding tags to your notes.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste15.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📝'
+  title='Addition of Detailed Mode'
+  label={['New']}
+/>
+
+- Detailed Mode: Added a 'Detailed Mode' in addition to the existing 'Simple
+  Mode'.
+- Structure & Balance: Visually express the wine's structure and balance such as
+  Body, Tannin, Sweetness, and Acidity.
+- Texture: Visually express textures such as Thin, Creamy, Oily/Viscous, Round,
+  etc.
+- Aroma: Select aromas directly; icons and intensity are displayed together to
+  vividly recall the nuances felt at that time.
+- Faults: Select any faults detected in the wine.
+- Other Info: Food pairings, serving temperature, decanting time, wine color,
+  and other expert-level details are shown in a clean UI.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste09.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste08.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste10.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste11.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste12.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste13.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste14.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste15.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste16.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste17.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📸'
+  title='Share Your Impression as an Image'
+  label={['New']}
+/>
+
+- Card News Creation: If text isn't enough, convert your tasting note into a
+  beautiful card image with a single export button.
+
+<PatchNoteSectionHeading
+  icon='👀'
+  title='Comfortable Design & Dark Mode'
+  label={['Update']}
+/>
+
+- Simple & Detail: Greatly improved legibility for both Simple Mode (focus on
+  essentials) and Detailed Mode (all info).
+- Dark Mode Optimization: Adjusted tag and text contrast perfectly so the app
+  doesn't glare when writing at night.
+
+<PatchNoteSectionHeading
+  icon='🔗'
+  title='Smart Information Connectivity'
+  label={['Update']}
+/>
+
+- Holding Period Display: Automatically calculates and shows how long the wine
+  was aged in the cellar before drinking.
+- Accurate Ratings: To complement star ratings, the exact numerical score is
+  also displayed next to the star.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste18.webp', alt: '' },
+    ]}
+  />
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='✍️'
+  title='Writing Tasting Notes'
+  label={['New']}
+  description='Don’t miss the sensations of the moment you drink.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste13.webp'
+/>
+
+Record like a professional, from Aroma to Structure and Pairing.
+
+<PatchNoteSectionHeading
+  icon='👃'
+  title='Refined Aroma Recording'
+  label={['New']}
+/>
+
+- Intuitive Selection: The aroma selection screen has been revamped into a
+  card-style UI for better viewing, and a search function was added.
+- Aroma Guide: Added 'Aroma Hint Help' for when you're unsure of a specific
+  scent.
+- Intensity Control: Touching a selected aroma brings up a slider to adjust the
+  intensity in detail.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste12.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste13.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste19.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🍷'
+  title='Expert-Level Detailed Recording'
+  label={['New']}
+/>
+
+- New Attributes: Significantly increased recordable items like Wine Color,
+  Pairing Food, Decanting Time, and Serving Temp.
+- Visualizing Structure: Intuitive adjustment for Body, Acidity, Sweetness, and
+  Tannin (with 'None' option added for Tannin).
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste08.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste09.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste10.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste11.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste14.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste15.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste16.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste17.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='💡'
+  title='Smarter & Easier Input'
+  label={['New']}
+/>
+
+- Tag Auto-complete: No need to type every tag. Entering a few letters suggests
+  previously used tags.
+- Prevention of Mistakes: A confirmation pop-up appears if you accidentally hit
+  'Back' while writing to prevent data loss.
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='Dark Mode & UI Optimization'
+  label={['Update']}
+/>
+
+- Legibility Improvement: Perfectly adjusted text and input box colors for dark
+  mode to make night recording comfortable.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📊'
+  title='Tasting Note Statistics'
+  label={['New']}
+  description='Not just accumulating records, we analyze what style of wine you prefer.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste23.webp'
+/>
+
+Discover your taste with changed charts and statistics.
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='Stronger Preference Analysis'
+  label={['New']}
+/>
+
+- Wine Type Chart: Shows the types of wine (Red, White, etc.) consumed by year
+  and adds analysis phrases on how your preferred style changed.
+- Rating Trends: Refined the rating UI and provides fun comments based on annual
+  average scores.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste24.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste25.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste27.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste28.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📈'
+  title='Easy-to-Read Charts'
+  label={['New']}
+/>
+
+- Line Chart Introduction: Changed monthly stats to intuitive annual line charts
+  to track consumption trends at a glance.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste26.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste29.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='Dark Mode & Stability'
+  label={['New']}
+/>
+
+- Visibility: Fixed titles and chart text that were hard to see in dark mode for
+  eye comfort.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='👅'
+  title='Aroma Selection'
+  label={['New']}
+  description='In Detailed Mode, you can now select aromas directly.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste13.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='👅'
+  title='Aroma Selection'
+  label={['New']}
+/>
+
+- Aroma Selection: You can directly select or search for aromas.
+- Guide Improvement: Check the help section if you need explanations for
+  specific aromas.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste12.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste13.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste19.webp', alt: '' },
+    ]}
+  />
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📖'
+  title='Aroma Guide'
+  label={['New']}
+  description='Added a guide screen to help with aroma selection.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/tastenote/taste21.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📖'
+  title='Aroma Guide'
+  label={['New']}
+/>
+
+- Aroma Guide: Provides brief descriptions of aromas and information on grape
+  varieties where they are primarily found.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste20.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste21.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/tastenote/taste22.webp', alt: '' },
+    ]}
+  />
+
+---
+
+<PatchNoteHeroBanner
+  title='Wine Cellar'
+  subtitle='Improved wine cellar management and storage location display'
+  bgImage='/patch-notes/myc_app/res/title/cellar_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🕋'
+  title='Wine Cellar List'
+  label={['Update']}
+  description='Manage your precious wine storage more luxuriously and intuitively.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/cellar/cellar01.webp'
+/>
+
+Applied designs that capture the dark atmosphere of actual cellars along with
+accurate statistics.
+
+<PatchNoteSectionHeading
+  icon='🚪'
+  title='Premium Cellar Atmosphere'
+  label={['Update']}
+/>
+
+- Dark Theme Design: Applied a dark background theme regardless of Light/Dark
+  mode settings to evoke the calm and premium feel of a cellar.
+- Card UI Improvement: Refined cellar card designs and adjusted background
+  brightness for clearer information.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar01.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📋'
+  title='New Sorting Features'
+  label={['New']}
+/>
+
+- Sorting Feature: Sort by Number of Bottles, Creation Date, or Name in
+  ascending/descending order.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar02.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='Cellar Status at a Glance'
+  label={['New']}
+/>
+
+- Smart Summary Cards: Changed the top summary area to a sophisticated
+  asymmetric UI. Total bottles and asset value are accurately calculated and
+  displayed (Excluding wines stored outside the cellar).
+- Intuitive Capacity Display: Don't just look at numbers. Progress bar colors
+  change based on storage rate (%) to intuitively show remaining space.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar01.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar03.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar04.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🛠'
+  title='Data & Stability'
+  label={['New']}
+/>
+
+- Data Correction: Applies a default value (99 bottles) if total capacity info
+  is missing to prevent UI breaking.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🕋'
+  title='Wine Cellar Detail'
+  label={['Update']}
+  description='The perfect way to manage your wine storage.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/cellar/cellar05.webp'
+/>
+
+Experience premium dark designs and seamless shelf/slot management features.
+
+<PatchNoteSectionHeading
+  icon='🚪'
+  title='Premium Dark Room'
+  label={['Update']}
+/>
+
+- Immersive Dark Theme: A dedicated dark theme is applied regardless of phone
+  settings to recreate the actual cellar atmosphere.
+- Sophisticated Summary Info: The top summary is now a 'Sticky' UI that stays as
+  you scroll, allowing you to enjoy cellar photos and descriptions like a
+  gallery.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar08.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar06.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar07.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🗂️'
+  title='Systematic Shelf & Slot Management'
+  label={['New']}
+/>
+
+- Visual Position Check: Now fully supports Shelf and Slot information for
+  cellars.
+- Intuitively check which shelf your wine is on.
+- View Mode Support: Switch between 'Grid View' and 'Simple View' for managing
+  wines on shelves.
+- Empty Slot Indicator: For slot-enabled cellars, empty spaces are indicated
+  with an icon (Inbox) to easily track available space.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar08.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar09.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='Cellar Insight'
+  label={['New']}
+/>
+
+- Smart Summary Tab: New 'Summary' tab.
+- Shows vintage distribution of your cellar in a chart and highlights 'Longest
+  Stored Wine' and 'Oldest Vintage'.
+- Accurate Statistics: Holdings by country and wine type stats are calculated
+  and displayed more accurately.
+
+<PatchNoteSectionHeading
+  icon='🛠'
+  title='Data Stability & Convenience'
+  label={['Update']}
+/>
+
+- Safe Deletion Logic: Deleting a cellar automatically cleans up shelf/slot info
+  for wines in that cellar and safely changes default settings.
+- Details: Commas (,) in prices and corrected capacity (L/Bottle) notation.
+
+  <br />
+
+<PatchNoteCategoryItem
+  icon='🕋'
+  title='Wine Cellar Registration/Edit'
+  label={['Update']}
+  description='From slot counts per shelf to manufacturer selection, the registration process is more refined and easier.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/cellar/cellar12.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🗂️'
+  title='Precise Shelf & Slot Settings'
+  label={['New']}
+/>
+
+- Slot Management: You can set the number of 'slots' for each shelf as well as
+  the number of shelves.
+- For shelves without dividers, set slots to '0' to display as Infinite.
+- Flexible Options: Shelf management too complex? Set shelf feature to 'Unused'
+  to simply manage total bottle count.
+- Intuitive UI: Separated shelf settings into a dedicated screen and improved
+  the intuitive display of shelf order.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar12.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar13.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar14.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar15.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar16.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar17.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='✨'
+  title='Revamped Registration UI'
+  label={['New']}
+/>
+
+- Manufacturer Selection: Frequently searched cellar brands are shown at the top
+  for faster selection.
+- Unified Experience: Image registration and date selection (Dark Mode applied)
+  designs are unified with the wine registration screen for consistency.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar18.webp', alt: '' },
+      { src: '/patch-notes/myc_app/res/3_0_0/cellar/cellar19.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='🛠'
+  title='Usability & Safety'
+  label={['New']}
+/>
+
+- Writing Protection: A confirmation pop-up prevents data loss if 'Back' is
+  pressed accidentally during cellar info input.
+- Stability Reinforcement: Fixed crashes when editing/deleting shelf/slot info
+  and resolved shelf alignment bugs.
+
+---
+
+<PatchNoteHeroBanner
+  title='Settings'
+  subtitle='Improved app configuration features'
+  bgImage='/patch-notes/myc_app/res/title/setting_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='⚙️'
+  title='Update Patch Notes'
+  label={['Update']}
+  description='Customize the app to perfectly fit your style.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/setting/setting01.webp'
+/>
+
+Finely configure your tasting note writing environment and perfectly restore
+data via CSV files.
+
+<PatchNoteSectionHeading
+  icon='📜  '
+  title='Detailed Patch Notes'
+  label={['New']}
+/>
+
+- Patch Notes: Check detailed changes, additions, and removals for each screen.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting01.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🍷'
+  title='Default Wine Storage Location'
+  label={['New']}
+/>
+
+- Default Storage: Tired of selecting a storage every time? Set a 'Default
+  Storage Location' to have it pre-selected.
+
+  <PatchNoteImageCarousel
+    items={[
+      { src: '/patch-notes/myc_app/res/3_0_0/setting/setting02.webp', alt: '' },
+    ]}
+  />
+
+<PatchNoteSectionHeading
+  icon='📝'
+  title='Diverse Tasting Note Settings'
+  label={['New']}
+/>
+
+- Note Mode: Set the default tasting note mode to use.
+- Default Title: Configure patterns (suffixes) for automatically generated
+  tasting note titles.
+- Aroma Intensity: Choose whether to use aroma intensity values in Detailed
+  Mode.
+- Defaults to Intensity 3 if unused.
+- Tag Management: View all #tags registered in notes and check their usage
+  counts.
+- Unnecessary tags can be deleted.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting03.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting04.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🔄'
+  title='More Stable Backup & Restore'
+  label={['New']}
+/>
+
+- Backup & Restore: Improved performance for faster progress.
+- Added new data values and reinforced stability for version changes.
+
+<PatchNoteSectionHeading
+  icon='📄'
+  title='Added CSV Restore Feature'
+  label={['New']}
+/>
+
+- CSV Restore: Directly import CSV files edited in Excel or text editors into
+  the app.
+- If you want to register large amounts of wines and cellars at once, check the
+  'CSV Restore Guide' for an easy transition.
+- Please refer to the CSV Restore Guide for details.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting05.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🧹'
+  title='Full Data Reset'
+  label={['New']}
+/>
+
+- Reset: Added a 'Full Reset' feature for when you want to return the app to its
+  fresh, installed state.
+- Clear all settings and data with one click to start anew.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting06.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🐞'
+  title='Bug & Inquiry Reporting'
+  label={['Update']}
+/>
+
+- Reporting: You can now report bugs or inquiries occurring within the app.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='💾'
+  title='CSV Restore'
+  label={['Update']}
+  description='Perfectly restore data via CSV files.'
+  bgImage='/patch-notes/myc_app/res/3_0_0/setting/setting05.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🍷'
+  title='Import Wine Data'
+  label={['New']}
+/>
+
+- Wine Section: Filling out a CSV file according to the format allows you to
+  import that data into MyWineCellar.
+- Photos can also be imported.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting05.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🕋'
+  title='Import Cellar Data'
+  label={['New']}
+/>
+
+- Cellar Section: Filling out a CSV file according to the format allows you to
+  import that data into the cellar.
+- Photos can also be imported.
+
+<PatchNoteSectionHeading
+  icon='📜'
+  title='CSV Restore Guide'
+  label={['New']}
+/>
+
+- CSV Restore Guide: Added a friendly guide screen to assist with restoration.
+- Feature-specific Guides: Provides subdivided guides for Wine and Cellar items.
+- If guide content is difficult, refer to the sample CSV files at the bottom.
+- Still having trouble?: If it's still difficult, please submit via the email
+  form and we will review and respond.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting07.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting08.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_0/setting/setting09.webp', alt: '' },
+  ]}
+/>
+
+---
+
+<br />
+<br />
+<br />

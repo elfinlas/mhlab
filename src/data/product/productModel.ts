@@ -128,6 +128,8 @@ export interface ProductItemType extends ProductPublished {
     appStore: string;
     googlePlay: string;
     type: 'mobile' | 'web' | 'full';
+    /** true이면 패치노트 목록 링크 표시 (`public/patch-notes/{id}/…` 제공 시) */
+    patchNotes?: boolean;
   };
   supportedLocales: ProductSupportedLocales;
   images: ProductImages;

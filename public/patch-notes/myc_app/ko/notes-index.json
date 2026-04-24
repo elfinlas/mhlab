@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "slug": "3.0.1",
+      "title": "마와셀 3.0.1 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "3.0.0",
+      "title": "마와셀 3.0.0 패치노트",
+      "types": [
+        "app",
+        "renewal"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.14",
+      "title": "마와셀 2.0.14 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.13",
+      "title": "마와셀 2.0.13 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.12",
+      "title": "마와셀 2.0.12 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.11",
+      "title": "마와셀 2.0.11 패치노트",
+      "types": [
+        "app",
+        "fix",
+        "feature"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.9",
+      "title": "마와셀 2.0.9 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.8",
+      "title": "마와셀 2.0.8 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.7",
+      "title": "마와셀 2.0.7 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.6",
+      "title": "마와셀 2.0.6 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.5",
+      "title": "마와셀 2.0.5 패치노트",
+      "types": [
+        "app",
+        "fix",
+        "feature"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.4",
+      "title": "마와셀 2.0.4 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.3",
+      "title": "마와셀 2.0.3 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.2",
+      "title": "마와셀 2.0.2 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.1",
+      "title": "마와셀 2.0.1 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "2.0.0",
+      "title": "마와셀 2.0.0 패치노트",
+      "types": [
+        "app",
+        "renewal"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "1.0.8",
+      "title": "마와셀 1.0.8 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "1.0.7",
+      "title": "마와셀 1.0.7 패치노트",
+      "types": [
+        "app",
+        "fix",
+        "feature"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "1.0.6",
+      "title": "마와셀 1.0.6 패치노트",
+      "types": [
+        "app",
+        "fix",
+        "feature"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "1.0.5",
+      "title": "마와셀 1.0.5 패치노트",
+      "types": [
+        "app",
+        "fix",
+        "feature"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "1.0.4",
+      "title": "마와셀 1.0.4 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "1.0.3",
+      "title": "마와셀 1.0.3 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "1.0.2",
+      "title": "마와셀 1.0.2 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "1.0.1",
+      "title": "마와셀 1.0.1 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    },
+    {
+      "slug": "1.0.0",
+      "title": "마와셀 1.0.0 패치노트",
+      "types": [
+        "app",
+        "feature"
+      ],
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24"
+    }
+  ]
+}

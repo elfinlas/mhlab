@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/ui/utils';
 
 type AboutStitchChapterRailProps = {
   /** 관찰할 섹션 id 목록 (순서대로) */

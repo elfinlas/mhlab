@@ -23,7 +23,8 @@
     "localeKo": "Korean",
     "localeEn": "English",
     "localeJa": "Japanese",
-    "detailBackToServiceList": "Service list"
+    "detailBackToServiceList": "Service list",
+    "detailPatchNotes": "Patch notes"
   },
   "home": {
     "aboutHeading": "About",

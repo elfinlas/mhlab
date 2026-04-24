@@ -1,0 +1,150 @@
+{
+  "패치노트 MDX — frontmatter": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-front", "patch-frontmatter"],
+    "body": [
+      "---",
+      "title: '${1:제목}'",
+      "type: ${2|app,web,renewal,feature,fix,improvement,security,maintenance,other|}",
+      "createdAt: ${3:2026-04-22}",
+      "updatedAt: ${4:2026-04-22}",
+      "---",
+      "",
+      "$0"
+    ],
+    "description": "패치노트 필수 YAML frontmatter"
+  },
+  "패치노트 MDX — PatchNoteHeroBanner": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-hero", "patch-hero", "PatchNoteHeroBanner"],
+    "body": [
+      "<PatchNoteHeroBanner",
+      "  title=\"${1:제목}\"",
+      "  subtitle=\"${2:부제목}\"",
+      "  bgImage=\"${3:/patch-notes/myc_app/ko/assets/banner.jpg}\"",
+      "/>"
+    ],
+    "description": "배경 이미지 + 제목/부제목 배너"
+  },
+  "패치노트 MDX — HeroBanner (별칭)": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-hero-short", "HeroBanner"],
+    "body": [
+      "<HeroBanner",
+      "  title=\"${1:제목}\"",
+      "  subtitle=\"${2:부제목}\"",
+      "  bgImage=\"${3:/patch-notes/myc_app/ko/assets/banner.jpg}\"",
+      "/>"
+    ],
+    "description": "PatchNoteHeroBanner와 동일 (짧은 태그명)"
+  },
+  "패치노트 MDX — HeroBanner + overlayOpacity": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-hero-dim", "patch-hero-opacity"],
+    "body": [
+      "<PatchNoteHeroBanner",
+      "  title=\"${1:제목}\"",
+      "  subtitle=\"${2:부제목}\"",
+      "  bgImage=\"${3:/patch-notes/myc_app/ko/assets/banner.jpg}\"",
+      "  overlayOpacity={${4:0.45}}",
+      "/>"
+    ],
+    "description": "배너 + 오버레이 투명도(0~1)"
+  },
+  "패치노트 MDX — Callout (info)": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-callout", "patch-callout"],
+    "body": ["<PatchNoteCallout>", "", "$1", "", "</PatchNoteCallout>", "$0"],
+    "description": "인디고 톤 안내 박스"
+  },
+  "패치노트 MDX — Callout (warning)": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-callout-warn", "patch-callout-warning"],
+    "body": [
+      "<PatchNoteCallout variant=\"warning\">",
+      "",
+      "$1",
+      "",
+      "</PatchNoteCallout>",
+      "$0"
+    ],
+    "description": "경고(앰버) 콜아웃"
+  },
+  "패치노트 MDX — Callout 짧은 태그": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-callout-tag", "Callout"],
+    "body": ["<Callout>", "", "$1", "", "</Callout>", "$0"],
+    "description": "<Callout> … PatchNoteCallout과 동일"
+  },
+  "패치노트 MDX — 이미지": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-img", "patch-img"],
+    "body": ["![${1:설명}](${2:/patch-notes/myc_app/ko/assets/image.png})", "$0"],
+    "description": "마크다운 이미지 (클릭 시 라이트박스)"
+  },
+  "패치노트 MDX — SectionHeading": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-h2", "patch-section", "PatchNoteSectionHeading", "SectionHeading"],
+    "body": [
+      "<PatchNoteSectionHeading",
+      "  icon=\"${1:🏠}\"",
+      "  title=\"${2:섹션 제목}\"",
+      "  label={['${3:라벨}']}",
+      "/>"
+    ],
+    "description": "섹션 h2 + 라벨 (플랫). 배경 이미지는 PatchNoteCategoryItem"
+  },
+  "패치노트 MDX — CategoryItem + 배경": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-cat-bg", "patch-category-bg"],
+    "body": [
+      "<PatchNoteCategoryItem",
+      "  icon=\"${1:🍷}\"",
+      "  title=\"${2:제목}\"",
+      "  label={['${3:업데이트}']}",
+      "  description=\"${4:설명 (생략 가능)}\"",
+      "  bgImage=\"${5:/patch-notes/myc_app/ko/assets/bg.jpg}\"",
+      "  overlayOpacity={${6:0.48}}",
+      "/>"
+    ],
+    "description": "카테고리 카드 + 배경 이미지·오버레이"
+  },
+  "패치노트 MDX — SectionHeading + 라벨 여러 개": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-h2-labels", "patch-section-labels"],
+    "body": [
+      "<PatchNoteSectionHeading",
+      "  icon=\"${1:🏠}\"",
+      "  title=\"${2:섹션 제목}\"",
+      "  label={['${3:라벨1}', '${4:라벨2}']}",
+      "/>"
+    ],
+    "description": "하단 라벨을 배열(칩 여러 개)로"
+  },
+  "패치노트 MDX — CategoryItem": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-cat", "patch-category", "PatchNoteCategoryItem", "CategoryItem"],
+    "body": [
+      "<PatchNoteCategoryItem",
+      "  icon=\"${1:🍷}\"",
+      "  title=\"${2:제목}\"",
+      "  label={['${3:업데이트}']}",
+      "  description=\"${4:설명 문장}\"",
+      "/>"
+    ],
+    "description": "카테고리 카드: 아이콘·제목·라벨·설명 (배경 없음)"
+  },
+  "패치노트 MDX — ImageCarousel": {
+    "scope": "mdx,markdown",
+    "prefix": ["pn-carousel", "patch-carousel", "PatchNoteImageCarousel", "ImageCarousel"],
+    "body": [
+      "<PatchNoteImageCarousel",
+      "  items={[",
+      "    { src: '${1:/patch-notes/myc_app/ko/assets/1.webp}', alt: '${2:설명1}' },",
+      "    { src: '${3:/patch-notes/myc_app/ko/assets/2.webp}', alt: '${4:설명2}' },",
+      "  ]}",
+      "/>"
+    ],
+    "description": "이미지 캐러셀 + 클릭 라이트박스"
+  }
+}

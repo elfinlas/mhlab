@@ -12,6 +12,7 @@ import {
   ArrowLeft,
   Cloud,
   ExternalLink,
+  FileText,
   Globe,
   MapPin,
   Sparkles,
@@ -22,6 +23,12 @@ import { ImageCarousel } from '@/components/product/ImageCarousel';
 import { ProductDetailNav } from '@/components/product/detail/ProductDetailNav';
 import { ProductSupportedLocales } from '@/components/product/ProductSupportedLocales';
 import { BsAndroid, BsApple } from 'react-icons/bs';
+import type { PatchNoteLocale } from '@/data/patch-notes/types';
+import type { Locale } from '@/lib/i18n';
+
+function patchNotesLocaleFromSiteLocale(siteLocale: Locale): PatchNoteLocale {
+  return siteLocale === 'ko' ? 'ko' : 'en';
+}
 
 const KEY_ICONS = [MapPin, Cloud, Sparkles] as const;
 
@@ -72,6 +79,8 @@ export function ProductDetailView({ project }: ProductDetailViewProps) {
     [project.functions, locale]
   );
   const primaryHref = primaryStoreHref(project);
+  const patchNotesLocale = patchNotesLocaleFromSiteLocale(locale);
+  const patchNotesListHref = `/product/${project.id}/patch_notes/${patchNotesLocale}`;
 
   return (
     <>
@@ -177,6 +186,18 @@ export function ProductDetailView({ project }: ProductDetailViewProps) {
                     Visit website
                     <ExternalLink className='h-4 w-4 shrink-0 opacity-90 dark:opacity-100' />
                   </a>
+                ) : null}
+                {project.links.patchNotes ? (
+                  <Link
+                    href={patchNotesListHref}
+                    className='inline-flex items-center justify-center gap-2 rounded-xl border-2 border-slate-300 bg-white px-6 py-3.5 text-sm font-bold tracking-wide text-slate-800 shadow-sm transition-all duration-300 hover:border-indigo-400 hover:bg-indigo-50/90 dark:border-slate-600 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:border-indigo-500/70 dark:hover:bg-slate-800'
+                  >
+                    <FileText
+                      className='h-4 w-4 shrink-0'
+                      aria-hidden
+                    />
+                    {t('productListing.detailPatchNotes')}
+                  </Link>
                 ) : null}
               </div>
             </div>
