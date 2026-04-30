@@ -1,6 +1,15 @@
 'use client';
 
-import { useEffect } from 'react';
+import {
+  type PointerEvent as ReactPointerEvent,
+  useCallback,
+  useEffect,
+  useRef,
+} from 'react';
+import {
+  PATCH_NOTE_IMAGE_SWIPE_DOMINANCE_RATIO,
+  PATCH_NOTE_IMAGE_SWIPE_MIN_PX,
+} from '@/lib/patch-notes/patchNoteImageSwipe';
 
 type PatchNoteImageLightboxProps = {
   src: string | null;
@@ -8,6 +17,11 @@ type PatchNoteImageLightboxProps = {
   onClose: () => void;
   closeLabel: string;
   dialogAriaLabel: string;
+  /** 여러 장 갤러리일 때 전체화면에서 좌우 스와이프·화살표 키 */
+  gallerySwipe?: {
+    onPrev: () => void;
+    onNext: () => void;
+  };
 };
 
 export function PatchNoteImageLightbox({
@@ -16,11 +30,89 @@ export function PatchNoteImageLightbox({
   onClose,
   closeLabel,
   dialogAriaLabel,
+  gallerySwipe,
 }: PatchNoteImageLightboxProps) {
+  const swipeStartRef = useRef<{
+    x: number;
+    y: number;
+    pointerId: number;
+  } | null>(null);
+
+  const handleGalleryPointerDown = useCallback(
+    (e: ReactPointerEvent<HTMLDivElement>) => {
+      if (!gallerySwipe) return;
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      swipeStartRef.current = {
+        x: e.clientX,
+        y: e.clientY,
+        pointerId: e.pointerId,
+      };
+      try {
+        e.currentTarget.setPointerCapture(e.pointerId);
+      } catch {
+        /* ignore */
+      }
+    },
+    [gallerySwipe]
+  );
+
+  const endGallerySwipe = useCallback(
+    (el: HTMLDivElement, e: ReactPointerEvent<HTMLDivElement>) => {
+      if (!gallerySwipe) return;
+      try {
+        el.releasePointerCapture(e.pointerId);
+      } catch {
+        /* ignore */
+      }
+      const start = swipeStartRef.current;
+      swipeStartRef.current = null;
+      if (!start || start.pointerId !== e.pointerId) return;
+      const dx = e.clientX - start.x;
+      const dy = e.clientY - start.y;
+      if (
+        Math.abs(dx) >= PATCH_NOTE_IMAGE_SWIPE_MIN_PX &&
+        Math.abs(dx) >= Math.abs(dy) * PATCH_NOTE_IMAGE_SWIPE_DOMINANCE_RATIO
+      ) {
+        if (dx > 0) gallerySwipe.onPrev();
+        else gallerySwipe.onNext();
+      }
+    },
+    [gallerySwipe]
+  );
+
+  const handleGalleryPointerUp = useCallback(
+    (e: ReactPointerEvent<HTMLDivElement>) => {
+      endGallerySwipe(e.currentTarget, e);
+    },
+    [endGallerySwipe]
+  );
+
+  const handleGalleryPointerCancel = useCallback(
+    (e: ReactPointerEvent<HTMLDivElement>) => {
+      swipeStartRef.current = null;
+      try {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      } catch {
+        /* ignore */
+      }
+    },
+    []
+  );
+
   useEffect(() => {
     if (!src) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
+      if (gallerySwipe) {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          gallerySwipe.onPrev();
+        }
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          gallerySwipe.onNext();
+        }
+      }
     };
     document.addEventListener('keydown', onKey);
     const prevOverflow = document.body.style.overflow;
@@ -29,7 +121,7 @@ export function PatchNoteImageLightbox({
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = prevOverflow;
     };
-  }, [src, onClose]);
+  }, [src, onClose, gallerySwipe]);
 
   if (!src) return null;
 
@@ -51,13 +143,21 @@ export function PatchNoteImageLightbox({
       >
         {closeLabel}
       </button>
-      {/* eslint-disable-next-line @next/next/no-img-element -- 라이트박스 동적 URL */}
-      <img
-        src={src}
-        alt={alt}
-        className='max-h-[90vh] max-w-[95vw] object-contain shadow-2xl'
+      <div
+        className='relative flex max-h-[90vh] max-w-[95vw] touch-pan-y select-none items-center justify-center'
         onClick={(e) => e.stopPropagation()}
-      />
+        onPointerDown={gallerySwipe ? handleGalleryPointerDown : undefined}
+        onPointerUp={gallerySwipe ? handleGalleryPointerUp : undefined}
+        onPointerCancel={gallerySwipe ? handleGalleryPointerCancel : undefined}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element -- 라이트박스 동적 URL */}
+        <img
+          src={src}
+          alt={alt}
+          className='max-h-[90vh] max-w-[95vw] object-contain shadow-2xl'
+          draggable={false}
+        />
+      </div>
     </div>
   );
 }

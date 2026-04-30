@@ -3,7 +3,6 @@
 import {
   type PointerEvent as ReactPointerEvent,
   useCallback,
-  useEffect,
   useMemo,
   useRef,
   useState,
@@ -11,6 +10,10 @@ import {
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { PatchNoteImageLightbox } from '@/components/patch-notes/PatchNoteImageLightbox';
 import type { PatchNoteLocale } from '@/data/patch-notes/types';
+import {
+  PATCH_NOTE_IMAGE_SWIPE_DOMINANCE_RATIO,
+  PATCH_NOTE_IMAGE_SWIPE_MIN_PX,
+} from '@/lib/patch-notes/patchNoteImageSwipe';
 import { patchNotesUi } from '@/lib/patch-notes/patchNotesUi';
 
 export type PatchNoteCarouselItem = {
@@ -32,10 +35,6 @@ function normalizeCarouselItems(raw: unknown): PatchNoteCarouselItem[] {
   return out;
 }
 
-const SWIPE_MIN_PX = 48;
-/** 수평 스와이프로 간주하려면 |dx|가 |dy|의 이 배수보다 커야 함 */
-const SWIPE_DOMINANCE_RATIO = 1.15;
-
 /** 패치노트 MDX — 이미지 캐러셀 + 클릭 시 라이트박스 확대 */
 export function PatchNoteImageCarousel({
   items,
@@ -48,30 +47,42 @@ export function PatchNoteImageCarousel({
   const slides = useMemo(() => normalizeCarouselItems(items), [items]);
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    if (slides.length === 0) return;
-    setIndex((i) => Math.min(i, slides.length - 1));
-  }, [slides.length]);
-  const [lightbox, setLightbox] = useState<{
-    src: string;
-    alt: string;
-  } | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  const safeIndex = slides.length > 0 ? index % slides.length : 0;
-  const current = slides[safeIndex];
+  const effectiveIndex =
+    slides.length === 0 ? 0 : Math.min(index, slides.length - 1);
+  const current = slides[effectiveIndex];
   const canNav = slides.length > 1;
 
   const go = useCallback(
     (delta: number) => {
       if (slides.length === 0) return;
-      setIndex((i) => (i + delta + slides.length) % slides.length);
+      setIndex((i) => {
+        const c = Math.min(i, slides.length - 1);
+        return (c + delta + slides.length) % slides.length;
+      });
     },
     [slides.length]
   );
 
-  const openLightbox = useCallback((src: string, alt: string) => {
-    setLightbox({ src, alt });
+  const openLightbox = useCallback(() => {
+    setLightboxOpen(true);
   }, []);
+
+  const closeLightbox = useCallback(() => {
+    setLightboxOpen(false);
+  }, []);
+
+  const gallerySwipePrev = useCallback(() => go(-1), [go]);
+  const gallerySwipeNext = useCallback(() => go(1), [go]);
+
+  const lightboxGallerySwipe = useMemo(
+    () =>
+      lightboxOpen && canNav
+        ? { onPrev: gallerySwipePrev, onNext: gallerySwipeNext }
+        : undefined,
+    [lightboxOpen, canNav, gallerySwipePrev, gallerySwipeNext]
+  );
 
   const swipeStartRef = useRef<{
     x: number;
@@ -111,8 +122,8 @@ export function PatchNoteImageCarousel({
       const dx = e.clientX - start.x;
       const dy = e.clientY - start.y;
       if (
-        Math.abs(dx) >= SWIPE_MIN_PX &&
-        Math.abs(dx) >= Math.abs(dy) * SWIPE_DOMINANCE_RATIO
+        Math.abs(dx) >= PATCH_NOTE_IMAGE_SWIPE_MIN_PX &&
+        Math.abs(dx) >= Math.abs(dy) * PATCH_NOTE_IMAGE_SWIPE_DOMINANCE_RATIO
       ) {
         suppressNextClickRef.current = true;
         go(dx > 0 ? -1 : 1);
@@ -161,7 +172,7 @@ export function PatchNoteImageCarousel({
                   suppressNextClickRef.current = false;
                   return;
                 }
-                openLightbox(current.src, current.alt ?? '');
+                openLightbox();
               }}
               aria-label={ui.imageExpandHint}
             >
@@ -203,11 +214,11 @@ export function PatchNoteImageCarousel({
                     key={i}
                     type='button'
                     role='tab'
-                    aria-selected={i === safeIndex}
+                    aria-selected={i === effectiveIndex}
                     aria-label={`${i + 1} / ${slides.length}`}
                     onClick={() => setIndex(i)}
                     className={
-                      i === safeIndex
+                      i === effectiveIndex
                         ? 'h-2 w-2 rounded-full bg-indigo-600 dark:bg-indigo-400'
                         : 'h-2 w-2 rounded-full bg-slate-300 transition-colors hover:bg-slate-400 dark:bg-slate-600 dark:hover:bg-slate-500'
                     }
@@ -220,11 +231,12 @@ export function PatchNoteImageCarousel({
       </section>
 
       <PatchNoteImageLightbox
-        src={lightbox?.src ?? null}
-        alt={lightbox?.alt ?? ''}
-        onClose={() => setLightbox(null)}
+        src={lightboxOpen ? current.src : null}
+        alt={lightboxOpen ? (current.alt ?? '') : ''}
+        onClose={closeLightbox}
         closeLabel={ui.lightboxClose}
         dialogAriaLabel={ui.lightboxImagePreview}
+        gallerySwipe={lightboxGallerySwipe}
       />
     </>
   );
