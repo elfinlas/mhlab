@@ -2,26 +2,32 @@
 
 import { useTheme } from '@/contexts/ThemeContext';
 
+const buttonClass =
+  'rounded-lg bg-slate-100 p-2 text-slate-600 transition-colors duration-200 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700';
+
+/** Tailwind 클래스 문자열은 SSR/클라 파이프라인에서 순서가 달라질 수 있어 크기는 속성으로 고정 */
+const ICON_PX = 20;
+
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
-  const handleClick = () => {
-    toggleTheme();
-  };
-
   return (
     <button
-      onClick={handleClick}
-      className='p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200'
+      type='button'
+      onClick={() => toggleTheme()}
+      className={buttonClass}
+      aria-label={theme === 'light' ? '다크모드로 변경' : '라이트모드로 변경'}
       title={theme === 'light' ? '다크모드로 변경' : '라이트모드로 변경'}
+      suppressHydrationWarning
     >
       {theme === 'light' ? (
-        // 달 아이콘 (다크모드)
         <svg
-          className='w-5 h-5'
+          width={ICON_PX}
+          height={ICON_PX}
           fill='none'
           viewBox='0 0 24 24'
           stroke='currentColor'
+          aria-hidden='true'
         >
           <path
             strokeLinecap='round'
@@ -31,12 +37,13 @@ export default function ThemeToggle() {
           />
         </svg>
       ) : (
-        // 태양 아이콘 (라이트모드)
         <svg
-          className='w-5 h-5'
+          width={ICON_PX}
+          height={ICON_PX}
           fill='none'
           viewBox='0 0 24 24'
           stroke='currentColor'
+          aria-hidden='true'
         >
           <path
             strokeLinecap='round'

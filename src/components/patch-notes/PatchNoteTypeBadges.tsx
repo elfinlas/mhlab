@@ -1,8 +1,9 @@
 import type { PatchNoteLocale, PatchNoteType } from '@/data/patch-notes/types';
+import { PATCH_NOTE_TYPE_BADGE_COLOR } from '@/lib/patch-notes/patchNoteTypeBadgeStyles';
 import { patchNoteTypeLabel } from '@/lib/patch-notes/typeLabels';
 
-const badgeClass =
-  'inline-flex rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-semibold text-indigo-800 dark:bg-indigo-950/80 dark:text-indigo-200';
+const badgeBase =
+  'inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset ring-black/[0.06] dark:ring-white/10';
 
 type PatchNoteTypeBadgesProps = {
   types: PatchNoteType[];
@@ -15,7 +16,7 @@ export function PatchNoteTypeBadges({ types, locale }: PatchNoteTypeBadgesProps)
       {types.map((t) => (
         <span
           key={t}
-          className={badgeClass}
+          className={`${badgeBase} ${PATCH_NOTE_TYPE_BADGE_COLOR[t]}`}
         >
           {patchNoteTypeLabel(t, locale)}
         </span>
