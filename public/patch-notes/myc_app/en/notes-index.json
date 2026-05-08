@@ -2,6 +2,28 @@
   "version": 1,
   "items": [
     {
+      "slug": "3.0.3",
+      "title": "MaWaCel 3.0.3 Patch Notes",
+      "types": [
+        "app",
+        "feature",
+        "fix",
+        "improvement"
+      ],
+      "createdAt": "2026-05-06",
+      "updatedAt": "2026-05-06"
+    },
+    {
+      "slug": "3.0.2",
+      "title": "마와셀 3.0.2 패치노트",
+      "types": [
+        "app",
+        "fix"
+      ],
+      "createdAt": "2026-05-01",
+      "updatedAt": "2026-05-01"
+    },
+    {
       "slug": "3.0.1",
       "title": "MaWaCel 3.0.1 Patch Notes",
       "types": [

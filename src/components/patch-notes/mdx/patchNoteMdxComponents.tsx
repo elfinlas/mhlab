@@ -7,6 +7,7 @@ import { PatchNoteHeroBanner } from './PatchNoteHeroBanner';
 import { PatchNoteCategoryItem } from './PatchNoteCategoryItem';
 import { PatchNoteImageCarousel } from './PatchNoteImageCarousel';
 import { PatchNoteSectionHeading } from './PatchNoteSectionHeading';
+import { PatchNoteWineRegionAppellationTable } from './PatchNoteWineRegionAppellationTable';
 
 type PatchNoteMdxComponents = NonNullable<
   ComponentProps<typeof MDXProvider>['components']
@@ -193,6 +194,18 @@ export function getPatchNoteMdxComponents(
     ),
     ImageCarousel: (props) => (
       <PatchNoteImageCarousel
+        {...props}
+        locale={locale}
+      />
+    ),
+    PatchNoteWineRegionAppellationTable: (props) => (
+      <PatchNoteWineRegionAppellationTable
+        {...props}
+        locale={locale}
+      />
+    ),
+    WineRegionAppellationTable: (props) => (
+      <PatchNoteWineRegionAppellationTable
         {...props}
         locale={locale}
       />

@@ -1,0 +1,539 @@
+---
+title: '마와셀 3.0.3 패치노트'
+type:
+  - app
+  - feature
+  - fix
+  - improvement
+createdAt: 2026-05-06
+updatedAt: 2026-05-06
+---
+
+# 3.0.3 버전 패치 안내
+
+<PatchNoteHeroBanner
+  title='와인'
+  subtitle='와인과 관련된 기능을 보완하고 개선하였습니다.'
+  bgImage='/patch-notes/myc_app/res/title/wine_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='와인 리스트 화면'
+  label={['업데이트']}
+  description='보유 기간 문제 수정'
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine02.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📆'
+  title='와인 리스트에서 보유 기간이 잘못 표기되는 문제 수정'
+  label={['업데이트']}
+/>
+
+- 와인 리스트에서 마심 상태 또는 마심 + 기록 상태 와인의 보유 기간이 잘못
+  표기되는 문제를 수정하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine02.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine03.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='와인 상세 화면'
+  label={['업데이트']}
+  description='와인명 복사 및 구입 일자 문제 수정'
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🖍️'
+  title='와인명 복사 기능'
+  label={['신규']}
+/>
+
+- 와인 상세 화면에서 와인명을 쉽게 복사하는 기능을 추가하였습니다.
+- 아이콘 및 와인명을 터치 시 와인명과 빈티지 정보가 복사됩니다.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_3/wine/wine01.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📆'
+  title='구입 정보에서 구입 일자가 보이지 않던 문제 수정'
+  label={['업데이트']}
+/>
+
+- 기존에 구입 일자를 등록하였음에도 보이지 않던 문제를 수정하였습니다.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_3/wine/wine05.webp', alt: '' }]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='와인 등록 화면'
+  label={['업데이트']}
+  description=''
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📆'
+  title='와인 복제 시 보관 시작일과 구입일 변경 처리'
+  label={['업데이트']}
+/>
+
+- 와인 복제 시 보관 시작일과 구입일이 복제하는 대상으로 맞춰지는 문제가
+  있었습니다.
+- 복제된 와인은 복제 당일 날짜로 지정되게 변경하였습니다.
+
+<PatchNoteSectionHeading
+  icon='🗺️'
+  title='와인 산지 지역 추가'
+  label={['업데이트']}
+/>
+
+- 신규 지역이 아래와 같이 추가되었습니다.
+
+<PatchNoteWineRegionAppellationTable
+  sections={[
+    {
+      title: '구세계 및 주요 유럽',
+      rows: [
+        {
+          country: '프랑스',
+          regions:
+            '포마르, 볼네, 코트 샬로네즈, 몽타뉴 드 랭스, 코트 데 블랑, 오브 (코트 데 바), 부브레, 반돌, 코르비에르',
+        },
+        {
+          country: '이탈리아',
+          regions:
+            '랑게, 로에로, 알토 아디제, 트렌토 (트렌토독), 몽테팔코 사그란티노, 바실리카타, 알리아니코 델 불투레',
+        },
+        {
+          country: '스페인',
+          regions:
+            '발데오라스, 캄포 데 보르하, 칼라타유드, 비노스 데 마드리드, 카나리아 제도, 바스크 (파이스 바스코)',
+        },
+        { country: '독일', regions: '아르, 뷔르템베르크' },
+        { country: '포르투갈', regions: '세투발, 아조레스' },
+        { country: '오스트리아', regions: '크렘스탈, 캄프탈, 빈 (비엔나)' },
+        { country: '헝가리', regions: '솜로, 섹사르드, 발라톤' },
+        { country: '그리스', regions: '세팔로니아, 드라마' },
+        { country: '루마니아', regions: '레카슈, 타르나베' },
+        { country: '불가리아', regions: '스트루마 밸리' },
+        { country: '세르비아', regions: '슈마디야' },
+        { country: '조지아', regions: '구리아, 사메그렐로' },
+        { country: '슬로베니아', regions: '브르다, 비파바 밸리' },
+        { country: '크로아티아', regions: '플레시비차' },
+        { country: '체코', regions: '미쿨로프' },
+        { country: '북마케도니아', regions: '펠라고니아' },
+        { country: '스위스', regions: '그라우뷘덴, 뇌샤텔' },
+        { country: '영국', regions: '서리' },
+      ],
+    },
+    {
+      title: '신세계 및 기타 지역',
+      rows: [
+        {
+          country: '미국',
+          regions: '앤더슨 밸리, 시에라 푸트힐스, 야키마 밸리',
+        },
+        {
+          country: '호주',
+          regions:
+            '애들레이드 힐즈, 에덴 밸리, 랭혼 크릭, 히스코트, 러더글렌, 질롱, 오렌지',
+        },
+        { country: '칠레', regions: '엘키 밸리, 산 안토니오 밸리' },
+        { country: '아르헨티나', regions: '라 리오하' },
+        {
+          country: '뉴질랜드',
+          regions: '캔터베리 (와이파라), 넬슨, 기즈번',
+        },
+        {
+          country: '남아프리카 공화국',
+          regions: '콘스탄시아, 엘긴, 로버트슨',
+        },
+        {
+          country: '캐나다',
+          regions: '나이아가라 펜인슐라, 오카나간 밸리, 노바 스코샤',
+        },
+        { country: '중국', regions: '윈난, 신장' },
+        { country: '일본', regions: '야마가타' },
+        { country: '우루과이', regions: '몬테비데오' },
+        { country: '브라질', regions: '발레 두 상 프란시스쿠' },
+        { country: '멕시코', regions: '케레타로' },
+        { country: '이스라엘', regions: '골란 고원, 네게브' },
+        { country: '튀르키예', regions: '카파도키아, 엘라즈으' },
+        { country: '러시아', regions: '크림' },
+        { country: '인도', regions: '딘도리, 숄라푸르' },
+        {
+          country: '모로코',
+          regions: '벤슬리만, 카사블랑카, 베르칸',
+        },
+        { country: '페루', regions: '모케과, 아레키파' },
+      ],
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🌏'
+  title='생산 국가 표시에서 주요 국가들을 위에 뜨게 처리'
+  label={['업데이트']}
+/>
+
+- 주요 생산국가가 상단에 표시되게 수정하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine10.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine11.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine12.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🎛️'
+  title='와인 대량 추가 등록 기능 추가'
+  label={['신규']}
+/>
+
+- 와인을 3개 이상 등록할 때 복제 기능으로는 불편한 점이 있었습니다.
+- 이를 위해 와인 대량 등록 추가 기능을 추가하였습니다.
+- 와인 등록 시 수량을 정할 수 있습니다.
+- 또는 와인 리스트 화면에서 대량 등록 화면으로 기존 와인을 가져올 수 있습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine06.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine07.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine08.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine09.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📆'
+  title='동일 와인 시음 적기를 일일이 입력해야 하는 문제'
+  label={['업데이트']}
+/>
+
+- 동일한 와인의 시음 적기를 일일이 입력해야 하는 문제가 있었습니다.
+- 이를 위해 동일 와인의 시음 적기를 공유하는 기능을 추가하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine13.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine14.webp', alt: '' },
+  ]}
+/>
+
+---
+
+<PatchNoteHeroBanner
+  title='시음 노트'
+  subtitle='시음노트 개선 및 별점 화면 개선'
+  bgImage='/patch-notes/myc_app/res/title/taste_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='아로마 가이드'
+  label={['업데이트']}
+  description='가이드가 비 정상적으로 동작'
+  bgImage='/patch-notes/myc_app/res/3_0_3/taste_note/tastenote02.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🔍'
+  title='가이드 검색 문제 수정'
+  label={['업데이트']}
+/>
+
+- 시음노트에서 아로마 가이드의 검색 필드가 제대로 동작하지 않는 문제를
+  수정하였습니다.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📋'
+  title='시음 노트 추가 및 수정'
+  label={['업데이트']}
+  description='신규 모드 및 재구매 여부 속성 추가'
+  bgImage='/patch-notes/myc_app/res/3_0_3/taste_note/tastenote04.webp'
+/>
+
+<br />
+
+<PatchNoteSectionHeading
+  icon='💸'
+  title='재구매 여부 속성 추가'
+  label={['신규']}
+/>
+
+- 와인을 마시고 나서 이 와인의 평점으로만 평점을 줄 수 있었습니다.
+- 하지만 평점말고, 해당 와인에 대한 재구매 여부도 중요한 정보입니다.
+- 이를 위해 재구매 여부 속성을 추가하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote04.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🖋️'
+  title='시음노트 기본 모드에 퀵 모드 추가하기'
+  label={['신규']}
+/>
+
+- 기본 모드에 퀵 모드 추가
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote07.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote08.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🗒️'
+  title='아로마 부분 미 선택 시 공백이 길게 생기는 문제'
+  label={['업데이트']}
+/>
+
+- 아로마를 선택하지 않았을 때 하단에 여백에 너무 길게 생성되는 문제가
+  있었습니다.
+- 이 문제를 해결하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote01.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='✴️'
+  title='아로마 강도 선택 모드 적용 시 첫 아로마의 강도 선택이 안되는 문제 수정'
+  label={['업데이트']}
+/>
+
+- 아로마 강도 모드 켰을 때 처음 선택하는 아로마에 값이 적용되지 않는 문제를
+  수정하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote02.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='✴️'
+  title='아로마 강도 선택 시 미리보기 하단에 강도 표시하기'
+  label={['신규']}
+/>
+
+- 아로마 선택 화면에서 아로마 강도를 선택하였음에도 강도 표시가 없어서
+  불편했습니다.
+- 이를 위해 아로마 강도 선택 시 미리보기 하단에 강도 표시하는 기능을
+  추가하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote03.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📋'
+  title='시음 노트 열람'
+  label={['업데이트']}
+  description='다크 모드 버그 및 별점 화면 개선'
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🌙'
+  title='다크 모드에서 마신 날짜의 아이콘 문제'
+  label={['업데이트']}
+/>
+
+- 다크모드에서 마신 날짜의 아이콘이 잘 보이지 않던 문제를 수정하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote05.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🌟'
+  title='별점 화면 개선 및 에니메이션 효과 추가'
+  label={['신규']}
+/>
+
+- 시음 노트의 별점의 색상과 표시 방식이 밋밋했습니다.
+- 이를 위해 별점의 색상과 표시 방식을 개선하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote06.gif',
+      alt: '',
+    },
+  ]}
+/>
+
+---
+
+<PatchNoteHeroBanner
+  title='설정'
+  subtitle='앱 설정 기능 개선'
+  bgImage='/patch-notes/myc_app/res/title/setting_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='⚙️'
+  title='백업 백업 및 복원 기능'
+  label={['업데이트']}
+  description='백업 복원 시 그래프 UI 변경 및 진행도 알림 개선'
+  bgImage='/patch-notes/myc_app/res/3_0_3/setting/setting01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='백업, 복원 시 그래프 UI 변경'
+  label={['업데이트']}
+/>
+
+- 백업 및 복원 시 그래프 UI 변경 처리가 있었습니다.
+- 이를 위해 백업 및 복원 시 그래프 UI 변경 처리를 추가하였습니다.
+- 복원 시 경과 시간을 표시하여 진행도 알림을 개선하였습니다.
+
+<PatchNoteCategoryItem
+  icon='📜'
+  title='패치노트'
+  label={['신규']}
+  description='직관적인 패치노트'
+  bgImage='/patch-notes/myc_app/res/3_0_3/setting/setting01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📜'
+  title='패치노트 열람 기능'
+  label={['신규']}
+/>
+
+- 스토어 내의 패치노트는 제공할 수 있는 정보가 제한적이었습니다.
+- 이를 위해 웹 서비스에서 패치노트를 제공하여, 더 자세한 정보를 확인할 수 있도록
+  하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/setting/setting01.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/setting/setting02.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📤'
+  title='와인 기본 저장소가 바로 적용되지 않는 문제'
+  label={['업데이트']}
+/>
+
+- 와인 기본 저장 장소를 설정했음에도 처음 진행할 때는 적용이 안되는 문제가
+  있었습니다.
+- 이 부분을 수정하였습니다.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🚦'
+  title='기타'
+  label={['업데이트']}
+  description='리스트 아이템을 쓸 때 스크롤 위치가 강제로 올라가는 문제 수정'
+  bgImage='/patch-notes/myc_app/res/3_0_3/setting/setting01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📁'
+  title='리스트 아이템을 쓸 때 스크롤 위치가 강제로 올라가는 문제 수정'
+  label={['업데이트']}
+/>
+
+- 와인 리스트, 시음노트 리스트, 셀러 리스트에서 상세 아이템으로 이동했다가
+  돌아오면 스크롤이 맨 처음으로 강제 이동하는 문제가 있었습니다.
+- 이 문제를 수정하였습니다.
+
+<PatchNoteSectionHeading
+  icon='🪪'
+  title='와인 ID, 시음 노트 ID 표시'
+  label={['신규']}
+/>
+
+- 와인과 시음노트에 Item Id를 보이게 처리하였습니다.
+- 와인의 경우 하단 기타 정보에 표시됩니다.
+- 시음 노트의 경우 하단에 정보가 표시됩니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/setting/setting05.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/setting/setting06.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+<PatchNoteSectionHeading
+  icon='⌨️'
+  title='키보드 패널 추가'
+  label={['신규']}
+/>
+
+- 키보드 패널을 추가하여 닫힘이 없는 환경을 위해 가상 키보드 위에 패널을
+  추가하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/setting/setting04.webp', alt: '' },
+  ]}
+/>

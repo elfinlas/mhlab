@@ -7,12 +7,12 @@
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "@swc/core",
+      "esbuild",
       "sharp",
       "unrs-resolver"
     ],
     "ignoredBuiltDependencies": [
       "core-js",
-      "esbuild",
       "protobufjs"
     ]
   },
@@ -20,10 +20,11 @@
     "build:patch-notes-index": "tsx scripts/build-patch-note-index.ts",
     "prebuild": "pnpm run build:patch-notes-index",
     "predev": "pnpm run build:patch-notes-index",
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.md,.mdx",
+    "lint:mdx": "eslint \"public/**/*.mdx\"",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -32,6 +33,7 @@
     "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@radix-ui/react-tabs": "^1.1.13",
+    "@tailwindcss/postcss": "^4.2.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
@@ -46,19 +48,19 @@
     "react-icons": "^5.6.0",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
+    "tailwindcss": "^4.2.2",
     "tailwind-merge": "^3.5.0",
     "tw-animate-css": "^1.4.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.2.1",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-mdx": "^3.6.2",
     "prettier": "^3.8.1",
-    "tailwindcss": "^4.2.2",
     "tsx": "^4.21.0",
     "typescript": "^5"
   }

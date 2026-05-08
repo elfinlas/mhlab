@@ -1,0 +1,544 @@
+---
+title: 'MaWaCell 3.0.3 Patch Notes'
+type:
+  - app
+  - feature
+  - fix
+  - improvement
+createdAt: 2026-05-06
+updatedAt: 2026-05-06
+---
+
+# 3.0.3 Patch Notes
+
+<PatchNoteHeroBanner
+  title='Wine'
+  subtitle='We have refined and improved wine-related features.'
+  bgImage='/patch-notes/myc_app/res/title/wine_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='Wine List Screen'
+  label={['Update']}
+  description='Fixed storage period display issue'
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine02.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📆'
+  title='Fixed incorrect holding period display in the wine list'
+  label={['Update']}
+/>
+
+- Fixed an issue where the holding period was displayed incorrectly for wines
+  marked as Drunk or Drunk + Logged in the wine list.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine02.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine03.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='Wine Detail Screen'
+  label={['Update']}
+  description='Wine name copy and purchase date fixes'
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🖍️'
+  title='Wine name copy feature'
+  label={['New']}
+/>
+
+- Added a feature to easily copy the wine name from the wine detail screen.
+- Tapping the icon or wine name copies both the wine name and vintage
+  information.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_3/wine/wine01.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📆'
+  title='Fixed issue where purchase date did not appear in purchase info'
+  label={['Update']}
+/>
+
+- Fixed an issue where the purchase date did not appear even when it had already
+  been entered.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_3/wine/wine05.webp', alt: '' }]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='Wine Registration Screen'
+  label={['Update']}
+  description=''
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📆'
+  title='Adjusted storage start date and purchase date when duplicating wine'
+  label={['Update']}
+/>
+
+- When duplicating a wine, the storage start date and purchase date were being
+  carried over from the original wine.
+- Duplicated wines are now set to the current date by default.
+
+<PatchNoteSectionHeading
+  icon='🗺️'
+  title='Added new wine regions'
+  label={['Update']}
+/>
+
+- New regions have been added as listed below.
+
+<PatchNoteWineRegionAppellationTable
+  sections={[
+    {
+      title: 'Old World and Major Europe',
+      rows: [
+        {
+          country: 'France',
+          regions:
+            'Pommard, Volnay, Côte Chalonnaise, Montagne de Reims, Côte des Blancs, Aube (Côte des Bar), Vouvray, Bandol, Corbières',
+        },
+        {
+          country: 'Italy',
+          regions:
+            'Langhe, Roero, Alto Adige, Trento (Trentodoc), Montefalco Sagrantino, Basilicata, Aglianico del Vulture',
+        },
+        {
+          country: 'Spain',
+          regions:
+            'Valdeorras, Campo de Borja, Calatayud, Vinos de Madrid, Canary Islands, Basque Country',
+        },
+        { country: 'Germany', regions: 'Ahr, Württemberg' },
+        { country: 'Portugal', regions: 'Setúbal, Azores' },
+        { country: 'Austria', regions: 'Kremstal, Kamptal, Wien (Vienna)' },
+        { country: 'Hungary', regions: 'Somló, Szekszárd, Balaton' },
+        { country: 'Greece', regions: 'Cephalonia, Drama' },
+        { country: 'Romania', regions: 'Recaș, Tarnave' },
+        { country: 'Bulgaria', regions: 'Struma Valley' },
+        { country: 'Serbia', regions: 'Šumadija' },
+        { country: 'Georgia', regions: 'Guria, Samegrelo' },
+        { country: 'Slovenia', regions: 'Brda, Vipava Valley' },
+        { country: 'Croatia', regions: 'Plešivica' },
+        { country: 'Czech Republic', regions: 'Mikulov' },
+        { country: 'North Macedonia', regions: 'Pelagonija' },
+        { country: 'Switzerland', regions: 'Graubünden, Neuchâtel' },
+        { country: 'United Kingdom', regions: 'Surrey' },
+      ],
+    },
+    {
+      title: 'New World and Other Regions',
+      rows: [
+        {
+          country: 'United States',
+          regions: 'Anderson Valley, Sierra Foothills, Yakima Valley',
+        },
+        {
+          country: 'Australia',
+          regions:
+            'Adelaide Hills, Eden Valley, Langhorne Creek, Heathcote, Rutherglen, Geelong, Orange',
+        },
+        { country: 'Chile', regions: 'Elqui Valley, San Antonio Valley' },
+        { country: 'Argentina', regions: 'La Rioja' },
+        {
+          country: 'New Zealand',
+          regions: 'Canterbury (Waipara), Nelson, Gisborne',
+        },
+        {
+          country: 'South Africa',
+          regions: 'Constantia, Elgin, Robertson',
+        },
+        {
+          country: 'Canada',
+          regions: 'Niagara Peninsula, Okanagan Valley, Nova Scotia',
+        },
+        { country: 'China', regions: 'Yunnan, Xinjiang' },
+        { country: 'Japan', regions: 'Yamagata' },
+        { country: 'Uruguay', regions: 'Montevideo' },
+        { country: 'Brazil', regions: 'Vale do São Francisco' },
+        { country: 'Mexico', regions: 'Querétaro' },
+        { country: 'Israel', regions: 'Golan Heights, Negev' },
+        { country: 'Türkiye', regions: 'Cappadocia, Elazığ' },
+        { country: 'Russia', regions: 'Crimea' },
+        { country: 'India', regions: 'Dindori, Solapur' },
+        {
+          country: 'Morocco',
+          regions: 'Benslimane, Casablanca, Berkane',
+        },
+        { country: 'Peru', regions: 'Moquegua, Arequipa' },
+      ],
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🌏'
+  title='Major producer countries are now shown at the top'
+  label={['Update']}
+/>
+
+- Updated the producer country list so major wine-producing countries appear at
+  the top.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine10.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine11.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine12.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🎛️'
+  title='Added bulk wine registration'
+  label={['New']}
+/>
+
+- The duplicate feature was inconvenient when registering three or more wines.
+- To improve this, we added a bulk wine registration feature.
+- You can now set a quantity when registering wines.
+- You can also import existing wines from the wine list into the bulk
+  registration screen.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine06.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine07.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine08.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine09.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📆'
+  title='Fixed manual re-entry issue for the same wine’s optimal tasting period'
+  label={['Update']}
+/>
+
+- Previously, users had to enter the optimal tasting period manually for each
+  duplicate of the same wine.
+- We added a feature to share the same optimal tasting period across identical
+  wines.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine13.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/wine/wine14.webp', alt: '' },
+  ]}
+/>
+
+---
+
+<PatchNoteHeroBanner
+  title='Tasting Notes'
+  subtitle='Improved tasting notes and enhanced the rating screen'
+  bgImage='/patch-notes/myc_app/res/title/taste_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='Aroma Guide'
+  label={['Update']}
+  description='Fixed abnormal guide behavior'
+  bgImage='/patch-notes/myc_app/res/3_0_3/taste_note/tastenote02.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🔍'
+  title='Fixed guide search issue'
+  label={['Update']}
+/>
+
+- Fixed an issue where the Aroma Guide search field in tasting notes did not
+  work properly.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📋'
+  title='Add / Edit Tasting Notes'
+  label={['Update']}
+  description='Added quick mode and repurchase status'
+  bgImage='/patch-notes/myc_app/res/3_0_3/taste_note/tastenote04.webp'
+/>
+
+<br />
+
+<PatchNoteSectionHeading
+  icon='💸'
+  title='Added repurchase intent field'
+  label={['New']}
+/>
+
+- Ratings alone often fall short of capturing a user's full impression after
+  tasting.
+- Repurchase intent is also an important piece of information.
+- To support this, we added a repurchase intent field.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote04.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🖋️'
+  title='Added Quick Mode to the default tasting note mode'
+  label={['New']}
+/>
+
+- Added Quick Mode to the default mode.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote07.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote08.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🗒️'
+  title='Fixed excessive blank space when no aroma was selected'
+  label={['Update']}
+/>
+
+- When no aroma was selected, an overly large blank area appeared at the bottom.
+- This issue has been resolved.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote01.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='✴️'
+  title='Fixed issue where the first aroma intensity could not be selected'
+  label={['Update']}
+/>
+
+- Fixed an issue where the first selected aroma did not receive an intensity
+  value when aroma intensity mode was enabled.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote02.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='✴️'
+  title='Show intensity labels at the bottom of preview when selecting aroma intensity'
+  label={['New']}
+/>
+
+- Even after selecting aroma intensity on the aroma selection screen, there was
+  no intensity indicator, which was inconvenient.
+- Added intensity labels at the bottom of the preview when aroma intensity is
+  selected.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote03.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📋'
+  title='Tasting Note View'
+  label={['Update']}
+  description='Dark mode bug fixes and rating screen improvements'
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🌙'
+  title='Fixed consumed-date icon visibility issue in dark mode'
+  label={['Update']}
+/>
+
+- Fixed an issue where the consumed-date icon was hard to see in dark mode.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote05.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🌟'
+  title='Improved rating UI and added animation effects'
+  label={['New']}
+/>
+
+- The color and presentation of the star ratings in tasting notes felt flat.
+- Improved both the color and display style of the rating UI.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_3/taste_note/tastenote06.gif',
+      alt: '',
+    },
+  ]}
+/>
+
+---
+
+<PatchNoteHeroBanner
+  title='Settings'
+  subtitle='Improvements to app settings features'
+  bgImage='/patch-notes/myc_app/res/title/setting_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='⚙️'
+  title='Backup and Restore'
+  label={['Update']}
+  description='Graph UI changes and improved progress notifications during restore'
+  bgImage='/patch-notes/myc_app/res/3_0_3/setting/setting01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='Updated graph UI during backup and restore'
+  label={['Update']}
+/>
+
+- Updated the graph UI shown during backup and restore.
+- Added elapsed time during restore to improve progress notifications.
+
+<PatchNoteCategoryItem
+  icon='📜'
+  title='Patch Notes'
+  label={['New']}
+  description='More intuitive patch notes'
+  bgImage='/patch-notes/myc_app/res/3_0_3/setting/setting01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📜'
+  title='Patch note viewing feature'
+  label={['New']}
+/>
+
+- Patch notes in app stores are limited in how much detail they can provide.
+- To address this, we now provide patch notes on the web service so users can
+  view more detailed information.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/setting/setting01.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/setting/setting02.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📤'
+  title='Fixed issue where default wine storage was not applied immediately'
+  label={['Update']}
+/>
+
+- Even after setting a default wine storage location, it was not applied on the
+  initial setup.
+- This issue has been fixed.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🚦'
+  title='Others'
+  label={['Update']}
+  description='Fixed forced scroll-to-top behavior when using list items'
+  bgImage='/patch-notes/myc_app/res/3_0_3/setting/setting01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📁'
+  title='Fixed forced scroll-to-top issue when opening list items'
+  label={['Update']}
+/>
+
+- In the wine list, tasting note list, and cellar list, returning from a detail
+  item sometimes forced the scroll position back to the top.
+- This issue has been fixed.
+
+<PatchNoteSectionHeading
+  icon='🪪'
+  title='Display Wine ID and Tasting Note ID'
+  label={['New']}
+/>
+
+- Item IDs are now shown for both wines and tasting notes.
+- For wines, the ID is shown in the lower miscellaneous info section.
+- For tasting notes, the ID is shown at the bottom.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/setting/setting05.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_3/setting/setting06.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+<PatchNoteSectionHeading
+  icon='⌨️'
+  title='Added keyboard panel'
+  label={['New']}
+/>
+
+- Added a panel above the virtual keyboard to improve usability in environments
+  where keyboard dismissal is not available.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_3/setting/setting04.webp', alt: '' },
+  ]}
+/>
