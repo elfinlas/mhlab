@@ -7,7 +7,7 @@ export function PatchNoteCategoryItem({
   label,
   description,
   bgImage,
-  overlayOpacity = 0.48,
+  overlayOpacity = 0.45,
 }: {
   /** 이모지 등 (선택) */
   icon?: string;
@@ -28,7 +28,7 @@ export function PatchNoteCategoryItem({
   const dim = Math.min(1, Math.max(0, overlayOpacity));
 
   const chipLight =
-    'rounded-lg border border-white/35 bg-white/15 px-2 py-0.5 text-xs font-semibold leading-snug text-white';
+    'rounded-lg border border-white/35 bg-white/20 px-2 py-0.5 text-xs font-semibold leading-snug text-white shadow-sm backdrop-blur-sm';
   const chipFlat =
     'rounded-lg border border-indigo-200/80 bg-indigo-50 px-2 py-0.5 text-xs font-semibold text-indigo-800 dark:border-indigo-500/35 dark:bg-indigo-950/50 dark:text-indigo-200';
 
@@ -38,7 +38,7 @@ export function PatchNoteCategoryItem({
         <div
           className={
             hasBg
-              ? 'flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/30 bg-white/15 text-2xl leading-none text-white'
+              ? 'flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/30 bg-white/15 text-2xl leading-none text-white shadow-sm backdrop-blur-sm'
               : 'flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-2xl leading-none dark:bg-slate-800/90'
           }
           aria-hidden
@@ -51,7 +51,7 @@ export function PatchNoteCategoryItem({
           <h3
             className={
               hasBg
-                ? 'text-lg font-semibold tracking-tight text-white'
+                ? 'text-lg font-semibold tracking-tight text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]'
                 : 'text-lg font-semibold tracking-tight text-slate-900 dark:text-white'
             }
           >
@@ -78,7 +78,7 @@ export function PatchNoteCategoryItem({
           <p
             className={
               hasBg
-                ? 'mt-2 text-sm leading-relaxed text-white/90'
+                ? 'mt-2 text-sm leading-relaxed text-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]'
                 : 'mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400'
             }
           >
@@ -103,17 +103,23 @@ export function PatchNoteCategoryItem({
       aria-label={title}
     >
       <div
-        className='absolute inset-0 bg-cover bg-center'
+        className='absolute inset-0 scale-105 bg-cover bg-center blur-[3px]'
         style={{ backgroundImage: `url(${bgUrl})` }}
         aria-hidden
       />
       <div
         className='absolute inset-0 bg-black'
-        style={{ opacity: dim }}
+        style={{ opacity: dim * 0.45 }}
+        aria-hidden
+      />
+      <div
+        className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/35 to-transparent'
         aria-hidden
       />
       <div className='relative flex min-h-[9rem] flex-col justify-end px-4 pb-4 pt-10 md:min-h-[10rem] md:px-6 md:pb-5 md:pt-12'>
-        {body}
+        <div className='rounded-xl border border-white/15 bg-black/25 p-3 shadow-md backdrop-blur-sm md:p-4'>
+          {body}
+        </div>
       </div>
     </section>
   );

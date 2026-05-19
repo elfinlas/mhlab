@@ -1,0 +1,508 @@
+---
+title: '마와셀 3.0.4 패치노트'
+type:
+  - app
+  - fix
+  - improvement
+createdAt: 2026-05-19
+updatedAt: 2026-05-19
+---
+
+# 3.0.4 버전 패치 안내
+
+<PatchNoteCallout variant='info'>
+  이번 패치에서는 일부 크리티컬한 버그 수정, 몇 가지 기능에 대한 편리성 개선
+  작업을 진행하였습니다. <br />
+  아래 패치 내역에서 상세한 정보를 확인하실 수 있습니다.
+</PatchNoteCallout>
+
+<br />
+
+<PatchNoteHeroBanner
+  title='와인'
+  subtitle='와인과 관련된 기능을 보완하고 개선하였습니다.'
+  bgImage='/patch-notes/myc_app/res/title/wine_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='와인 리스트 화면'
+  label={['업데이트']}
+  description='필터 UI 개선'
+  bgImage='/patch-notes/myc_app/res/3_0_4/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🔎'
+  title='필터 적용 UI 개선'
+  label={['업데이트']}
+/>
+
+- 필터 적용 시 상단에 너무 크게 표시되어, 검색 결과의 화면을 가리는 문제가
+  있었습니다.
+- 접힘, 펼침 버튼을 추가하여 필터 적용 시 검색 결과의 화면을 가리는 문제를
+  해결하였습니다.
+- 사진 첨부
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine01.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine02.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📤'
+  title='와인 일괄 이동 기능 개선'
+  label={['업데이트']}
+/>
+
+- 기존 일괄 이동의 경우 사용 방법이 복잡하고, 이동할 와인을 선별하는 부분이
+  어려웠습니다.
+- 완전히 새롭게 개편하였습니다.
+- 이동 대상 셀러를 선정 후, 이동할 와인을 선택하게끔 변경하였습니다.
+- 또한 와인의 정보를 추가적으로 제공하여 이동할 와인을 선택할 때 도움이 되도록
+  개선하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine03.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine04.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine05.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine06.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine07.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine08.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='와인 등록 및 수정 화면'
+  label={['수정', '업데이트']}
+  description='대량 복제 시 와인이 다 나오지 않는 문제 수정'
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🔄'
+  title='대량 복제 시 와인이 다 나오지 않는 문제 수정'
+  label={['업데이트']}
+/>
+
+- 대량 복제 대상 와인이 전부 표시되지 않고, 보관 상태만 보여지는 문제가
+  있었습니다.
+- 해당 문제를 수정하였습니다.
+
+<PatchNoteSectionHeading
+  icon='🔄'
+  title='지역 비우기 기능 추가'
+  label={['신규']}
+/>
+
+- 한번 지역을 선택하면 지울 수 없는 문제가 있었습니다.
+- 지역을 선택하면 지역을 지우는 버튼을 추가하였습니다.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_4/wine/wine09.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🗺️'
+  title='와인 산지 지역 추가'
+  label={['업데이트']}
+/>
+
+- 신규 지역이 아래와 같이 추가되었습니다.
+- 3.0.3 버전에서 추가된 지역 외에 신규 지역이 추가되었습니다.
+
+<PatchNoteWineRegionAppellationTable
+  sections={[
+    {
+      title: '구세계 및 주요 유럽',
+      rows: [
+        {
+          country: '프랑스',
+          regions:
+            '리스트락-메독, 무리스-앙-메독, 푸이-퓌세, 샤샤뉴-몽라셰, 알록스-코르통, 라스토, 발레 드 라 마른, 코트 드 세잔, 앙주, 소뮈르',
+        },
+        {
+          country: '이탈리아',
+          regions:
+            '베르나차 디 산 지미냐노, 모렐리노 디 스칸사노, 아마로네 델라 발폴리첼라, 발폴리첼라 리파소, 가티나라, 피아노 디 아벨리노, 그레코 디 투포, 에밀리아-로마냐, 람브루스코',
+        },
+        {
+          country: '스페인',
+          regions: '카바, 차콜리, 발렌시아, 우티엘-레케나',
+        },
+        {
+          country: '독일',
+          regions: '헤센 베르크슈트라세',
+        },
+        {
+          country: '포르투갈',
+          regions: '테주, 포르투 (포트 와인)',
+        },
+        {
+          country: '조지아',
+          regions: '킨즈마라울리, 묵자니',
+        },
+        {
+          country: '오스트리아',
+          regions: '와하우',
+        },
+      ],
+    },
+    {
+      title: '신세계 및 기타 지역',
+      rows: [
+        {
+          country: '미국',
+          regions: '야힐-카니로스, 던디 힐스, 러더포드, 오크빌',
+        },
+        {
+          country: '칠레',
+          regions: '아팔타',
+        },
+        {
+          country: '호주',
+          regions: '그레이트 서던',
+        },
+        {
+          country: '뉴질랜드',
+          regions: '와이라우 밸리, 아와테레 밸리',
+        },
+      ],
+    },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='와인 상세 화면'
+  label={['업데이트']}
+  description='와인명 복사 및 구입 일자 문제 수정'
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🔄'
+  title='상세 화면의 이동 방법 변경'
+  label={['신규']}
+/>
+
+- 리스트에서 와인을 상세화면으로 이동 후, 다른 와인을 보려면 다시 리스트 이동 후
+  선택했어야 했습니다.
+- 이번 패치로 인해 상세 화면에서 좌우 스와이프 시 다음 와인으로 이동하는 기능이
+  추가되었습니다.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_4/wine/wine10.webp', alt: '' }]}
+/>
+
+---
+
+<PatchNoteHeroBanner
+  title='시음 노트'
+  subtitle='검색 및 필터 기능 개선 및 화면 UI 개선'
+  bgImage='/patch-notes/myc_app/res/title/taste_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📋'
+  title='시음 노트 리스트 화면'
+  label={['업데이트']}
+  description='검색 기능 개선'
+  bgImage='/patch-notes/myc_app/res/3_0_4/taste_note/tastenote01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🔍'
+  title='검색 기능이 안되는 문제 수정'
+  label={['업데이트']}
+/>
+
+- 시음 노트 검색 시 잘못된 화면 표시 및 기능이 정상적으로 동작하지 않던 문제를
+  수정하였습니다.
+
+<PatchNoteSectionHeading
+  icon='🔢'
+  title='검색 기능에서 검색 항목 UI 변경'
+  label={['업데이트']}
+/>
+
+- 기존에는 드랍다운 형태로 되어 있어서 항목 선택 시 불편함이 있었습니다.
+- 이를 위해 버튼 형태로 변경하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote01.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote02.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🔎'
+  title='필터 적용 UI 개선'
+  label={['업데이트']}
+/>
+
+- 필터 적용 시 상단에 너무 크게 표시되어, 검색 결과의 화면을 가리는 문제가
+  있었습니다.
+- 접힘, 펼침 버튼을 추가하여 필터 적용 시 검색 결과의 화면을 가리는 문제를
+  해결하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote03.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📅'
+  title='달력 화면 UI 개선'
+  label={['업데이트']}
+/>
+
+- 기존 달력 화면은 상단의 달력을 접고 봐야 하는 불편함이 있었습니다.
+- 이번 패치에서는 화면 자체 스크롤을 활성화 하여 보기 편하도록 개선하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote04.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote05.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📋'
+  title='시음 노트 추가 및 수정'
+  label={['업데이트']}
+  description='신규 모드 및 재구매 여부 속성 추가'
+  bgImage='/patch-notes/myc_app/res/3_0_4/taste_note/tastenote06.webp'
+/>
+
+<br />
+
+<PatchNoteSectionHeading
+  icon='✍️'
+  title='시음노트 수정 시 아로마 및 기타 화면 하단의 UI 문제'
+  label={['업데이트']}
+/>
+
+- 3.0.3 패치에서는 추가 할 때만 수정하고, 수정은 동일한 문제가 노출되는 문제가
+  있었습니다.
+- 이번 패치에서는 수정 부분도 개선하였습니다.
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='시음노트 상세 화면 UI 개선'
+  label={['업데이트']}
+/>
+
+- 기존 상세 화면의 경우 시음 데이터를 입력하는 부분이 복잡하게 구성되어
+  있었으며, 구조적으로도 불편함이 있었습니다.
+- 이번 패치에서는 <b>외관</b>, <b>팔랫</b>, <b>질감</b>, <b>아로마</b>,
+  <b>여운&서빙</b>, <b>메모</b> 항목으로 나누어 보기 편하도록 개선하였습니다.
+- 와인 시음 흐름에 맞게끔 구조를 변경하여 편리성 향상을 도모하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote06.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote07.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote08.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote09.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote10.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote11.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote12.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote13.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote14.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+---
+
+<PatchNoteHeroBanner
+  title='와인 셀러'
+  subtitle='와인 셀러 관리 및 보관 위치 표시 기능 개선'
+  bgImage='/patch-notes/myc_app/res/title/cellar_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🕋'
+  title='와인 셀러 리스트'
+  label={['업데이트']}
+  description='네비게이션 버튼 문제 해결'
+  bgImage='/patch-notes/myc_app/res/3_0_0/cellar/cellar01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🚪'
+  title='네비게이션 동작 문제'
+  label={['업데이트']}
+/>
+
+- 셀러 리스트 화면에서 네비게이션 버튼을 두 번 눌러야 메인 화면으로 이동했던
+  문제를 수정하였습니다.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🕋'
+  title='와인 셀러 열람'
+  label={['업데이트']}
+  description='스크롤 문제 및 보관 와인 열람 방법 추가'
+  bgImage='/patch-notes/myc_app/res/3_0_0/cellar/cellar01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='↕️'
+  title='셀러 열람 화면 스크롤 문제'
+  label={['업데이트']}
+/>
+
+- 셀러 내 보유 와인을 조회 후 돌아오면 스크롤이 항상 위로 가 있는 문제가
+  있었습니다.
+- 이제는 스크롤이 원래 위치로 돌아가도록 개선하였습니다.
+
+<PatchNoteSectionHeading
+  icon='📚'
+  title='보관 와인 열람 방법 추가'
+  label={['업데이트']}
+/>
+
+- 기존 와인과 시음 노트와 동일한 방법으로 열람 방법을 추가하였습니다.
+
+---
+
+<PatchNoteHeroBanner
+  title='설정'
+  subtitle='앱 설정 기능 개선'
+  bgImage='/patch-notes/myc_app/res/title/setting_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='⚙️'
+  title='오픈 소스 가이드'
+  label={['신규']}
+  description='오픈 소스 가이드 화면 추가'
+  bgImage='/patch-notes/myc_app/res/3_0_3/setting/setting01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='오픈 소스 가이드 화면 추가'
+  label={['신규']}
+/>
+
+- 오픈 소스 사용 라이선스 화면을 추가하였습니다.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/setting/setting01.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/setting/setting02.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<br />
+
+---
+
+# 다음 패치 예정 내역
+
+다음 패치에는 몇 가지 사용성을 개선하는 작업을 진행할 예정입니다. <br/>아래는
+패치 예정 리스트 이며, 내역은 확정된 내역은 아니며, 변경될 수 있습니다. <br/>
+
+적용될 버전은 3.0.5 또는 3.1.0 버전에 적용될 수 있습니다.<br /> 다음 버전은
+3.0.5 이며, 웹 로그인 기능 등을 추가한 3.1.0 버전이 출시될 예정입니다.
+
+## 홈 화면
+
+- 홈 화면 UI 개선 (3.1.0)
+
+## 와인
+
+- 와인 등록 시 정보 웹에서 받아오는 기능 (3.1.0)
+- 포도 품종 데이터 추가 (3.1.0)
+- 요약 화면 재구성 (3.0.5)
+
+## 시음 노트
+
+- 재구매 여부 필터 기능 추가 (3.0.5)
+- 요약 화면 재구성 (3.0.5)
+
+## 와인 셀러
+
+- 셀러의 보유 와인 화면 UI 개선 (3.0.5)
+- 셀러 요약 화면 재구성 (-)
+
+## 기타
+
+- 다국어 출시 (일본어, 프랑스어) (3.0.5)
+- 와인 지식 관련 화면 추가 (-)
+- 마와셀 웹 버전 출시 및 연동 (3.1.0 or 3.1.1)
+
+<br />
+
+앞으로 더 많은 기능을 제공할 예정이며, 즐거운 와인 생활 하시길 바랍니다.

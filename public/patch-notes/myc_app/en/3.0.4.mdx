@@ -1,0 +1,525 @@
+---
+title: 'MaWaCel 3.0.4 Patch Notes'
+type:
+  - app
+  - fix
+  - improvement
+createdAt: 2026-05-19
+updatedAt: 2026-05-19
+---
+
+# Version 3.0.4 Update Guide
+
+<PatchNoteCallout variant='info'>
+  In this update, we have resolved several critical bugs and implemented various
+  usability improvements to enhance your experience. <br />
+  Please review the detailed patch notes below for more information.
+</PatchNoteCallout>
+
+<br />
+
+<PatchNoteHeroBanner
+  title='Wine Management'
+  subtitle='Enhanced and refined various features related to your wine collection.'
+  bgImage='/patch-notes/myc_app/res/title/wine_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='Wine List Screen'
+  label={['Update']}
+  description='Improved Filter UI'
+  bgImage='/patch-notes/myc_app/res/3_0_4/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🔎'
+  title='Improved Active Filter UI'
+  label={['Update']}
+/>
+
+- Previously, the active filter section at the top occupied too much screen
+  space, occasionally obstructing search results.
+- We have introduced a collapsible/expandable button to toggle the filter
+  display, ensuring an unobstructed view of your search results.
+- Attached screenshot
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine01.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine02.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📤'
+  title='Enhanced Batch Wine Relocation Feature'
+  label={['Update']}
+/>
+
+- The previous batch relocation workflow was complex, making it difficult to
+  select and filter target wines for moving.
+- This system has been completely redesigned.
+- You can now select the target destination cellar first, and then choose the
+  wines you wish to move.
+- Additionally, richer contextual wine data is now provided on the selection
+  screen to help you pick the right bottles more easily.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine03.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine04.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine05.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine06.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine07.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_0_4/wine/wine08.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='Add & Edit Wine Screen'
+  label={['Fix', 'Update']}
+  description='Fixed an issue where some wines were missing during batch duplication'
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🔄'
+  title='Fixed Batch Duplication Display Issue'
+  label={['Update']}
+/>
+
+- Resolved an issue where target wines were occasionally omitted during batch
+  duplication, displaying only their storage status.
+- This bug has been successfully resolved.
+
+<PatchNoteSectionHeading
+  icon='🔄'
+  title='Added "Clear Region" Feature'
+  label={['New']}
+/>
+
+- Previously, once a wine region was selected, it could not be cleared or reset.
+- We have added a "Clear Region" button that appears once a region has been
+  chosen.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_4/wine/wine09.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🗺️'
+  title='Added New Wine Regions'
+  label={['Update']}
+/>
+
+- New wine regions have been added to our database following the updates in
+  version 3.0.3, expanding your tracking capabilities:
+
+<PatchNoteWineRegionAppellationTable
+  sections={[
+    {
+      title: 'Old World & Major Europe',
+      rows: [
+        {
+          country: 'France',
+          regions:
+            'Listrac-Médoc, Moulis-en-Médoc, Pouilly-Fuissé, Chassagne-Montrachet, Aloxe-Corton, Rasteau, Vallée de la Marne, Côte de Sézanne, Anjou, Saumur',
+        },
+        {
+          country: 'Italy',
+          regions:
+            'Vernaccia di San Gimignano, Morellino di Scansano, Amarone della Valpolicella, Valpolicella Ripasso, Gattinara, Fiano di Avellino, Greco di Tufo, Emilia-Romagna, Lambrusco',
+        },
+        {
+          country: 'Spain',
+          regions: 'Cava, Txakoli, Valencia, Utiel-Requena',
+        },
+        {
+          country: 'Germany',
+          regions: 'Hessische Bergstraße',
+        },
+        {
+          country: 'Portugal',
+          regions: 'Tejo, Porto (Port Wine)',
+        },
+        {
+          country: 'Georgia',
+          regions: 'Kindzmarauli, Mukuzani',
+        },
+        {
+          country: 'Austria',
+          regions: 'Wachau',
+        },
+      ],
+    },
+    {
+      title: 'New World & Other Regions',
+      rows: [
+        {
+          country: 'USA',
+          regions: 'Yamhill-Carlton, Dundee Hills, Rutherford, Oakville',
+        },
+        {
+          country: 'Chile',
+          regions: 'Apalta',
+        },
+        {
+          country: 'Australia',
+          regions: 'Great Southern',
+        },
+        {
+          country: 'New Zealand',
+          regions: 'Wairau Valley, Awatere Valley',
+        },
+      ],
+    },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🍷'
+  title='Wine Detail Screen'
+  label={['Update']}
+  description='Changed navigation method inside the Detail view'
+  bgImage='/patch-notes/myc_app/res/3_0_3/wine/wine01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🔄'
+  title='Improved Detail Screen Navigation'
+  label={['New']}
+/>
+
+- Previously, to view a different wine after opening a detail screen, you had to
+  manually return to the list view and select another entry.
+- With this patch, you can now seamlessly swipe left or right on the detail
+  screen to navigate to the next or previous wine.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_0_4/wine/wine10.webp', alt: '' }]}
+/>
+
+---
+
+<PatchNoteHeroBanner
+  title='Tasting Notes'
+  subtitle='Refined search, filters, and a major overhaul to the tasting note entry UI.'
+  bgImage='/patch-notes/myc_app/res/title/taste_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📋'
+  title='Tasting Note List Screen'
+  label={['Update']}
+  description='Improved Search Functionality'
+  bgImage='/patch-notes/myc_app/res/3_0_4/taste_note/tastenote01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🔍'
+  title='Fixed Tasting Note Search Bug'
+  label={['Update']}
+/>
+
+- Fixed an issue where the screen rendered incorrectly or failed to execute
+  searches properly when looking up tasting notes.
+
+<PatchNoteSectionHeading
+  icon='🔢'
+  title='Redesigned Search Criteria UI'
+  label={['Update']}
+/>
+
+- The previous dropdown menu style for selecting search parameters caused minor
+  friction.
+- This has been updated to an intuitive button-based layout for faster toggling.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote01.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote02.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🔎'
+  title='Improved Active Filter UI'
+  label={['Update']}
+/>
+
+- Addressed an issue where active filters occupied too much space at the top of
+  the screen and covered search results.
+- Added expand/collapse buttons to minimize the filter overlay when browsing
+  search outcomes.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote03.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📅'
+  title='Enhanced Calendar Screen Usability'
+  label={['Update']}
+/>
+
+- The previous calendar layout required users to manually collapse the upper
+  calendar grid to see list details comfortably.
+- In this patch, we have enabled seamless overall screen scrolling for a more
+  natural browsing experience.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote04.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote05.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='📋'
+  title='Add & Edit Tasting Note'
+  label={['Update']}
+  description='Introduced structured tasting layout and repurchase attribute'
+  bgImage='/patch-notes/myc_app/res/3_0_4/taste_note/tastenote06.webp'
+/>
+
+<br />
+
+<PatchNoteSectionHeading
+  icon='✍️'
+  title='Fixed Bottom UI Issue in Edit Mode'
+  label={['Update']}
+/>
+
+- While the bottom UI bug on the Aromas and Miscellaneous screens was fixed for
+  creating entries in v3.0.3, it persisted when editing existing notes.
+- This patch successfully extends the UI fix to the entry modification screen as
+  well.
+
+<PatchNoteSectionHeading
+  icon='🎨'
+  title='Overhauled Tasting Note Entry UI Flow'
+  label={['Update']}
+/>
+
+- The previous entry screen had a dense and visually cluttered layout for
+  inputting raw tasting data, resulting in structural friction.
+- This version completely restructures the layout into six clear, chronological
+  sections following a natural tasting workflow: <b>Look</b>, <b>Palate</b>,
+  <b>Texture</b>, <b>Aromas</b>, <b>Finish & Serving</b>, and <b>Journal</b>.
+  This update ensures significantly higher convenience and clarity.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote06.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote07.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote08.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote09.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote10.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote11.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote12.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote13.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/taste_note/tastenote14.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+---
+
+<PatchNoteHeroBanner
+  title='Wine Cellar'
+  subtitle='Refined cellar management and improved storage location mapping.'
+  bgImage='/patch-notes/myc_app/res/title/cellar_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🕋'
+  title='Wine Cellar List'
+  label={['Update']}
+  description='Resolved navigation button friction'
+  bgImage='/patch-notes/myc_app/res/3_0_0/cellar/cellar01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🚪'
+  title='Fixed Double-Tap Navigation Bug'
+  label={['Update']}
+/>
+
+- Fixed an issue on the cellar list screen where the navigation button had to be
+  pressed twice to return to the main dashboard.
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='🕋'
+  title='Cellar Inspection View'
+  label={['Update']}
+  description='Fixed scroll state reset and added a alternative inventory view'
+  bgImage='/patch-notes/myc_app/res/3_0_0/cellar/cellar01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='↕️'
+  title='Fixed Cellar View Scroll Reset Issue'
+  label={['Update']}
+/>
+
+- Previously, when returning to the cellar inspection view after browsing a
+  specific stored wine, the scroll bar would automatically jump back to the very
+  top.
+- The scroll behavior has been corrected to preserve your previous location.
+
+<PatchNoteSectionHeading
+  icon='📚'
+  title='Added Stored Wine Inventory View Method'
+  label={['Update']}
+/>
+
+- Introduced a standardized inventory viewing framework consistent with the core
+  wine list and tasting note interfaces.
+
+---
+
+<PatchNoteHeroBanner
+  title='Settings'
+  subtitle='Upgraded global application configuration options.'
+  bgImage='/patch-notes/myc_app/res/title/setting_title.webp'
+/>
+
+<br />
+
+<PatchNoteCategoryItem
+  icon='⚙️'
+  title='Open Source Guide'
+  label={['New']}
+  description='Added a dedicated Open Source Guide interface'
+  bgImage='/patch-notes/myc_app/res/3_0_3/setting/setting01.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='📊'
+  title='New Open Source License Dashboard'
+  label={['New']}
+/>
+
+- Added a dedicated open-source compliance screen to properly track and display
+  third-party software library licenses.
+
+<PatchNoteImageCarousel
+  items={[
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/setting/setting01.webp',
+      alt: '',
+    },
+    {
+      src: '/patch-notes/myc_app/res/3_0_4/setting/setting02.webp',
+      alt: '',
+    },
+  ]}
+/>
+
+<br />
+
+---
+
+# Upcoming Features Roadmap
+
+The upcoming updates will focus on further refining day-to-day usability.
+
+<br />
+Below is a preliminary roadmap for future development. Please note that these
+items are subject to change based on QA testing and development priorities.
+<br />
+
+These changes will be integrated into versions 3.0.5 or 3.1.0. <br />The
+immediate next release will be v3.0.5, followed by v3.1.0 which will introduce
+web authentication and cloud integration features.
+
+## Home Dashboard
+
+- Home Screen UI Overhaul (v3.1.0)
+
+## Wine Management
+
+- Web-powered Auto-Fill for wine registration data (v3.1.0)
+- Expanded Grape Varietals Database (v3.1.0)
+- Redesigned Wine Summary Analytics (v3.0.5)
+
+## Tasting Notes
+
+- Added Filter criteria for "Repurchase Intent" (v3.0.5)
+- Redesigned Tasting Summary Dashboard (v3.0.5)
+
+## Wine Cellar
+
+- Enhanced UI for in-cellar inventory lists (v3.0.5)
+- Restructured Cellar Summary Metrics (-)
+
+## Miscellaneous
+
+- Multi-language localization support (Japanese, French) (v3.0.5)
+- Added Wine Knowledge & Educational Reference screen (-)
+- Launch and cloud synchronization for the MaWaCel Web Platform (v3.1.0 or
+  v3.1.1)
+
+<br />
+
+We are committed to bringing you more advanced features. Wishing you a wonderful
+and delightful wine journey!

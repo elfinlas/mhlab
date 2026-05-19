@@ -2,6 +2,17 @@
   "version": 1,
   "items": [
     {
+      "slug": "3.0.4",
+      "title": "마와셀 3.0.4 패치노트",
+      "types": [
+        "app",
+        "fix",
+        "improvement"
+      ],
+      "createdAt": "2026-05-19",
+      "updatedAt": "2026-05-19"
+    },
+    {
       "slug": "3.0.3",
       "title": "마와셀 3.0.3 패치노트",
       "types": [
