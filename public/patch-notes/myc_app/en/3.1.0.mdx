@@ -1,0 +1,401 @@
+---
+title: 'MaWaCel 3.1.0 Patch Notes'
+type:
+  - app
+  - fix
+  - improvement
+createdAt: 2026-10-31
+updatedAt: 2026-10-31
+---
+
+# Version 3.1.0 Update Guide
+
+<PatchNoteCallout variant='info'>
+  This update includes usability improvements, fixes for incorrectly functioning
+  features, and various bug fixes. <br />
+  Please see the details below for a complete list of changes.
+</PatchNoteCallout>
+
+<br />
+
+<PatchNoteHeroBanner
+  title='Wine Management'
+  subtitle='Enhanced and refined various features related to your wine collection.'
+  bgImage='/patch-notes/myc_app/res/title/wine_title.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='↕️'
+  title='Added Jump to First and Last Item in Wine Lists'
+  label={['new']}
+/>
+
+- Added the ability to quickly jump to the first or last item in a wine list.
+- These options are available above the menu button, making it easier to
+  navigate long lists.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_1_0/wine/wine01.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📅'
+  title='Improved Drinking Window Selection When Adding or Editing Wines'
+  label={['update']}
+/>
+
+- Previously, the vintage selection range when entering a drinking window was
+  unnecessarily wide.
+- The selection range has been narrowed to make it easier to browse and select
+  the desired vintage
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine02.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine03.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine04.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📅'
+  title='Added Bulk Drinking Window Assignment'
+  label={['new']}
+/>
+
+- Previously, when setting a drinking window for a wine, the information was
+  only applied to the selected wine, even when identical wines existed in your
+  collection.
+- Now, drinking window information is automatically applied to all matching
+  wines in your collection.
+
+<PatchNoteSectionHeading
+  icon='📝'
+  title='Improved Wine Storage Duration Display'
+  label={['update']}
+/>
+
+- Previously, wines registered on the current day were displayed with a storage
+  duration of 0 days.
+- Updated the wording to display the storage duration more appropriately for
+  wines added on the same day.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_1_0/wine/wine05.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🗂️'
+  title='Fixed Incorrect Index Display in Wine Lists'
+  label={['update']}
+/>
+
+- Fixed an issue where index values were not displayed correctly when they
+  reached three digits.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_1_0/wine/wine06.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📄'
+  title='Fixed Incorrect Storage Location Display'
+  label={['update']}
+/>
+
+- Fixed an issue where incorrect storage location information was displayed
+  after changing the shelf level of a wine.
+
+<PatchNoteSectionHeading
+  icon='🔍'
+  title='Fixed Search Filters Not Being Applied'
+  label={['update']}
+/>
+
+- Fixed an issue where filters were not properly applied when searching for wine
+  names in the wine list.
+
+<PatchNoteSectionHeading
+  icon='🔄'
+  title='Fixed Filters Not Being Applied During Wine Navigation'
+  label={['update']}
+/>
+
+- Fixed an issue where navigating between wines using the previous and next
+  buttons on the wine detail screen did not respect the currently applied
+  filters.
+
+<PatchNoteSectionHeading
+  icon='🚪'
+  title='Fixed Missing Storage Location Information'
+  label={['update']}
+/>
+
+- Fixed an issue where wines without assigned slot information did not display
+  their storage location on the wine detail screen.
+- When no slot is assigned, the display will now indicate the shelf level where
+  the wine is stored.
+
+<PatchNoteImageCarousel
+  items={[{ src: '/patch-notes/myc_app/res/3_1_0/wine/wine07.webp', alt: '' }]}
+/>
+
+<PatchNoteSectionHeading
+  icon='💬'
+  title='Fixed Long Wine Names Not Displaying Correctly'
+  label={['update']}
+/>
+
+- Fixed an issue where long wine names were not displayed correctly.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine14.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine15.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='📤'
+  title='Completely Redesigned Bulk Wine Transfer'
+  label={['update']}
+/>
+
+- The original bulk wine transfer feature was difficult to use and unnecessarily
+  complicated, so it was redesigned once before.
+- However, the revised version still wasn’t intuitive or user-friendly enough.
+- As a result, we received reports of wines being accidentally moved to
+  incorrect storage locations.
+- In this update, the entire bulk transfer process has been redesigned from the
+  ground up.
+- The new process consists of three clear steps, making it easier to move wines
+  to the intended storage location.
+- First, select the destination. Next, choose the wines you want to move.
+  Finally, review the source and destination locations along with the selected
+  wines before confirming the transfer.
+- We sincerely apologize to users who experienced difficulties with this
+  feature. We hope you enjoy the redesigned experience, and we would greatly
+  appreciate your feedback.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine08.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine09.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine10.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine11.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine12.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/wine/wine13.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🛠️'
+  title='Various Wine UI Improvements'
+  label={['업데이트']}
+/>
+
+- Updated the storage location selection when adding or editing wines.
+  User-created cellars are now displayed first.
+- Improved some fonts and fixed various UI display issues.
+
+<br />
+
+---
+
+<PatchNoteHeroBanner
+  title='Tasting Notes'
+  subtitle='Added usability improvements and screen UI improvements'
+  bgImage='/patch-notes/myc_app/res/title/taste_title.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='↕️'
+  title='Added Jump to First and Last Item in Tasting Note Lists'
+  label={['new']}
+/>
+
+- Added the ability to quickly jump to the first or last item in a tasting note
+  list, just like in the wine list.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_1_0/taste_note/taste01.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🔄'
+  title='Fixed Filters Not Being Applied During Tasting Note Navigation'
+  label={['update']}
+/>
+
+- Fixed an issue where navigating between tasting notes using the previous and
+  next buttons on the detail screen did not respect the currently applied
+  filters.
+
+---
+
+<PatchNoteHeroBanner
+  title='Wine Cellars'
+  subtitle='Improved shelf functionality and slot functionality'
+  bgImage='/patch-notes/myc_app/res/title/cellar_title.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🙈'
+  title='Fixed Wines Without Assigned Slots Not Appearing in the Cellar'
+  label={['update']}
+/>
+
+- Previously, wines stored in a cellar could be viewed through the Shelf tab on
+  the cellar detail screen.
+- However, wines with an assigned shelf but no specific slot were not displayed
+  correctly.
+- This issue has been fixed.
+- Wines with an assigned slot will display their slot location, while wines
+  without one will be marked as Unassigned.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_1_0/taste_note/taste02.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/taste_note/taste03.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🎚️'
+  title='Added Per-Shelf Slot Management Options'
+  label={['신규']}
+/>
+
+- You can now choose whether to use slots for each shelf when creating or
+  editing a cellar.
+- This also allows you to enable or disable slot management for individual
+  shelves.
+- To disable slots for a particular shelf, simply set its slot count to 1 or
+  less.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_1_0/taste_note/taste04.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/taste_note/taste05.webp', alt: '' },
+  ]}
+/>
+
+<PatchNoteSectionHeading
+  icon='🧭'
+  title='Added Wine Slot Assignment and Navigation'
+  label={['new']}
+/>
+
+- When using slots, selecting a wine now allows you to choose between moving it
+  to another slot or opening its wine details.
+
+<PatchNoteImageCarousel
+  items={[
+    { src: '/patch-notes/myc_app/res/3_1_0/taste_note/taste06.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/taste_note/taste07.webp', alt: '' },
+    { src: '/patch-notes/myc_app/res/3_1_0/taste_note/taste08.webp', alt: '' },
+  ]}
+/>
+
+<br />
+
+---
+
+<PatchNoteHeroBanner
+  title='Settings & Others'
+  subtitle='Updates to Tasting Note Settings'
+  bgImage='/patch-notes/myc_app/res/title/setting_title.webp'
+/>
+
+<PatchNoteSectionHeading
+  icon='🚫'
+  title='Removed Tasting Note Photo Path Recovery'
+  label={['delete']}
+/>
+
+- Removed the photo path recovery feature, as it is no longer necessary.
+
+<PatchNoteSectionHeading
+  icon='✍️'
+  title='Fixed Default Tasting Note Title Not Being Applied'
+  label={['update']}
+/>
+
+- Fixed an issue where the default title configured for tasting notes was not
+  being applied correctly.
+
+<PatchNoteSectionHeading
+  icon='✍️'
+  title='Fixed Main Screen Search Input Not Working'
+  label={['update']}
+/>
+
+- Fixed an issue where the integrated search field on the main screen was not
+  responding to user input.
+
+---
+
+# What’s Next?
+
+- We are currently working on the development of the My Wine Cellar web version
+  and its integration with the app.
+- We apologize for the delay in releasing this update. We’d also like to give
+  you a brief preview of some of the major features planned for upcoming
+  versions.
+- The next major development phase will begin with version 4.x, with new
+  features introduced gradually over time.
+
+## Upcoming Features
+
+### User Accounts
+
+- User account functionality is planned, with email-based login as the primary
+  authentication method.
+  - Social login options will not be supported.
+- User Groups will also be introduced in a future update.
+  - This feature is planned for a release after version 4.x.
+  - Users will be able to create groups and share wine collections and tasting
+    notes with other members.
+
+### Major UI Redesign
+
+- The overall user interface will undergo a significant redesign.
+- We are currently planning a completely refreshed experience, starting with the
+  main screen and extending throughout the app.
+
+### Wines
+
+- Starting with the web-integrated version, users will be able to retrieve wine
+  information directly from the web.
+- The initial wine database may have limited coverage, but we will continue
+  expanding and improving the available data over time.
+- New features related to grape varieties will be introduced.
+- The wine summary feature will also be improved to make key information easier
+  to understand at a glance.
+
+### Tasting Notes
+
+- With web integration, tasting notes will gain a sharing feature.
+- Search filters will become more detailed and customizable.
+- New features will analyze users’ preferences based on their tasting notes.
+
+### Wine Cellar
+
+- With web integration, users will also be able to view their cellar information
+  on the web.
+- The visual presentation will be improved to make cellar management and
+  browsing more intuitive.
+
+### Other
+
+- Multilingual support (Japanese and French).
+- New wine knowledge and educational content.
+- Educational content covering grape varieties and wine aromas.
+
+<br />
+
+We will continue working to bring you more features and improvements.
+
+Thank you for using MaWaCell. We hope you continue to enjoy your wine journey!
